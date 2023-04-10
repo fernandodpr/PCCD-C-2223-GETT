@@ -42,45 +42,52 @@ void* recepcion(void* args){
 
 }
 int main(int argc, char *argv[]) {
-    // Tendríamos que hacer una función de inicialización de los buzones
-
-   
-    //Aleatorizar la entrada en SC
-    double random_value;
-    bool   quiero_entrar;
-    do {
-        random_value = (double)rand() / RAND_MAX;
-        quiero_entrar = random_value > PROBABILIDAD_ENTRADA;
-        if (!quiero_entrar) {
-           sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
-        }else{}
-    }while (!quiero_entrar);
-
-    //Ahora el proceso ya quiere entrar en SC
-    bool acceso=false;
-
-    //Comprobar si hay otro poceso que nos notificó su deseo de entrar
 
 
 
-    // Sección crítica
-    if(acceso){
-        printf("[Nodo %i]: He entrado en la sección crítica",identificador_nodo);
-        sleep(rand() % 5 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
-        printf("[Nodo %i]: He terminado la sección crítica",identificador_nodo);
-    }
-    //Salgo de la sección critica:
-        //Cambio mi estado a que no quiero entrar
-        quiero_entrar = false;
-        // Cambio mi estado a que ya no
-        estado=0;
-        //Notifico a los nodos que ya salí de SC
-        //De momento está en pseudocodigo
-        for(i=0;i<cantidaddenodos;i++){
-            //Enviar a cada nodo un mensaje de que ya salió de SC
-           
-            printf("[Nodo %i]: Mensaje enviado a nodo %i. Contenido: Ya no quiero entrar en SC\n",identificador_nodo,nodovecino);
+    do{
+        // Tendríamos que hacer una función de inicialización de los buzones
+
+    
+        //Aleatorizar la entrada en SC
+
+        bool   quiero_entrar;
+        do {
+            quiero_entrar = (double)rand() / RAND_MAX > PROBABILIDAD_ENTRADA;
+            if (!quiero_entrar) {
+                // Si no quiero entrar espero
+            sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
+            }else{}
+        }while (!quiero_entrar);
+
+
+
+        //Ahora el proceso ya quiere entrar en SC
+        bool acceso=false;
+        //Comprobar si hay otro poceso que nos notificó su deseo de entrar
+        //Aqui, en función de esto es donde se asigna el valor  a estado.
+
+
+        // Sección crítica
+        if(acceso){
+            printf("[Nodo %i]: He entrado en la sección crítica",identificador_nodo);
+            sleep(rand() % 5 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
+            printf("[Nodo %i]: He terminado la sección crítica",identificador_nodo);
         }
 
+
+        //Salgo de la sección critica:
+            //Cambio mi estado a que no quiero entrar
+            quiero_entrar = false;
+            // Cambio mi estado a que ya no
+            estado=0;
+            //Notifico a los nodos que ya salí de SC
+            //De momento está en pseudocodigo
+            for(i=0;i<cantidaddenodos;i++){
+                //Enviar a cada nodo un mensaje de que ya salió de SC
+                printf("[Nodo %i]: Mensaje enviado a nodo %i. Contenido: Ya no quiero entrar en SC\n",identificador_nodo,nodovecino);
+            }
+
+    }while (1); // Bucle para que funcione constantemente
     return 0;
 }
