@@ -3,11 +3,14 @@
 #include <stdbool.h>
 #include <string.h>
 #include <sys/msg.h>
+#include <semaphore.h>
 #include <pthread.h>
+#include <unistd.h>
 
 
 #define PROBABILIDAD_ENTRADA 0.5
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
+#define NODOSVECINOS 2
 
 
 
@@ -16,12 +19,17 @@ typedef enum {
     SOLICITANTE, //1  El proceso está solicitando acceso a la sección crítica
     ESPERANDO   //2  El proceso está esperando su turno para acceder a la sección crítica
 } Status;
-
+typedef enum {
+    SOLICITUD, //0 
+    ACK,
+    NACK
+} Instruccion;
 
 typedef struct {
     int id_nodo;        //Origen del paquete
     int id_proceso;     //Origen peticion PID
     int num_ticket;    //El número de ticket  
+    Instruccion instruccion;
     Status estado;      //En que estado se encuentra
 } Paquete;
 
@@ -44,7 +52,7 @@ void NetworkSend(int destination, Paquete* message) {
         exit(1);
     }
 
-    printf("PAQUETE ENVIADO\n");
+    printf("PAQUETE ENVIADO A NODO %i.\n",message->id_nodo);
 }
 
 // Función dummy para recibir un mensaje de otro proceso
@@ -82,87 +90,107 @@ int init_buzon(int IDNodo) {
 
 //Memoria y variables del proceso
 int identificador_nodo = 0;
+sem_t esperaRespuesta;
 Status estado = 0;
+int lastticket=10; // Este es el mayor número de ticket recibido.
 
 
 void* recepcion(void* args){
 
-    Paquete paqueteRecibido;
+    //Tenemos que definir los tipos de cada uno de los paquetes.
     // Espera a recibir un mensaje en la cola de mensajes
     while(1){
-    networkrcv(identificador_nodo);
+
+        Paquete* recibido = networkrcv(identificador_nodo);
+        if(recibido->instruccion==SOLICITUD){
+            //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
+
+
+        }else if(recibido->instruccion==ACK){
+            //Nos están dando permiso para entrar SC
+        }else if (recibido->instruccion==NACK){
+            //No nos están dando el permiso para SC??
+        }
+
     }
+
 }
 
 int main(int argc, char *argv[]) {
+    int proj_id=52;
+    int nodos[NODOSVECINOS-1];
 
-    identificador_nodo = atoi(argv[1]);
 
+    pid_t pid = getpid();
+
+    //Creación del buzón del nodo
+    key_t key=ftok("/bin/ls",proj_id);
+    nodos[0]=msgget(key, IPC_CREAT | 0777);
+    printf("Este nodo tiene IDENTIFICADOR: %i\n",nodos[0]);
 	printf("Buzon id: %d creado", init_buzon(identificador_nodo));
 
-/*    pthread_t pthrecepcion;
+    //Obtener las direcciones de los demás nodos
+    for (int i=1; i<NODOSVECINOS; i++) {
+        printf("Introduzca la ID del nodo %i",i);
+        scanf("%i",&nodos[i]);
+    }
+
+    pthread_t pthrecepcion;
     pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);   
-*/
-    Paquete aenviar = creaPaquete();
 
-    NetworkSend(0, &aenviar);
 
-  /* do{
-        // Tendríamos que hacer una función de inicialización de los buzones
-		init_buzon();
-        				// Es necesario meter semaforos sobre la variable comptartida entre receptor y main (estado y ticket)
-       // Contienda entre los procesos del mismo nodo. No sabes a que proceso envia. ESO SERIA FACIL SI SE ENVIA EL PROCESO EN EL MENSAJE ID PROCESO EN LAS PETICIONES Y EN LAS RESPUESTAS. Asi sabe para quien es.
-        //UN PROCESO NO SABE SI LOS QUE QUIEREN ENTRAR ESTAN EN SU MISMO NODO O NO
-// EL RECEPTOR CONTESTA A LOS MENSAJES
-// COMUNICAR RECEPTOR CON PROCESOS EN EL MISMO NODO?
-// 
+ do{
+    // Tendríamos que hacer una función de inicialización de los buzones
+    // Es necesario meter semaforos sobre la variable comptartida entre receptor y main (estado y ticket)
+    // Contienda entre los procesos del mismo nodo. No sabes a que proceso envia. ESO SERIA FACIL SI SE ENVIA EL PROCESO EN EL MENSAJE ID PROCESO EN LAS PETICIONES Y EN LAS RESPUESTAS. Asi sabe para quien es.
+    //UN PROCESO NO SABE SI LOS QUE QUIEREN ENTRAR ESTAN EN SU MISMO NODO O NO
+    // EL RECEPTOR CONTESTA A LOS MENSAJES
+    // COMUNICAR RECEPTOR CON PROCESOS EN EL MISMO NODO?
+    // 
 
 
     
-        //Aleatorizar la entrada en SC
+    //Aleatorizar la entrada en SC
 
         bool   quiero_entrar;
+        
         do {
             quiero_entrar = (double)rand() / RAND_MAX > PROBABILIDAD_ENTRADA;
             if (!quiero_entrar) {
                 // Si no quiero entrar espero
-            sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
+                sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
             }else{}
         }while (!quiero_entrar);
 
+        //PASOS NECESARIOS PARA ENTRAR EN LA SC
+        // 1 NOTIFICAR
+        // 2 ESPERAR RESPUESTA
+        // 3 EVALUAR RESPUESTA
+        // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
 
+        //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
+        //Duda: Puede dar pie a contienda mas comun el incrementar de uno en uno?
+        int ticketnum= lastticket + 1;
+        
+        //NOTIFICACION A NODOS VECINOS Duda: que pasa si me notifico a mi mismo
 
-        //Ahora el proceso ya quiere entrar en SC
-        bool acceso=false;
-        //Comprobar si hay otro poceso que nos notificó su deseo de entrar
-        //Aqui, en función de esto es donde se asigna el valor  a estado.
-
-
-//EL RECEPTOR: ME LLEGA SOLICITD, SI NADIE EN MI NODO QUISO ENTRAR LE DOY PERMISO- DUDA: NOS INTERESA PONER AQUI EL ESTADO COMO ESPERANDO??
-
-
-// Si el estado es esperando significa que un nodo entro y estamos esperando a que termine su SC. ¿Con un semaforo de condicion? do while sigaamos esp
-
-
-        //SI NO ESTAMOS ESPERANDO....
-//Bloquear la variable estado
-// estado solicitante
-        for(i=0;i<cantidaddenodos;i++){
-                //Enviar a cada nodo un mensaje de que quiero entrar en SC
-                printf("[Nodo %i]: Mensaje enviado a nodo %i. Contenido: Ya no quiero entrar en SC\n",identificador_nodo,nodovecino);
-            }
-
-//RECIBIR UN MENSAJE POR NODO CON OK
-
-
-
-
-        // Sección crítica
-        if(acceso){
-            printf("[Nodo %i]: He entrado en la sección crítica",identificador_nodo);
-            sleep(rand() % 5 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
-            printf("[Nodo %i]: He terminado la sección crítica",identificador_nodo);
+        for (int i=1;i<NODOSVECINOS; i++) {
+            Paquete peticion;
+            peticion.estado=SOLICITANTE;
+            peticion.instruccion=SOLICITUD;
+            peticion.id_nodo=nodos[0];
+            peticion.num_ticket=ticketnum;
+            peticion.id_proceso=pid;//Para futuro para poder direccionar en multiples procesos
+            NetworkSend(nodos[i], &peticion); //TODO: Imprimir algun dato más desde esta función
         }
+
+        //Ahora mismo todo el trabajo por parte del proceso está finalizado, se han enviado las peticiones y se encarga el receptor
+        //La sincronización con el proceso se hace mediante un semaforo
+        sem_wait(&esperaRespuesta);
+        printf("[Nodo %i]: He entrado en la sección crítica",identificador_nodo);
+        sleep(rand() % 5 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
+        printf("[Nodo %i]: He terminado la sección crítica",identificador_nodo);
+
 
 
         //Salgo de la sección critica:
