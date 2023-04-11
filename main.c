@@ -8,12 +8,10 @@
 #include <pthread.h>
 #include <unistd.h>
 
-
+///////////////////////////////////
 #define PROBABILIDAD_ENTRADA 0.5
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
 #define NODOSVECINOS 2
-
-
 
 typedef enum {
     NO_INTERESADO, //0  El proceso no está interesado en acceder a la sección crítica actualmente
@@ -25,6 +23,11 @@ typedef enum {
     ACK,
     NACK
 } Instruccion;
+
+struct Nodo {
+    int valor;
+    struct Nodo* siguiente;
+};
 
 typedef struct {
     int id_nodo;        //Origen del paquete
@@ -43,6 +46,12 @@ Paquete creaPaquete(){
     paquete.estado = SOLICITANTE;
     return paquete;
 }
+void agregarNodo(struct Nodo** cabeza, int valor) {
+    struct Nodo* nuevoNodo = (struct Nodo*) malloc(sizeof(struct Nodo));
+    nuevoNodo->valor = valor;
+    nuevoNodo->siguiente = *cabeza;
+    *cabeza = nuevoNodo;
+}
 
 // Función dummy para enviar un mensaje a otro proceso
 void NetworkSend(int destination, Paquete* message) {
@@ -53,7 +62,6 @@ void NetworkSend(int destination, Paquete* message) {
         perror("Error al enviar el mensaje");
         exit(1);
     }
-
     printf("PAQUETE ENVIADO A NODO %i.\n",message->id_nodo);
 }
 
@@ -94,11 +102,10 @@ int init_buzon(int IDNodo) {
 int identificador_nodo = 0;
 sem_t esperaRespuesta;
 Status estado = 0;
-
 int nodos[NODOSVECINOS-1]; //IMPORTANTE en nodos[0] siempre está mi ID
-
 int lastticket=10; // Este es el mayor número de ticket recibido.
 int ticketnum;  // Este es el numero de ticket que yo estoy usando
+struct Nodo* nodosenespera = NULL; //Lista con los nodos en espera
 
 void* recepcion(void* args){
 
@@ -106,17 +113,12 @@ void* recepcion(void* args){
     // Espera a recibir un mensaje en la cola de mensajes
     int acks = 0;
     while(1){
-
         Paquete* recibido = networkrcv(identificador_nodo);
-
-
         if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
-
             //Primero es necesario conocer si hay contienda mediante mi estado
             if(estado==0){
                 //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
-
                 if(recibido->num_ticket>lastticket) lastticket=recibido->num_ticket; // Si el ticket que recibo es mayor actualizo
 
                 //Mando el ACK
@@ -128,11 +130,38 @@ void* recepcion(void* args){
                 respuesta.id_proceso=0;//No es relevante en este caso
                 NetworkSend(recibido->id_nodo, &respuesta); 
 
-            }else if (0){ //Pasa el nodo con ID menor
-                //Si ya llegamos hasta aquí hay contienda
-                
-            }else if(0){
-                //Si ya llegamos hasta aquí hay contienda
+
+
+//En estos casos existe contienda.
+            }else if (estado==1 && (recibido->num_ticket<ticketnum) ){ //Pasa el nodo con ticket menor, el otro
+                //Dejamos que pase el otro proceso:   MOTIVO --> //Su ticket es menor
+                //Mando el ACK
+                Paquete respuesta;
+                respuesta.estado=SOLICITANTE;
+                respuesta.instruccion=ACK;
+                respuesta.id_nodo=nodos[0];
+                respuesta.num_ticket=0;//No es relevante en este caso
+                respuesta.id_proceso=0;//No es relevante en este caso
+                NetworkSend(recibido->id_nodo, &respuesta); 
+
+            }else if(estado==1 && (recibido->num_ticket==ticketnum) ){ //Tenemos el mismo numero de ticket, resolvemos con el ID nodo
+                if(recibido->id_nodo<nodos[0]){
+                    //Entra el nodo con ID menor
+                    Paquete respuesta;
+                    respuesta.estado=SOLICITANTE;
+                    respuesta.instruccion=ACK;
+                    respuesta.id_nodo=nodos[0];
+                    respuesta.num_ticket=0;//No es relevante en este caso
+                    respuesta.id_proceso=0;//No es relevante en este caso
+                    NetworkSend(recibido->id_nodo, &respuesta); 
+                }else{
+                    //No autoricé al nodo, tengo que despertarlo cuando termine
+                    agregarNodo(&nodosenespera,recibido->id_nodo);
+                }
+
+            }else if(estado==1 && (recibido->num_ticket>ticketnum)){
+                //Tengo un ticket menor al del solicitante asi que lo agrego a la lista
+                agregarNodo(&nodosenespera,recibido->id_nodo);
 
             }
         }else if(recibido->instruccion==ACK){
@@ -245,7 +274,7 @@ int main(int argc, char *argv[]) {
         printf("[Nodo %i]: He terminado la sección crítica",identificador_nodo);
 
         //Ahora notificamos la salida de la SC a los vecinos
-        for (int i=1;i<NODOSVECINOS; i++) {
+        /*for (int i=1;i<NODOSVECINOS; i++) {
             Paquete peticion;
             peticion.estado=FINALIZADO;
             peticion.instruccion=ACK;
@@ -253,8 +282,28 @@ int main(int argc, char *argv[]) {
             peticion.num_ticket=ticketnum;
             peticion.id_proceso=pid;//Para futuro para poder direccionar en multiples procesos
             NetworkSend(nodos[i], &peticion); //TODO: Imprimir algun dato más desde esta función
+        }*/ //Esto es para notificar a todos, mejor avisar solo a los nodos que dejamos esperando
+
+
+        Paquete activacion;
+        activacion.estado=NO_INTERESADO;
+        activacion.id_nodo=nodos[0];
+        activacion.id_proceso=pid;
+        activacion.instruccion=ACK;
+        activacion.num_ticket=ticketnum;
+        // Recorrer la lista
+        struct Nodo* actual = nodosenespera;
+        while (actual != NULL) {
+            printf("Notificando al nodo: %d ", actual->valor);
+            NetworkSend(actual->valor,&activacion);
+            actual = actual->siguiente;
         }
         estado = 0;
+
+
+
+
+
 
     }while (1); // Bucle para que funcione constantemente*/ 
     return 0;
