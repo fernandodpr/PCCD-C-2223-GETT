@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <signal.h>
 #include <sys/msg.h>
 #include <semaphore.h>
 #include <pthread.h>
@@ -116,10 +117,30 @@ void* recepcion(void* args){
 
 }
 
-int main(int argc, char *argv[]) {
-    int proj_id=52;
-    int nodos[NODOSVECINOS-1];
 
+int nodos[NODOSVECINOS-1]; //IMPORTANTE en nodos[0] siempre está mi ID
+
+
+void sigint_handler(int sig) {
+    printf("Se ha presionado Ctrl+C eliminando buzones....\n");
+    if (msgctl(nodos[0], IPC_RMID, NULL) == -1) {
+        perror("msgctl");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Buzón eliminado.\n");
+
+    exit(EXIT_SUCCESS);
+}
+
+
+int main(int argc, char *argv[]) {
+
+    printf("Presione Ctrl+C para salir del programa.\n");
+    signal(SIGINT, sigint_handler);
+
+    int proj_id=52; //TODO: Esto hay que parametrizarlo
+    
 
     pid_t pid = getpid();
 
@@ -151,9 +172,7 @@ int main(int argc, char *argv[]) {
 
     
     //Aleatorizar la entrada en SC
-
         bool   quiero_entrar=false;
-        
         do {
             quiero_entrar = (double)rand() / RAND_MAX > PROBABILIDAD_ENTRADA;
             if (!quiero_entrar) {
@@ -206,3 +225,4 @@ int main(int argc, char *argv[]) {
     }while (1); // Bucle para que funcione constantemente*/ 
     return 0;
 }
+
