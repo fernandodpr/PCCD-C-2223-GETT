@@ -46,6 +46,7 @@ Paquete creaPaquete(){
 
 // Función dummy para enviar un mensaje a otro proceso
 void NetworkSend(int destination, Paquete* message) {
+    //TODO: Imprimir algun dato más desde esta función Como un resumen del paquete
     // TODO: Implementar la lógica de envío de mensaje a otro proceso
         // Enviamos el paquete al buzón correspondiente
     if (msgsnd(destination, message, sizeof(Paquete) - sizeof(long), 0) == -1) {
@@ -93,22 +94,61 @@ int init_buzon(int IDNodo) {
 int identificador_nodo = 0;
 sem_t esperaRespuesta;
 Status estado = 0;
-int lastticket=10; // Este es el mayor número de ticket recibido.
 
+int nodos[NODOSVECINOS-1]; //IMPORTANTE en nodos[0] siempre está mi ID
+
+int lastticket=10; // Este es el mayor número de ticket recibido.
+int ticketnum;  // Este es el numero de ticket que yo estoy usando
 
 void* recepcion(void* args){
 
     //Tenemos que definir los tipos de cada uno de los paquetes.
     // Espera a recibir un mensaje en la cola de mensajes
+    int acks = 0;
     while(1){
 
         Paquete* recibido = networkrcv(identificador_nodo);
+
+
         if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
 
+            //Primero es necesario conocer si hay contienda mediante mi estado
+            if(estado==0){
+                //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
 
+                if(recibido->num_ticket>lastticket) lastticket=recibido->num_ticket; // Si el ticket que recibo es mayor actualizo
+
+                //Mando el ACK
+                Paquete respuesta;
+                respuesta.estado=NO_INTERESADO;
+                respuesta.instruccion=ACK;
+                respuesta.id_nodo=nodos[0];
+                respuesta.num_ticket=0;//No es relevante en este caso
+                respuesta.id_proceso=0;//No es relevante en este caso
+                NetworkSend(recibido->id_nodo, &respuesta); 
+
+            }else if (0){ //Pasa el nodo con ID menor
+                //Si ya llegamos hasta aquí hay contienda
+                
+            }else if(0){
+                //Si ya llegamos hasta aquí hay contienda
+
+            }
         }else if(recibido->instruccion==ACK){
             //Nos están dando permiso para entrar SC
+            //Primera comprobación, realmente, queremos?
+            if(estado!=0){ // Si mi estado no es 0 significa que quiero entrar
+                //Cuando puedo entar a SC? Cuando tengo permiso de todos los nodos
+                acks++; //Hemos recibido un ACK
+                printf("Nuevo ACK recibido. %i",acks);
+                if (acks==NODOSVECINOS-1){
+                    //Tenemos los permisos necesarios para acceder a SC
+                    //Aviso al proceso de que pase
+                    sem_post(&esperaRespuesta);
+                    printf("RECEPTOR: Se ha notificado al proceso de que tiene permisos para entar.");
+                }
+            }
         }else if (recibido->instruccion==NACK){
             //No nos están dando el permiso para SC??
         }
@@ -116,10 +156,6 @@ void* recepcion(void* args){
     }
 
 }
-
-
-int nodos[NODOSVECINOS-1]; //IMPORTANTE en nodos[0] siempre está mi ID
-
 
 void sigint_handler(int sig) {
     printf("Se ha presionado Ctrl+C eliminando buzones....\n");
@@ -140,8 +176,6 @@ int main(int argc, char *argv[]) {
     signal(SIGINT, sigint_handler);
 
     int proj_id=52; //TODO: Esto hay que parametrizarlo
-    
-
     pid_t pid = getpid();
 
     //Creación del buzón del nodo
@@ -172,14 +206,14 @@ int main(int argc, char *argv[]) {
 
     
     //Aleatorizar la entrada en SC
-        bool   quiero_entrar=false;
+       
         do {
-            quiero_entrar = (double)rand() / RAND_MAX > PROBABILIDAD_ENTRADA;
-            if (!quiero_entrar) {
+            estado = (double)rand() / RAND_MAX > PROBABILIDAD_ENTRADA;
+            if (!estado) {
                 // Si no quiero entrar espero
                 sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
             }else{}
-        }while (!quiero_entrar);
+        }while (!estado); // 0 No interesado 1 SOLICITANTE
 
         //PASOS NECESARIOS PARA ENTRAR EN LA SC
         // 1 NOTIFICAR
@@ -189,7 +223,7 @@ int main(int argc, char *argv[]) {
 
         //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
         //Duda: Puede dar pie a contienda mas comun el incrementar de uno en uno?
-        int ticketnum= lastticket + 1;
+        ticketnum= lastticket + 1;
         
         //NOTIFICACION A NODOS VECINOS Duda: que pasa si me notifico a mi mismo
 
@@ -220,7 +254,7 @@ int main(int argc, char *argv[]) {
             peticion.id_proceso=pid;//Para futuro para poder direccionar en multiples procesos
             NetworkSend(nodos[i], &peticion); //TODO: Imprimir algun dato más desde esta función
         }
-        quiero_entrar = false;
+        estado = 0;
 
     }while (1); // Bucle para que funcione constantemente*/ 
     return 0;
