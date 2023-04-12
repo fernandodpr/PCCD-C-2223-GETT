@@ -8,7 +8,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
-///////////////////////////////////
+////////////////////////////////////
 #define PROBABILIDAD_ENTRADA 0.25
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
 #define NODOSVECINOS 4
