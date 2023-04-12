@@ -9,9 +9,9 @@
 #include <unistd.h>
 
 ///////////////////////////////////
-#define PROBABILIDAD_ENTRADA 0.25
+#define PROBABILIDAD_ENTRADA 0.75
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
-#define NODOSVECINOS 4
+//#define NODOSVECINOS 10
 
 
 
@@ -46,13 +46,14 @@ int identificador_nodo = 0;
 int red =0;
 sem_t esperaRespuesta;
 Status estado = 0;
-int contadorsc=0;
+int contadorsc=1;
 
 int lastticket=78; // Este es el mayor número de ticket recibido.
 int ticketnum;  // Este es el numero de ticket que yo estoy usando
 struct Nodo* nodosenespera = NULL; //Lista con los nodos en espera
+int NODOSVECINOS = 0;
 
-int nodos[NODOSVECINOS-1]; //IMPORTANTE en nodos[0] siempre está mi ID
+int nodos[100]; //IMPORTANTE en nodos[0] siempre está mi ID
 
 /////////////////////////////////////////////////////////////////////////////////
 Paquete creaPaquete(){
@@ -230,10 +231,9 @@ void sigint_handler(int sig) {
 
 int main(int argc, char *argv[]) {
     //Parametros con las ID
-    if (argc != NODOSVECINOS+1) {
-        printf("Error: Se deben introducir exactamente %i parámetros. IDNODO ... IDVECINOS\n",NODOSVECINOS);
-        return 1;
-    }
+    NODOSVECINOS=argc-1;
+    printf("Se van a iniciar %i nodos",NODOSVECINOS);
+
     //Signal de salida
     printf("Presione Ctrl+C para salir del programa.\n");
     signal(SIGINT, sigint_handler);
@@ -317,7 +317,7 @@ int main(int argc, char *argv[]) {
 
         //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
         //Duda: Puede dar pie a contienda mas comun el incrementar de uno en uno?
-        ticketnum = lastticket + rand() % 6 + 5;
+        ticketnum = lastticket + rand() % NODOSVECINOS + 5;
         
 
         
@@ -333,7 +333,7 @@ int main(int argc, char *argv[]) {
         printf("Espero a ACK por los nodos...");
         fflush(stdout);
         sem_wait(&esperaRespuesta);
-        printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",identificador_nodo,contadorsc,ticketnum);
+        printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",nodos[0],contadorsc,ticketnum);
         sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
         contadorsc++;
 
