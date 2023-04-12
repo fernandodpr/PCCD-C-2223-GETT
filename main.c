@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 ///////////////////////////////////
-#define PROBABILIDAD_ENTRADA 0.05
+#define PROBABILIDAD_ENTRADA 0.25
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
 #define NODOSVECINOS 4
 
@@ -249,6 +249,7 @@ int main(int argc, char *argv[]) {
     
     int proj_id=52; //TODO: Esto hay que parametrizarlo
     pid_t pid = getpid();
+    
 
     //Creación del buzón del nodo
     key_t key=ftok("/bin/ls",proj_id);
