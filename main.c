@@ -71,6 +71,18 @@ void agregarNodo(struct Nodo** cabeza, int valor) {
     nuevoNodo->siguiente = *cabeza;
     *cabeza = nuevoNodo;
 }
+void borrarLista(struct Nodo** cabeza) {
+    struct Nodo* nodoActual = *cabeza;
+    struct Nodo* nodoSiguiente = NULL;
+    
+    while (nodoActual != NULL) {
+        nodoSiguiente = nodoActual->siguiente;
+        free(nodoActual);
+        nodoActual = nodoSiguiente;
+    }
+    
+    *cabeza = NULL;
+}
 
 // Función dummy para enviar un mensaje a otro proceso
 void NetworkSend(int red, int destinatario,int estado, int pid,int instruccion,int ticket) {
@@ -256,6 +268,7 @@ int main(int argc, char *argv[]) {
     for (int i=0; i<NODOSVECINOS; i++) {
         printf("ID de nodo %i: %i    ",i,nodos[i]);
     }
+    
     printf("\n");
     fflush(stdout);
 
@@ -331,12 +344,7 @@ int main(int argc, char *argv[]) {
         }*/ //Esto es para notificar a todos, mejor avisar solo a los nodos que dejamos esperando
 
 
-        Paquete activacion;
-        activacion.estado=NO_INTERESADO;
-        activacion.id_nodo=nodos[0];
-        activacion.id_proceso=pid;
-        activacion.instruccion=ACK;
-        activacion.num_ticket=ticketnum;
+
         // Recorrer la lista
         struct Nodo* actual = nodosenespera;
         while (actual != NULL) {
@@ -346,6 +354,7 @@ int main(int argc, char *argv[]) {
             actual = actual->siguiente;
         }
         estado = 0;
+        borrarLista(&nodosenespera);
 
     }while (1); // Bucle para que funcione constantemente*/ 
     return 0;
