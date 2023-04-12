@@ -149,7 +149,7 @@ void* recepcion(void* args){
     //Tenemos que definir los tipos de cada uno de los paquetes.
     // Espera a recibir un mensaje en la cola de mensajes
     int acks = 0;
-    printf("Escuchando... por la red: %i",red);
+    printf("Escuchando... por la red: %i\n",red);
     while(1){
         
         fflush(stdout);
@@ -163,7 +163,7 @@ void* recepcion(void* args){
                 //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
                 if(recibido->num_ticket>lastticket){
                     lastticket=recibido->num_ticket;
-                    printf("####### Nuevo numero de ticket minimo %i.",lastticket);
+                    printf("####### Nuevo numero de ticket minimo %i.\n",lastticket);
                 }  // Si el ticket que recibo es mayor actualizo
 
                 //Mando el ACK
@@ -199,12 +199,12 @@ void* recepcion(void* args){
             if(estado!=0){ // Si mi estado no es 0 significa que quiero entrar
                 //Cuando puedo entar a SC? Cuando tengo permiso de todos los nodos
                 acks++; //Hemos recibido un ACK
-                printf("Nuevo ACK recibido. %i",acks);
+                printf("Nuevo ACK recibido. %i\n",acks);
                 if (acks==NODOSVECINOS-1){
                     //Tenemos los permisos necesarios para acceder a SC
                     //Aviso al proceso de que pase
                     sem_post(&esperaRespuesta);
-                    printf("RECEPTOR: Se ha notificado al proceso de que tiene permisos para entar.");
+                    printf("RECEPTOR: Se ha notificado al proceso de que tiene permisos para entar.\n");
                     acks=0;
                 }
             }
@@ -218,7 +218,7 @@ void* recepcion(void* args){
 
 void sigint_handler(int sig) {
     printf("\n\n\n\n");
-    printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces",contadorsc);
+    printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces\n",contadorsc);
     printf("Se ha presionado Ctrl+C eliminando buzones....\n");
     if (msgctl(red, IPC_RMID, NULL) == -1) {
         perror("msgctl");
@@ -273,7 +273,7 @@ int main(int argc, char *argv[]) {
     }*/
     printf("Nodos vecinos son:\n");
     for (int i=0; i<NODOSVECINOS; i++) {
-        printf("ID de nodo %i: %i    ",i,nodos[i]);
+        printf("ID de nodo %i: %i    \n",i,nodos[i]);
     }
     
     printf("\n");
@@ -312,7 +312,7 @@ int main(int argc, char *argv[]) {
         // 2 ESPERAR RESPUESTA
         // 3 EVALUAR RESPUESTA
         // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
-        printf("Va a entrar en la SC...");
+        printf("Va a entrar en la SC...\n");
         fflush(stdout);
 
         //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
@@ -330,10 +330,10 @@ int main(int argc, char *argv[]) {
 
         //Ahora mismo todo el trabajo por parte del proceso está finalizado, se han enviado las peticiones y se encarga el receptor
         //La sincronización con el proceso se hace mediante un semaforo
-        printf("Espero a ACK por los nodos...");
+        printf("Espero a ACK por los nodos...\n");
         fflush(stdout);
         sem_wait(&esperaRespuesta);
-        printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",identificador_nodo,contadorsc,ticketnum);
+        printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n", nodos[0],contadorsc,ticketnum);
         sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
         contadorsc++;
 
@@ -354,7 +354,7 @@ int main(int argc, char *argv[]) {
         // Recorrer la lista
         struct Nodo* actual = nodosenespera;
         while (actual != NULL) {
-            printf("Notificando al nodo que ahora si puede entrar: %d ", actual->valor);
+            printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
            
             NetworkSend(red, actual->valor, NO_INTERESADO,pid, ACK, ticketnum);
             actual = actual->siguiente;
