@@ -291,12 +291,12 @@ void consultas(){
 
 void initparam(int argc, char *argv[]){
     //Parametros con las ID
-    NODOSVECINOS=argc-1;
+    NODOSVECINOS=argc-4;
     printf("Se van a iniciar %i nodos",NODOSVECINOS);
 
     //Parametros a entero
-    for (int i = 1; i < argc; i++) {
-        nodos[i-1] = atoi(argv[i]);
+    for (int i = 4; i < argc; i++) {
+        nodos[i-4] = atoi(argv[i]);
     }
 
     srand(time(NULL)); //Para que los aleatorios no sean siempre los mismos!
@@ -308,8 +308,7 @@ void initparam(int argc, char *argv[]){
 
     //Compuebo que hay un receptor escuchando en los buzones correspondientes
     char command[256];
-    snprintf(command, 256, "ps ax | grep -v grep | grep \"./multiproceso.o RECEP %s %s\"", argv[2], argv[3]);
-    if (system(command) == 0) {
+    snprintf(command, 256, "ps ax | grep -v grep | grep \"./multiproceso.o RECEP %s %s\" > /dev/null", argv[2], argv[3]);    if (system(command) == 0) {
         printf("Existe un receptor activo para este proceso.\n");
         return;
     }else{
