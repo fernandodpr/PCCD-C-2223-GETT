@@ -1,3 +1,7 @@
+/*ABOUT: Este es el programa creado para la primera entrega de clase por error. Consiste en un algoritmo para 1 proceso N nodos
+Los nodos se definen como parámetros de entrada. Siendo tantos parámeteros como Nodos introducidos por parémetro.
+IMPORTANTE: El primer parámetro siempre tiene que ser la ID del nodo
+Para poder ejecutar el sript de inicialización autiomática de nodos compilar con nombre de salida multinodo.o*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
