@@ -16,12 +16,8 @@ Para poder ejecutar el sript de inicialización autiomática de nodos compilar c
 #include "network.h"
 #include "datatypes.h"
 #include "linkedlist.h"
+#include "config.h"
 
-
-///////////////////////////////////
-#define PROBABILIDAD_ENTRADA 0.75
-#define PROBABILIDAD_PERDIDA_PAQUETE 0.01
-//#define NODOSVECINOS 10
 
 
 //Memoria y variables del proceso
@@ -254,21 +250,6 @@ int main(int argc, char *argv[]) {
         printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",nodos[0],contadorsc,ticketnum);
         sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
         contadorsc++;
-
-
-        //Ahora notificamos la salida de la SC a los vecinos
-        /*for (int i=1;i<NODOSVECINOS; i++) {
-            Paquete peticion;
-            peticion.estado=FINALIZADO;
-            peticion.instruccion=ACK;
-            peticion.id_nodo=nodos[0];
-            peticion.num_ticket=ticketnum;
-            peticion.id_proceso=pid;//Para futuro para poder direccionar en multiples procesos
-            NetworkSend(red,nodos[i], &peticion); //TODO: Imprimir algun dato más desde esta función
-        }*/ //Esto es para notificar a todos, mejor avisar solo a los nodos que dejamos esperando
-
-
-
         // Recorrer la lista
         struct Nodo* actual = nodosenespera;
         while (actual != NULL) {

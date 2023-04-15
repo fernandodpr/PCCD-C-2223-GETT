@@ -1,7 +1,8 @@
-#include "datatypes.h"
+
 
 #ifndef NETWORK_H
-#define NETWORK_H
+    #define NETWORK_H
+    #include "datatypes.h"
     typedef struct {
         long mtype;          //Destinatario DEST
         int id_nodo;        //Remitente SRC
