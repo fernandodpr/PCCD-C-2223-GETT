@@ -176,8 +176,6 @@ int main(int argc, char *argv[]) {
     printf("Presione Ctrl+C para salir del programa.\n");
     signal(SIGINT, sigint_handler);
 
-
-
     if(strcasecmp(argv[1], "RECEP") == 0){
         //EJECUTO EL RECEPTOR
             //Creación del buzón del nodo
@@ -190,20 +188,16 @@ int main(int argc, char *argv[]) {
    }else if(strcasecmp(argv[1], "consultas") == 0){
         //EJECUTO EL SERVICIO DE CONSULTAS
         initparam(argc, argv); //INICIALIZO LOS PARÁMETROS DEL PROGRAMA
-        //consultas();
+        consultas();
+   }else if(strcasecmp(argv[1], "reservas") == 0){
+        //EJECUTO EL SERVICIO DE CONSULTAS
+        initparam(argc, argv); //INICIALIZO LOS PARÁMETROS DEL PROGRAMA
+        consultas();
    }else{//MUESTRO AYUDA
         ayuda();
         return 0;
    }
   
- 
-   
-    
-    
-  
-   
-
-
     return 0;
 }
 
@@ -288,6 +282,89 @@ void consultas(){
     }while (1); // Bucle para que funcione constantemente*/ 
     return;
 }
+void reservas(){
+    pid_t pid = getpid();
+    do{
+        // Tendríamos que hacer una función de inicialización de los buzones
+        // Es necesario meter semaforos sobre la variable comptartida entre receptor y main (estado y ticket)
+        // Contienda entre los procesos del mismo nodo. No sabes a que proceso envia. ESO SERIA FACIL SI SE ENVIA EL PROCESO EN EL MENSAJE ID PROCESO EN LAS PETICIONES Y EN LAS RESPUESTAS. Asi sabe para quien es.
+        //UN PROCESO NO SABE SI LOS QUE QUIEREN ENTRAR ESTAN EN SU MISMO NODO O NO
+        // EL RECEPTOR CONTESTA A LOS MENSAJES
+        // COMUNICAR RECEPTOR CON PROCESOS EN EL MISMO NODO?
+        // 
+
+        //Aleatorizar la entrada en SC
+        
+            do {
+                estado = (double)rand() / RAND_MAX > PROBABILIDAD_ENTRADA;
+                if (!estado) {
+                    // Si no quiero entrar espero
+                    sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
+                }else{}
+            }while (!estado); // 0 No interesado 1 SOLICITANTE
+
+            //PASOS NECESARIOS PARA ENTRAR EN LA SC
+            // 1 NOTIFICAR
+            // 2 ESPERAR RESPUESTA
+            // 3 EVALUAR RESPUESTA
+            // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
+            printf("Va a entrar en la SC...\n");
+            fflush(stdout);
+
+            //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
+            //Duda: Puede dar pie a contienda mas comun el incrementar de uno en uno?
+            ticketnum = lastticket + rand() % NODOSVECINOS + 5;
+            
+
+            
+            //NOTIFICACION A NODOS VECINOS Duda: que pasa si me notifico a mi mismo
+
+            for (int i=1;i<NODOSVECINOS; i++){
+                fflush(stdout);
+                NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,pid,SOLICITUD,ticketnum);
+            }
+
+            //Ahora mismo todo el trabajo por parte del proceso está finalizado, se han enviado las peticiones y se encarga el receptor
+            //La sincronización con el proceso se hace mediante un semaforo
+            printf("Espero a ACK por los nodos...\n");
+            fflush(stdout);
+            sem_wait(&esperaRespuesta);
+            printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",nodos[0],contadorsc,ticketnum);
+            sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
+            contadorsc++;
+
+
+            //Ahora notificamos la salida de la SC a los vecinos
+            /*for (int i=1;i<NODOSVECINOS; i++) {
+                Paquete peticion;
+                peticion.estado=FINALIZADO;
+                peticion.instruccion=ACK;
+                peticion.id_nodo=nodos[0];
+                peticion.num_ticket=ticketnum;
+                peticion.id_proceso=pid;//Para futuro para poder direccionar en multiples procesos
+                NetworkSend(red,nodos[i], &peticion); //TODO: Imprimir algun dato más desde esta función
+            }*/ //Esto es para notificar a todos, mejor avisar solo a los nodos que dejamos esperando
+
+
+
+            // Recorrer la lista
+            struct Nodo* actual = nodosenespera;
+            while (actual != NULL) {
+                printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
+            
+                NetworkSend(red,nodos[0], actual->valor, NO_INTERESADO,pid, ACK, ticketnum);
+                actual = actual->siguiente;
+            }
+            estado = 0;
+            borrarLista(&nodosenespera);
+
+            if (lastticket < ticketnum) lastticket=ticketnum;
+
+    }while (1); // Bucle para que funcione constantemente*/ 
+    return;
+}
+
+
 
 void initparam(int argc, char *argv[]){
     //Parametros con las ID
