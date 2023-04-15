@@ -1,3 +1,15 @@
+/*ABOUT: Este es el programa creado para la primera entrega de clase por error. Consiste en un algoritmo para 1 proceso N nodos
+Los nodos se definen como parámetros de entrada. Siendo tantos parámeteros como Nodos introducidos por parémetro.
+IMPORTANTE: El primer parámetro siempre tiene que ser la ID del nodo
+Para poder ejecutar el sript de inicialización autiomática de nodos compilar con nombre de salida multinodo.o*/
+
+/*Contexto: Lanzamiento: En función del parámetro introducido ejecuta una función o otra para poder usar el mismo programa.
+(Ahora mismo parece buena idea, igual no por mucho tiempo)*/
+/*Ejemplo de lanzamiento: 
+multiproceso.o RECEP ID_COLA_INTERNA ID_COLA_RED #########Lanza la aplicacioón receptor 
+multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -8,38 +20,17 @@
 #include <pthread.h>
 #include <unistd.h>
 
+
+#include "network.h"
+#include "datatypes.h"
+#include "linkedlist.h"
+
+
 ///////////////////////////////////
 #define PROBABILIDAD_ENTRADA 0.75
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
 //#define NODOSVECINOS 10
 
-
-
-typedef enum {
-    NO_INTERESADO, //0  El proceso no está interesado en acceder a la sección crítica actualmente
-    SOLICITANTE, //1  El proceso está solicitando acceso a la sección crítica
-    FINALIZADO   //2  El proceso está esperando su turno para acceder a la sección crítica
-} Status;
-
-typedef enum {
-    SOLICITUD, //0 
-    ACK,
-    NACK
-} Instruccion;
-
-struct Nodo {
-    int valor;
-    struct Nodo* siguiente;
-};
-
-typedef struct {
-    long mtype;          //Destinatario DEST
-    int id_nodo;        //Remitente SRC
-    int id_proceso;     //Origen peticion PID
-    int num_ticket;     //El número de ticket  
-    Instruccion instruccion;
-    Status estado;      //En que estado se encuentra
-} Paquete;
 
 //Memoria y variables del proceso
 int identificador_nodo = 0;
@@ -66,71 +57,6 @@ Paquete creaPaquete(){
     return paquete;
 }
 
-void agregarNodo(struct Nodo** cabeza, int valor) {
-    struct Nodo* nuevoNodo = (struct Nodo*) malloc(sizeof(struct Nodo));
-    nuevoNodo->valor = valor;
-    nuevoNodo->siguiente = *cabeza;
-    *cabeza = nuevoNodo;
-}
-void borrarLista(struct Nodo** cabeza) {
-    struct Nodo* nodoActual = *cabeza;
-    struct Nodo* nodoSiguiente = NULL;
-    
-    while (nodoActual != NULL) {
-        nodoSiguiente = nodoActual->siguiente;
-        free(nodoActual);
-        nodoActual = nodoSiguiente;
-    }
-    
-    *cabeza = NULL;
-}
-
-// Función dummy para enviar un mensaje a otro proceso
-void NetworkSend(int red, int destinatario,int estado, int pid,int instruccion,int ticket) {
-    //TODO: Imprimir algun dato más desde esta función Como un resumen del paquete
-    // TODO: Implementar la lógica de envío de mensaje a otro proceso
-    // Enviamos el paquete al buzón correspondiente
-    Paquete message;
-    message.estado=estado;
-    message.id_nodo=nodos[0];
-    message.id_proceso=pid;
-    message.instruccion=instruccion;
-    message.mtype=destinatario;
-    message.num_ticket=ticket;
-    
-    //printf("Soy la función Send y me han pasado el parámetro RED: %i\n", red);
-    
-    if (msgsnd(red, (struct msgbuf *)&message, sizeof(Paquete), 0) == -1) {
-       printf("ERROR NO ENVIADO: Red:%i  Destino: %li   Instruccion: %i\n", red, message.mtype, message.instruccion);
-        exit(1);
-    }
-
-       //printf("ENVIADO: Red:%i  Destino: %li   Instruccion: %i\n", red, message.mtype, message.instruccion);
-}
-// Función dummy para recibir un mensaje de otro proceso
-Paquete* networkrcv(int red) {
-    Paquete paquete;
-    //printf("Esperando recibir un paquete por red %i para mi (%i)",red,nodos[0]);
-    fflush(stdout);
-    if (msgrcv(red, (struct msgbuf *)&paquete, sizeof(Paquete),(long)nodos[0], 0) == -1) {
-        perror("Error al recibir el mensaje");
-        exit(1);
-    }
-
-    // Imprime el paquete recibido
-    //printf("Paquete recibido:  ");
-    //printf("  id_nodo: %d  ", paquete.id_nodo);
-    //printf("  destinatario mtype: %ld  ", paquete.mtype);
-    //printf("  id_proceso: %d  ", paquete.id_proceso);
-    //printf("  num_ticket: %d  ", paquete.num_ticket);
-    //printf("  estado: %d\n", paquete.estado);
-
-    // Hacer una copia del paquete y devolver un puntero a la misma
-    Paquete* paqueteRecibido = malloc(sizeof(Paquete));
-    memcpy(paqueteRecibido, &paquete, sizeof(Paquete));
-
-    return paqueteRecibido;
-}
 
 // Inicializa la cola de mensajes
 int init_buzon(int IDNodo) {
@@ -154,7 +80,7 @@ void* recepcion(void* args){
     while(1){
         
         fflush(stdout);
-        Paquete* recibido = networkrcv(red);
+        Paquete* recibido = networkrcv(red,nodos[0]);
         
         
         if(recibido->instruccion==SOLICITUD){
@@ -168,7 +94,7 @@ void* recepcion(void* args){
                 }  // Si el ticket que recibo es mayor actualizo
 
                 //Mando el ACK
-                NetworkSend(red, recibido->id_nodo, NO_INTERESADO,0,ACK,0);
+                NetworkSend(red,nodos[0], recibido->id_nodo, NO_INTERESADO,0,ACK,0);
 
 
 
@@ -176,13 +102,13 @@ void* recepcion(void* args){
             }else if (estado==1 && (recibido->num_ticket<ticketnum) ){ //Pasa el nodo con ticket menor, el otro
                 //Dejamos que pase el otro proceso:   MOTIVO --> //Su ticket es menor
                 //Mando el ACK
-                NetworkSend(red, recibido->id_nodo, SOLICITANTE,0,ACK,0);
+                NetworkSend(red,nodos[0],recibido->id_nodo, SOLICITANTE,0,ACK,0);
 
 
             }else if(estado==1 && (recibido->num_ticket==ticketnum) ){ //Tenemos el mismo numero de ticket, resolvemos con el ID nodo
                 if(recibido->id_nodo<nodos[0]){
                     //Entra el nodo con ID menor, le mando el ACK
-                    NetworkSend(red, recibido->id_nodo, SOLICITANTE,0,ACK,0);
+                    NetworkSend(red,nodos[0], recibido->id_nodo, SOLICITANTE,0,ACK,0);
 
                 }else{
                     //No autoricé al nodo, tengo que despertarlo cuando termine
@@ -325,7 +251,7 @@ int main(int argc, char *argv[]) {
 
         for (int i=1;i<NODOSVECINOS; i++){
             fflush(stdout);
-            NetworkSend(red,nodos[i],SOLICITANTE,pid,SOLICITUD,ticketnum);
+            NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,pid,SOLICITUD,ticketnum);
         }
 
         //Ahora mismo todo el trabajo por parte del proceso está finalizado, se han enviado las peticiones y se encarga el receptor
@@ -356,7 +282,7 @@ int main(int argc, char *argv[]) {
         while (actual != NULL) {
             printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
            
-            NetworkSend(red, actual->valor, NO_INTERESADO,pid, ACK, ticketnum);
+            NetworkSend(red,nodos[0], actual->valor, NO_INTERESADO,pid, ACK, ticketnum);
             actual = actual->siguiente;
         }
         estado = 0;
