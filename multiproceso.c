@@ -193,8 +193,8 @@ int main(int argc, char *argv[]) {
     if(strcasecmp(argv[1], "RECEP") == 0){
         //EJECUTO EL RECEPTOR
             //Creación del buzón del nodo
-            int proj_id=52; //TODO: Esto hay que parametrizarlo
-            key_t key=ftok("/bin/ls",proj_id);
+            //int proj_id=52; //TODO: Esto hay que parametrizarlo
+            //key_t key=ftok("/bin/ls",proj_id);
             red=msgget(99999, IPC_CREAT | 0777);
             //printf("red establecida: %i\n",red);
             recepcion();
@@ -220,7 +220,7 @@ void * procesoHilo(int * param){
 
 // TODO: por ahora solo consultas. Despues coge el param para crear otro tipo de procesos
     int procesoPrio = 5;
-    int *pcolaConsultas = &colaConsultas;
+    //int *pcolaConsultas = &colaConsultas;
     sem_t* sem_proceso;
     //Si el proceso no es una consulta, se desactiva las consultas para poder escribir.
     if(procesoPrio != 5){

@@ -161,12 +161,12 @@ int main(int argc, char *argv[]) {
 
 
     
-    int proj_id=52; //TODO: Esto hay que parametrizarlo
+    //int proj_id=52; //TODO: Esto hay que parametrizarlo
     pid_t pid = getpid();
     
 
     //Creación del buzón del nodo
-    key_t key=ftok("/bin/ls",proj_id);
+    //key_t key=ftok("/bin/ls",proj_id);
     red=msgget(99999, IPC_CREAT | 0777);
     //printf("red establecida: %i\n",red);
     
