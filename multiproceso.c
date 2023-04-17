@@ -51,7 +51,6 @@ int consultasEnSC = 0;
 int colaConsultas = 0;
 
 sem_t sem_crear_hilos;
-sem_t sem_procesos;
 
 sem_t sem_consultas;
 sem_t sem_solicitaSC;
@@ -91,7 +90,6 @@ void recepcion(){
     printf("Escuchando... por la red: %i\n",red);
     while(1){
         
-        fflush(stdout);
         Paquete* recibido = networkrcv(red,nodos[0]);
         
         
@@ -215,6 +213,25 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+// CREA numProcesos HILOS de PROCESOS con prioridad prioProceso
+// prioProceso = 5 -> CONSULTAS
+// prioProceso = 4 -> DEMÁS
+int creaHiloProceso(int prioProceso, int numProcesos){
+
+    pthread_t procesoHilos[1000];
+
+    for(int i = 0; i < numProcesos; i++){
+
+
+        pthread_create(&procesoHilos[i],NULL,(void *)procesoHilo,(void *)&prioProceso);
+        colaConsultas++;
+        sem_wait(&sem_crear_hilos);
+    }
+
+    return 0;
+
+}
+
 void * procesoHilo(int * param){
     pid_t pid = getpid();
 
@@ -225,8 +242,9 @@ void * procesoHilo(int * param){
     //Si el proceso no es una consulta, se desactiva las consultas para poder escribir.
     if(procesoPrio != 5){
         consultasActivas = 0;
-        sem_proceso = &sem_consultas;
     }
+
+    sem_proceso = &sem_consultas;
 
     printf("Creado proceso de prioridad: %i\n", procesoPrio);
     sem_post(&sem_crear_hilos);
@@ -241,6 +259,8 @@ void * procesoHilo(int * param){
         //El proceso creado es CONSULTA, las consultas están ACTIVAS y hay consultas en SC, continua a la SC
     }else{
         //Esperamos a que el nodo nos de permiso
+        sem_post(&sem_solicitaSC);
+            printf("AQUI ESTAMOS\n");
         sem_wait(sem_proceso);
     }
 
@@ -252,7 +272,9 @@ void * procesoHilo(int * param){
         consultasEnSC = 1;
     }
 
-    if(procesoPrio == 5 && colaConsultas != 0){
+    if(procesoPrio == 5){
+
+            printf("AQUI ENTRO\n");
         sem_post(&sem_solicitaSC);
     }
 
@@ -266,31 +288,16 @@ void * procesoHilo(int * param){
 
     printf("FIN PROCESO PRIO: %i de PID: %i", procesoPrio, pid);
 
+    colaConsultas--;
+
     pthread_exit(NULL);
 
 }
 
 
-// CREA numProcesos HILOS de PROCESOS con prioridad prioProceso
-// prioProceso = 5 -> CONSULTAS
-// prioProceso = 4 -> DEMÁS
-int creaHiloProceso(int prioProceso, int numProcesos){
-
-    pthread_t procesoHilos[1000];
-
-    for(int i = 0; i < numProcesos; i++){
-
-        pthread_create(&procesoHilos[i],NULL,(void *)procesoHilo,(void *)&prioProceso);
-        sem_wait(&sem_crear_hilos);
-    }
-
-    return 0;
-
-}
 
 void consultas(){
     pid_t pid = getpid();
-    do{
         // Tendríamos que hacer una función de inicialización de los buzones
         // Es necesario meter semaforos sobre la variable comptartida entre receptor y main (estado y ticket)
         // Contienda entre los procesos del mismo nodo. No sabes a que proceso envia. ESO SERIA FACIL SI SE ENVIA EL PROCESO EN EL MENSAJE ID PROCESO EN LAS PETICIONES Y EN LAS RESPUESTAS. Asi sabe para quien es.
@@ -298,8 +305,9 @@ void consultas(){
         // EL RECEPTOR CONTESTA A LOS MENSAJES
         // COMUNICAR RECEPTOR CON PROCESOS EN EL MISMO NODO?
         // 
+do{
 
-        //Aleatorizar la entrada en SC
+      /*  //Aleatorizar la entrada en SC
         
             do {
                 estado = (double)rand() / RAND_MAX > PROBABILIDAD_ENTRADA;
@@ -308,18 +316,27 @@ void consultas(){
                     sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
                 }else{}
             }while (!estado); // 0 No interesado 1 SOLICITANTE
-
+*/
             //PASOS NECESARIOS PARA ENTRAR EN LA SC
             // 1 NOTIFICAR
             // 2 ESPERAR RESPUESTA
             // 3 EVALUAR RESPUESTA
             // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
 
-            creaHiloProceso(5,3);
+            printf("AQUI\n");
+            sem_wait(&sem_solicitaSC);
+
+            for(int i = 0; i < colaConsultas; i++){
+
+            printf("AQUI SI QUE LLEGAMOS\n");
+
             sem_post(&sem_consultas);
-            sem_wait(&sem_saleSC);
+
+            }
+
             printf("Va a entrar en la SC...\n");
-            fflush(stdout);
+
+            sem_wait(&sem_saleSC);
 
             //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
             //Duda: Puede dar pie a contienda mas comun el incrementar de uno en uno?
@@ -330,14 +347,12 @@ void consultas(){
             //NOTIFICACION A NODOS VECINOS Duda: que pasa si me notifico a mi mismo
 
             for (int i=1;i<NODOSVECINOS; i++){
-                fflush(stdout);
                 NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,pid,SOLICITUD,ticketnum);
             }
 
             //Ahora mismo todo el trabajo por parte del proceso está finalizado, se han enviado las peticiones y se encarga el receptor
             //La sincronización con el proceso se hace mediante un semaforo
             printf("Espero a ACK por los nodos...\n");
-            fflush(stdout);
             sem_wait(&esperaRespuesta);
             printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",nodos[0],contadorsc,ticketnum);
             sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
@@ -370,7 +385,8 @@ void consultas(){
 
             if (lastticket < ticketnum) lastticket=ticketnum;
 
-    }while (1); // Bucle para que funcione constantemente*/ 
+
+}while(1);
     return;
 }
 void reservas(){
@@ -400,7 +416,6 @@ void reservas(){
             // 3 EVALUAR RESPUESTA
             // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
             printf("Va a entrar en la SC...\n");
-            fflush(stdout);
 
             //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
             //Duda: Puede dar pie a contienda mas comun el incrementar de uno en uno?
@@ -411,14 +426,12 @@ void reservas(){
             //NOTIFICACION A NODOS VECINOS Duda: que pasa si me notifico a mi mismo
 
             for (int i=1;i<NODOSVECINOS; i++){
-                fflush(stdout);
                 NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,pid,SOLICITUD,ticketnum);
             }
 
             //Ahora mismo todo el trabajo por parte del proceso está finalizado, se han enviado las peticiones y se encarga el receptor
             //La sincronización con el proceso se hace mediante un semaforo
             printf("Espero a ACK por los nodos...\n");
-            fflush(stdout);
             sem_wait(&esperaRespuesta);
             printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",nodos[0],contadorsc,ticketnum);
             sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
@@ -475,11 +488,13 @@ void initparam(int argc, char *argv[]){
     }
 
     //INICIALIZACIÓN DE SEMAFOROS
-    sem_init(&sem_procesos,0,0);
     sem_init(&sem_solicitaSC,0,0);
     sem_init(&sem_crear_hilos,0,1);
     sem_init(&sem_consultas,0,0);
     sem_init(&sem_saleSC,0,0);
+
+
+    creaHiloProceso(5,3);
 
     //Compuebo que hay un receptor escuchando en los buzones correspondientes
     char command[256];
