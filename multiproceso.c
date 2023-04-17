@@ -272,6 +272,7 @@ void * procesoHilo(int * param){
         consultasEnSC = 1;
     }
 
+
     if(procesoPrio == 5){
 
             printf("AQUI ENTRO\n");
