@@ -45,6 +45,18 @@ int NODOSVECINOS = 0;
 
 int nodos[100]; //IMPORTANTE en nodos[0] siempre está mi ID
 
+/////////////////////////////////////////////////////////////////////////////////
+Paquete creaPaquete(){
+    // Crea un paquete
+    Paquete paquete;
+    paquete.id_nodo = 1;
+    paquete.id_proceso = 123;
+    paquete.num_ticket = 456;
+    paquete.estado = SOLICITANTE;
+    return paquete;
+}
+
+
 // Inicializa la cola de mensajes
 int init_buzon(int IDNodo) {
     int msgid;
@@ -58,7 +70,7 @@ int init_buzon(int IDNodo) {
     return msgid;
 }
 
-void* recepcion(void* args){
+void recepcion(){
     //Tenemos que definir los tipos de cada uno de los paquetes.
     // Espera a recibir un mensaje en la cola de mensajes
     int acks = 0;
@@ -129,15 +141,6 @@ void* recepcion(void* args){
 
 }
 
-void sigusr1_handler(int sig, siginfo_t *si, void *unused) {
-    printf("Señal SIGUSR1 recibida valor %d\n", si->si_value.sival_int);
-    // Aquí puedes procesar los datos recibidos
-}
-void sigusr2_handler(int sig, siginfo_t *si, void *unused) {
-    printf("Señal SIGUSR2 recibida con valor %d\n", si->si_value.sival_int);
-    // Aquí puedes procesar los datos recibidos
-}
-
 void sigint_handler(int sig) {
     printf("\n\n\n\n");
     printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces\n",contadorsc);
@@ -173,39 +176,14 @@ int main(int argc, char *argv[]) {
     printf("Presione Ctrl+C para salir del programa.\n");
     signal(SIGINT, sigint_handler);
 
-    //Asignacion de señal USR1
-    struct sigaction sa;
-    sa.sa_flags = SA_SIGINFO;
-    sa.sa_sigaction = sigusr1_handler;
-    sigemptyset(&sa.sa_mask);
-    if (sigaction(SIGUSR1, &sa, NULL) == -1) {
-        perror("Error al instalar manejador de señal");
-        return 1;
-    }
-    //Asignacion de señal USR2
-    sa.sa_flags = SA_SIGINFO;
-    sa.sa_sigaction = sigusr2_handler;
-    sigemptyset(&sa.sa_mask);
-    if (sigaction(SIGUSR2, &sa, NULL) == -1) {
-        perror("Error al instalar manejador de señal");
-        return 1;
-    }
-
-    //ES necesario volver a meter esto en un hilo
-    //EJECUTO EL RECEPTOR
-    //Creación del buzón del nodo
-    int proj_id=52; //TODO: Esto hay que parametrizarlo
-    key_t key=ftok("/bin/ls",proj_id);
-    red=msgget(99999, IPC_CREAT | 0777);
-    //printf("red establecida: %i\n",red);
-    pthread_t pthrecepcion;
-    pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);   
-
-    recepcion();
-
-
     if(strcasecmp(argv[1], "RECEP") == 0){
-
+        //EJECUTO EL RECEPTOR
+            //Creación del buzón del nodo
+            int proj_id=52; //TODO: Esto hay que parametrizarlo
+            key_t key=ftok("/bin/ls",proj_id);
+            red=msgget(99999, IPC_CREAT | 0777);
+            //printf("red establecida: %i\n",red);
+            recepcion();
 
    }else if(strcasecmp(argv[1], "consultas") == 0){
         //EJECUTO EL SERVICIO DE CONSULTAS
@@ -273,6 +251,21 @@ void consultas(){
             printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",nodos[0],contadorsc,ticketnum);
             sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
             contadorsc++;
+
+
+            //Ahora notificamos la salida de la SC a los vecinos
+            /*for (int i=1;i<NODOSVECINOS; i++) {
+                Paquete peticion;
+                peticion.estado=FINALIZADO;
+                peticion.instruccion=ACK;
+                peticion.id_nodo=nodos[0];
+                peticion.num_ticket=ticketnum;
+                peticion.id_proceso=pid;//Para futuro para poder direccionar en multiples procesos
+                NetworkSend(red,nodos[i], &peticion); //TODO: Imprimir algun dato más desde esta función
+            }*/ //Esto es para notificar a todos, mejor avisar solo a los nodos que dejamos esperando
+
+
+
             // Recorrer la lista
             struct Nodo* actual = nodosenespera;
             while (actual != NULL) {
