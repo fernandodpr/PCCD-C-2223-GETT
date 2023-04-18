@@ -228,7 +228,7 @@ int main(int argc, char *argv[]) {
     pthread_t pthrecepcion;
     pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);   
 
-    recepcion();
+    //recepcion();
 
 
     if(strcasecmp(argv[1], "RECEP") == 0){
@@ -238,7 +238,7 @@ int main(int argc, char *argv[]) {
             //key_t key=ftok("/bin/ls",proj_id);
             red=msgget(99999, IPC_CREAT | 0777);
             //printf("red establecida: %i\n",red);
-            recepcion();
+            //recepcion();
 
    }else if(strcasecmp(argv[1], "consultas") == 0){
         //EJECUTO EL SERVICIO DE CONSULTAS
