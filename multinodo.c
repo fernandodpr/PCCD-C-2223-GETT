@@ -67,7 +67,7 @@ void* recepcion(void* args){
     printf("Escuchando... por la red: %i\n",red);
     while(1){
         
-        fflush(stdout);
+        //fflush(stdout);
         Paquete* recibido = networkrcv(red,nodos[0]);
         
         
@@ -119,7 +119,7 @@ void* recepcion(void* args){
                     //Tenemos los permisos necesarios para acceder a SC
                     //Aviso al proceso de que pase
                     sem_post(&esperaRespuesta);
-                    printf("RECEPTOR: Se ha notificado al proceso de que tiene permisos para entar.\n");
+                    printf("[RECEPTOR] Se ha notificado al proceso de que tiene permisos para entrar.\n");
                     acks=0;
                 }
             }
@@ -146,7 +146,11 @@ void sigint_handler(int sig) {
 int main(int argc, char *argv[]) {
     //Parametros con las ID
     NODOSVECINOS=argc-1;
-    printf("Se van a iniciar %i nodos",NODOSVECINOS);
+    if(NODOSVECINOS == 0){
+        printf("Formato: ./multinodo.o idNodo <ids otros nodos>\n");
+        exit(0);
+    }
+    printf("Se van a iniciar %i nodos\n",NODOSVECINOS);
 
     //Signal de salida
     printf("Presione Ctrl+C para salir del programa.\n");
@@ -158,24 +162,20 @@ int main(int argc, char *argv[]) {
 
     srand(time(NULL)); //Para que los aleatorios no sean siempre los mismos!
 
-
-
-    
-    int proj_id=52; //TODO: Esto hay que parametrizarlo
+   
+    //int proj_id=52; //TODO: Esto hay que parametrizarlo
     pid_t pid = getpid();
     
 
     //Creación del buzón del nodo
-    key_t key=ftok("/bin/ls",proj_id);
+    //key_t key=ftok("/bin/ls",proj_id);
     red=msgget(99999, IPC_CREAT | 0777);
     //printf("red establecida: %i\n",red);
     
-    
-
-
+ 
 
     printf("Este nodo tiene IDENTIFICADOR: %i\n",nodos[0]);
-    fflush(stdout);
+    //fflush(stdout);
 	printf("El identificador del buzón es: %d\n",red);
 
     //Obtener las direcciones de los demás nodos //Voy a hacer esto mejor por parámetros
@@ -191,14 +191,14 @@ int main(int argc, char *argv[]) {
     }
     
     printf("\n");
-    fflush(stdout);
+    //fflush(stdout);
 
-    printf("Iniciando hilo de recepcion...\n");
-    fflush(stdout);
+    //printf("Iniciando hilo de recepcion...\n");
+    //fflush(stdout);
     pthread_t pthrecepcion;
     pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);   
     printf("Iniciado hilo de recepcion...\n");
-    fflush(stdout);
+    //fflush(stdout);
 
  do{
     // Tendríamos que hacer una función de inicialización de los buzones
@@ -227,7 +227,7 @@ int main(int argc, char *argv[]) {
         // 3 EVALUAR RESPUESTA
         // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
         printf("Va a entrar en la SC...\n");
-        fflush(stdout);
+        //fflush(stdout);
 
         //Antes de mandar la petición tengo que generar mi numero de ticket: Esto es el numero de ticket mas grande conocido+1
         //Duda: Puede dar pie a contienda mas comun el incrementar de uno en uno?
@@ -238,14 +238,14 @@ int main(int argc, char *argv[]) {
         //NOTIFICACION A NODOS VECINOS Duda: que pasa si me notifico a mi mismo
 
         for (int i=1;i<NODOSVECINOS; i++){
-            fflush(stdout);
+            //fflush(stdout);
             NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,pid,SOLICITUD,ticketnum);
         }
 
         //Ahora mismo todo el trabajo por parte del proceso está finalizado, se han enviado las peticiones y se encarga el receptor
         //La sincronización con el proceso se hace mediante un semaforo
         printf("Espero a ACK por los nodos...\n");
-        fflush(stdout);
+        //fflush(stdout);
         sem_wait(&esperaRespuesta);
         printf("\n[Nodo %i]: He entrado en la sección crítica %i veces. Con el ticket: %i\n",nodos[0],contadorsc,ticketnum);
         sleep(rand() % 10 + 4); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }

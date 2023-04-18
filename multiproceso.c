@@ -45,6 +45,32 @@ int NODOSVECINOS = 0;
 
 int nodos[100]; //IMPORTANTE en nodos[0] siempre está mi ID
 
+int consultasActivas = 1;
+int consultasEnSC = 0;
+
+int colaConsultas = 0;
+
+sem_t sem_crear_hilos;
+sem_t sem_procesos;
+
+sem_t sem_consultas;
+sem_t sem_solicitaSC;
+sem_t sem_saleSC;
+
+
+void* procesoHilo(int * param);
+/////////////////////////////////////////////////////////////////////////////////
+Paquete creaPaquete(){
+    // Crea un paquete
+    Paquete paquete;
+    paquete.id_nodo = 1;
+    paquete.id_proceso = 123;
+    paquete.num_ticket = 456;
+    paquete.estado = SOLICITANTE;
+    return paquete;
+}
+
+
 // Inicializa la cola de mensajes
 int init_buzon(int IDNodo) {
     int msgid;
@@ -205,7 +231,13 @@ int main(int argc, char *argv[]) {
 
 
     if(strcasecmp(argv[1], "RECEP") == 0){
-
+        //EJECUTO EL RECEPTOR
+            //Creación del buzón del nodo
+            //int proj_id=52; //TODO: Esto hay que parametrizarlo
+            //key_t key=ftok("/bin/ls",proj_id);
+            red=msgget(99999, IPC_CREAT | 0777);
+            //printf("red establecida: %i\n",red);
+            recepcion();
 
    }else if(strcasecmp(argv[1], "consultas") == 0){
         //EJECUTO EL SERVICIO DE CONSULTAS
@@ -221,6 +253,79 @@ int main(int argc, char *argv[]) {
    }
   
     return 0;
+}
+
+void * procesoHilo(int * param){
+    pid_t pid = getpid();
+
+// TODO: por ahora solo consultas. Despues coge el param para crear otro tipo de procesos
+    int procesoPrio = 5;
+    //int *pcolaConsultas = &colaConsultas;
+    sem_t* sem_proceso;
+    //Si el proceso no es una consulta, se desactiva las consultas para poder escribir.
+    if(procesoPrio != 5){
+        consultasActivas = 0;
+        sem_proceso = &sem_consultas;
+    }
+
+    printf("Creado proceso de prioridad: %i\n", procesoPrio);
+    sem_post(&sem_crear_hilos);
+
+    sleep(5);
+
+    if(procesoPrio != 5){
+        sem_post(&sem_solicitaSC);
+    }
+
+    if(procesoPrio == 5 && consultasActivas == 1 && consultasEnSC == 1){
+        //El proceso creado es CONSULTA, las consultas están ACTIVAS y hay consultas en SC, continua a la SC
+    }else{
+        //Esperamos a que el nodo nos de permiso
+        sem_wait(sem_proceso);
+    }
+
+
+    printf("PROCESO con prioridad: %i entra a la SC\n", procesoPrio);
+
+    if(procesoPrio == 5){
+        consultasActivas = 1;
+        consultasEnSC = 1;
+    }
+
+    if(procesoPrio == 5 && colaConsultas != 0){
+        sem_post(&sem_solicitaSC);
+    }
+
+    sleep(7);
+
+    printf("PROCESO con prioridad:%i sale de la SC\n", procesoPrio);
+
+    sem_post(&sem_saleSC);
+
+    consultasEnSC = 0;
+
+    printf("FIN PROCESO PRIO: %i de PID: %i", procesoPrio, pid);
+
+    pthread_exit(NULL);
+
+}
+
+
+// CREA numProcesos HILOS de PROCESOS con prioridad prioProceso
+// prioProceso = 5 -> CONSULTAS
+// prioProceso = 4 -> DEMÁS
+int creaHiloProceso(int prioProceso, int numProcesos){
+
+    pthread_t procesoHilos[1000];
+
+    for(int i = 0; i < numProcesos; i++){
+
+        pthread_create(&procesoHilos[i],NULL,(void *)procesoHilo,(void *)&prioProceso);
+        sem_wait(&sem_crear_hilos);
+    }
+
+    return 0;
+
 }
 
 void consultas(){
@@ -249,6 +354,10 @@ void consultas(){
             // 2 ESPERAR RESPUESTA
             // 3 EVALUAR RESPUESTA
             // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
+
+            creaHiloProceso(5,3);
+            sem_post(&sem_consultas);
+            sem_wait(&sem_saleSC);
             printf("Va a entrar en la SC...\n");
             fflush(stdout);
 
@@ -389,6 +498,13 @@ void initparam(int argc, char *argv[]){
     for (int i=0; i<NODOSVECINOS; i++) {
         printf("ID de nodo %i: %i    \n",i,nodos[i]);
     }
+
+    //INICIALIZACIÓN DE SEMAFOROS
+    sem_init(&sem_procesos,0,0);
+    sem_init(&sem_solicitaSC,0,0);
+    sem_init(&sem_crear_hilos,0,1);
+    sem_init(&sem_consultas,0,0);
+    sem_init(&sem_saleSC,0,0);
 
     //Compuebo que hay un receptor escuchando en los buzones correspondientes
     char command[256];
