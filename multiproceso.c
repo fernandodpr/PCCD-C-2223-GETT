@@ -233,7 +233,6 @@ int creaHiloProceso(int prioProceso, int numProcesos){
 }
 
 void * procesoHilo(int * param){
-    pid_t pid = getpid();
 
 // TODO: por ahora solo consultas. Despues coge el param para crear otro tipo de procesos
     int procesoPrio = 5;
@@ -260,7 +259,6 @@ void * procesoHilo(int * param){
     }else{
         //Esperamos a que el nodo nos de permiso
         sem_post(&sem_solicitaSC);
-            printf("AQUI ESTAMOS\n");
         sem_wait(sem_proceso);
     }
 
@@ -274,7 +272,6 @@ void * procesoHilo(int * param){
 
     if(procesoPrio == 5){
 
-            printf("AQUI ENTRO\n");
         sem_post(&sem_solicitaSC);
     }
 
@@ -286,7 +283,7 @@ void * procesoHilo(int * param){
 
     consultasEnSC = 0;
 
-    printf("FIN PROCESO PRIO: %i de PID: %i", procesoPrio, pid);
+    printf("FIN PROCESO PRIO: %i", procesoPrio);
 
     colaConsultas--;
 
@@ -323,12 +320,9 @@ do{
             // 3 EVALUAR RESPUESTA
             // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
 
-            printf("AQUI\n");
             sem_wait(&sem_solicitaSC);
 
             for(int i = 0; i < colaConsultas; i++){
-
-            printf("AQUI SI QUE LLEGAMOS\n");
 
             sem_post(&sem_consultas);
 
