@@ -194,8 +194,8 @@ int main(int argc, char *argv[]) {
     
     //EJECUTO EL RECEPTOR
     //Creación del buzón del nodo
-    int proj_id=52; //TODO: Esto hay que parametrizarlo
-    key_t key=ftok("/bin/ls",proj_id);
+    //int proj_id=52; //TODO: Esto hay que parametrizarlo
+    //key_t key=ftok("/bin/ls",proj_id);
     red=msgget(99999, IPC_CREAT | 0777);
     //printf("red establecida: %i\n",red);
 
@@ -279,15 +279,16 @@ void * procesoHilo(int * param){
     consultasEnSC = 0;
     printf("FIN PROCESO type: %i", procesotype);
     colaConsultas--;
+    */
     pthread_exit(NULL);
-*/
+
 }
 
 
 
 void * procesomutex(int * param){
 
-    pid_t pid = getpid();
+    //pid_t pid = getpid();
         // Tendríamos que hacer una función de inicialización de los buzones
         // Es necesario meter semaforos sobre la variable comptartida entre receptor y main (estado y ticket)
         // Contienda entre los procesos del mismo nodo. No sabes a que proceso envia. ESO SERIA FACIL SI SE ENVIA EL PROCESO EN EL MENSAJE ID PROCESO EN LAS PETICIONES Y EN LAS RESPUESTAS. Asi sabe para quien es.
@@ -415,7 +416,7 @@ void * procesomutex(int * param){
 
 void * procesoconsultas(int * param){
 
-    pid_t pid = getpid();
+    //pid_t pid = getpid();
         // Tendríamos que hacer una función de inicialización de los buzones
         // Es necesario meter semaforos sobre la variable comptartida entre receptor y main (estado y ticket)
         // Contienda entre los procesos del mismo nodo. No sabes a que proceso envia. ESO SERIA FACIL SI SE ENVIA EL PROCESO EN EL MENSAJE ID PROCESO EN LAS PETICIONES Y EN LAS RESPUESTAS. Asi sabe para quien es.
