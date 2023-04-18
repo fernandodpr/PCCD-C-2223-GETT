@@ -30,3 +30,14 @@ void borrarLista(struct Nodo** cabeza) {
     
     *cabeza = NULL;
 }
+int contarNodos(struct Nodo* cabeza) {
+    int contador = 0;
+    struct Nodo* nodoActual = cabeza;
+    
+    while (nodoActual != NULL) {
+        contador++;
+        nodoActual = nodoActual->siguiente;
+    }
+    
+    return contador;
+}

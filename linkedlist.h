@@ -9,4 +9,5 @@
 
     void borrarLista(struct Nodo** cabeza);
     void agregarNodo(struct Nodo** cabeza, int valor);
+    int contarNodos(struct Nodo* cabeza);
 #endif
