@@ -155,6 +155,8 @@ void* recepcion(void* args){
 
 }
 
+
+//No es una buena opcióm
 void sigusr1_handler(int sig, siginfo_t *si, void *unused) {
     printf("Señal SIGUSR1 recibida valor %d\n", si->si_value.sival_int);
     // Aquí puedes procesar los datos recibidos
