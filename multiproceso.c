@@ -177,10 +177,10 @@ void sigint_handler(int sig) {
 }
 void ayuda() {
     printf("Uso:\n");
-    printf("multiproceso.o RECEP ID_COLA_INTERNA ID_COLA_RED\n\n");
-    printf("multiproceso.o TIPO ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]\n");
+    printf("multiproceso.o RECEP ID_COLA_RED\n\n");
+    printf("multiproceso.o TIPO ID_COLA_RED ID_NODO [ID'S NODOS]\n");
     printf("  TIPO: El tipo de proceso a lanzar: consultas,reservas...\n");
-    printf("  ID_COLA_INTERNA:  Identificador del buzón interno de sincronizacion.\n");
+    printf("  #####ID_COLA_INTERNA:  Identificador del buzón interno de sincronizacion.\n");
     printf("  ID_COLA_RED:      Identificador de la cola sobre la que se simula la red\n");
     printf("  ID_NODO:          Identificador del nodo donde se ejecuta\n");
     printf("  [ID'S NODOS]:     Identificadores de nodos vecinos\n");
@@ -189,7 +189,7 @@ void ayuda() {
 int main(int argc, char *argv[]) {
 
     //Parámetros
-    if (argc < 4 || (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)) {
+    if (argc < 3 || (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)) {
         // Muestra la ayuda y sale del programa
         ayuda();
         return 0;
@@ -199,6 +199,7 @@ int main(int argc, char *argv[]) {
     printf("Presione Ctrl+C para salir del programa.\n");
     signal(SIGINT, sigint_handler);
 
+/*
     //Asignacion de señal USR1
     struct sigaction sa;
     sa.sa_flags = SA_SIGINFO;
@@ -215,7 +216,7 @@ int main(int argc, char *argv[]) {
     if (sigaction(SIGUSR2, &sa, NULL) == -1) {
         perror("Error al instalar manejador de señal");
         return 1;
-    }
+    }*///Asignacion de señales como interfaz de control de procesos
 
     //ES necesario volver a meter esto en un hilo
     //EJECUTO EL RECEPTOR
@@ -517,6 +518,8 @@ void initparam(int argc, char *argv[]){
 
     creaHiloProceso(5,3);
 
+    //Útil para implementación de múltiples procesos (no hilos)
+    /*
     //Compuebo que hay un receptor escuchando en los buzones correspondientes
     char command[256];
     snprintf(command, 256, "ps ax | grep -v grep | grep \"./multiproceso.o RECEP %s %s\" > /dev/null", argv[2], argv[3]);    if (system(command) == 0) {
@@ -525,6 +528,6 @@ void initparam(int argc, char *argv[]){
     }else{
         printf("NO Existe un receptor activo para este proceso.\n");
         sigint_handler(1);//TODO: Poner el numero del ctrl+c
-    }
+    }*/
 
 }
