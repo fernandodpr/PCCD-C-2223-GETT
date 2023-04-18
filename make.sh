@@ -1,16 +1,16 @@
 clear
 
 #Matar procesos 
-killall receptor
-killall multiproceso
-killall multinodo
+killall receptor.o
+killall multiproceso.o
+killall multinodo.o
 
 #Borrar ejecutables
-rm receptor
-rm multiproceso
-rm multinodo
+rm receptor.o
+rm multiproceso.o
+rm multinodo.o
 
 #Compilación del proyecto
-gcc -Wall multiproceso.c network.c linkedlist.c -o multiproceso
-gcc -Wall multinodo.c network.c linkedlist.c -o multinodo
-gcc -Wall receptor.c -o receptor
+gcc -Wall multiproceso.c network.c linkedlist.c -o multiproceso.o
+gcc -Wall multinodo.c network.c linkedlist.c -o multinodo.o
+gcc -Wall receptor.c -o receptor.o
