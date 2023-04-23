@@ -20,7 +20,7 @@ for (( i=0; i<$n; i++ )); do
     index=$((j % n))
     args+=("${nodes[$index]}")
   done
-  ./multinodo.o "${args[@]}" &
+  ./multiproceso.o "${args[@]}" &
   procs+=($!)  # Añadir el PID del proceso a la lista
 done
 
