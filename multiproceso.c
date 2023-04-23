@@ -103,7 +103,7 @@ void* recepcion(void* args){
         if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
             //Primero es necesario conocer si hay contienda mediante mi estado
-            printf("[Nodo %i] El valor de mi estado es %i",nodos[0],estado);
+            printf("[Nodo %i] El valor de mi estado es %i\n",nodos[0],estado);
             if(estado==0){
                 //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
                 if(recibido->num_ticket>lastticket){
@@ -131,13 +131,13 @@ void* recepcion(void* args){
                 }else{
                     //No autoricé al nodo, tengo que despertarlo cuando termine
                     agregarNodo(&nodosenespera,recibido->id_nodo);
-                    printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.",nodos[0]);
+                    printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
                 }
 
             }else if(estado==1 && (recibido->num_ticket>ticketnum)){
                 //Tengo un ticket menor al del solicitante asi que lo agrego a la lista
                 agregarNodo(&nodosenespera,recibido->id_nodo);
-                printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.",nodos[0]);
+                printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
 
             }
         }else if(recibido->instruccion==ACK){
@@ -235,18 +235,21 @@ void * procesomutex(int * param){
                 sem_getvalue(&sem_SC, &valorSemaforoSC);
 
                 int cantidadnodosesperando=contarNodos(nodosenespera);
-                printf("Nodos en espera: %i",cantidadnodosesperando);
-                printf("Valor semaforo SC: %i",valorSemaforoSC);
+                printf("Nodos en espera: %i\n",cantidadnodosesperando);
+                printf("Valor semaforo SC: %i\n",valorSemaforoSC);
 
                 if(cantidadnodosesperando>0){
                     //Hay más nodos en espera no puedo entrar en SC sin solicitud
+                    printf("[Proceso %d] -> He entrado en cantidad Nodos esperando %d\n", hilo_pid, cantidadnodosesperando);
                     necesariasolicitud=true;
                     sem_wait(&sem_esperaAvisoNodos);
                 }else if(valorSemaforoSC==1){
                     //En mi nodo no hay nadie más esperando por SC o nadie en SC "Soy el primero en entar"
+                     printf("[Proceso %d] -> He entrado en ValorSemaforoSC %d\n", hilo_pid, valorSemaforoSC);
                     necesariasolicitud=true;
                 }else{
                     //Hay más procesos en el nodo esperando o hay SC, después me pongo a la cola y ya no pido permiso a los nodos
+                     printf("[Proceso %d] -> He entrado en else\n", hilo_pid);
                     necesariasolicitud=false;
 
                 }
@@ -315,7 +318,7 @@ void * procesomutex(int * param){
 void initparam(int argc, char *argv[]){
     //Parametros con las ID
     NODOSVECINOS=argc-1;
-    printf("Se van a iniciar %i nodos",NODOSVECINOS);
+    printf("Se van a iniciar %i nodos\n",NODOSVECINOS);
 
     //Parametros a entero
     for (int i = 1; i < argc; i++) {
@@ -326,7 +329,7 @@ void initparam(int argc, char *argv[]){
 
     //printf("Nodos vecinos son:\n");
     for (int i=0; i<NODOSVECINOS; i++) {
-        printf("ID de nodo %i: %i    \n",i,nodos[i]);
+        printf("ID de nodo %i: %i \n",i,nodos[i]);
     }
 
     //INICIALIZACIÓN DE SEMAFOROS
