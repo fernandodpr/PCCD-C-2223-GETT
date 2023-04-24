@@ -284,6 +284,31 @@ void * procesomutex(int * param){
             printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale.\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid);
 
             sem_getvalue(&sem_esperaAvisoNodos, &valorSemaforoAvisoNodos);
+            sem_getvalue(&sem_SC, &valorSemaforoSC);
+            cantidadnodosesperando=contarNodos(nodosenespera);
+            
+            printf("\n[Nodo %i Hilo%i] Valor sem SC %i.\n",nodos[0],hilo_pid,valorSemaforoSC);
+            printf("\n[Nodo %i Hilo%i] Valor sem Avisa nodos %i.\n",nodos[0],hilo_pid,valorSemaforoAvisoNodos);
+            printf("\n[Nodo %i Hilo%i] Nodos en cola. %i\n",nodos[0],hilo_pid,cantidadnodosesperando);
+            
+
+            
+            if(cantidadnodosesperando!=0 && valorSemaforoSC==1){
+                    sem_post(&sem_esperaAvisoNodos);
+                        struct Nodo* actual = nodosenespera;
+                        while (actual != NULL) {
+                            printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
+                    
+                            NetworkSend(red,nodos[0], actual->valor, NO_INTERESADO,hilo_pid, ACK, ticketnum);
+                            actual = actual->siguiente;
+                        }
+                        estado = 0;
+                        borrarLista(&nodosenespera);
+                    sem_post(&sem_SC);
+            }else if(0){
+            }else{
+                sem_post(&sem_SC);
+            }
 
             if(valorSemaforoAvisoNodos<1){
                 //Hay procesos en mi nodo que no van a pedir permiso
@@ -305,7 +330,7 @@ void * procesomutex(int * param){
                 
             }
             if (lastticket < ticketnum) lastticket=ticketnum;
-            sem_post(&sem_SC);
+            
             sleep(1);
     }while(1);
     
