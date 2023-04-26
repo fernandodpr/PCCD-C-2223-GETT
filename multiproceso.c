@@ -134,13 +134,13 @@ void* recepcion(void* args){
                 }else{
                     //No autoricé al nodo, tengo que despertarlo cuando termine
                     agregarNodo(&nodosenespera,recibido->id_nodo);
-                    printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.",nodos[0]);
+                    printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
                 }
 
             }else if(estado==SOLICITANTE && (recibido->num_ticket>ticketnum)){
                 //Tengo un ticket menor al del solicitante asi que lo agrego a la lista
                 agregarNodo(&nodosenespera,recibido->id_nodo);
-                printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.",nodos[0]);
+                printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
 
             }
         }else if(recibido->instruccion==ACK){
@@ -246,6 +246,7 @@ void * procesomutex(int * param){
                     printf("[Nodo %i]IF 1.1",nodos[0]);
  
                     //Hay más nodos en espera no puedo entrar en SC sin solicitud
+                    printf("[Proceso %d] -> He entrado en cantidad Nodos esperando %d\n", hilo_pid, cantidadnodosesperando);
                     necesariasolicitud=true;
                     sem_wait(&sem_esperaAvisoNodos);
 
@@ -353,7 +354,7 @@ void * procesomutex(int * param){
 void initparam(int argc, char *argv[]){
     //Parametros con las ID
     NODOSVECINOS=argc-1;
-    printf("Se van a iniciar %i nodos",NODOSVECINOS);
+    printf("Se van a iniciar %i nodos\n",NODOSVECINOS);
 
     //Parametros a entero
     for (int i = 1; i < argc; i++) {
@@ -364,7 +365,7 @@ void initparam(int argc, char *argv[]){
 
     //printf("Nodos vecinos son:\n");
     for (int i=0; i<NODOSVECINOS; i++) {
-        printf("ID de nodo %i: %i    \n",i,nodos[i]);
+        printf("ID de nodo %i: %i \n",i,nodos[i]);
     }
 
     //INICIALIZACIÓN DE SEMAFOROS
