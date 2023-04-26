@@ -101,7 +101,7 @@ void* recepcion(void* args){
     while(1){
         
         Paquete* recibido = networkrcv(red,nodos[0]);
-        printf("[Nodo %i][RECEPTOR] Nuevo paquete recibido: Mi estado es %s y he recibido de tipo %s. Tiene ticket %i y yo tengo ticket %i \n",nodos[0],estadostring[estado],tipostring[recibido->instruccion],recibido->num_ticket,ticketnum);
+        printf("[Nodo %i][RECEPTOR] Nuevo paquete recibido: Mi estado es %s y he recibido de tipo %s. Tiene ticket %i y yo tengo ticket %i \n",nodos[0],estadostring[estado],tipostring[recibido->instruccion],recibido->num_ticket,lastticket);
 
         if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
@@ -115,7 +115,7 @@ void* recepcion(void* args){
                 }  // Si el ticket que recibo es mayor actualizo
 
                 //Mando el ACK
-                NetworkSend(red,nodos[0], recibido->id_nodo, NO_INTERESADO,0,ACK,0);
+                NetworkSend(red,nodos[0], recibido->id_nodo, NO_INTERESADO,0,ACK,lastticket);
 
 
 
@@ -123,13 +123,13 @@ void* recepcion(void* args){
             }else if (estado==SOLICITANTE && (recibido->num_ticket<ticketnum) ){ //Pasa el nodo con ticket menor, el otro
                 //Dejamos que pase el otro proceso:   MOTIVO --> //Su ticket es menor
                 //Mando el ACK
-                NetworkSend(red,nodos[0],recibido->id_nodo, SOLICITANTE,0,ACK,0);
+                NetworkSend(red,nodos[0],recibido->id_nodo, SOLICITANTE,0,ACK,lastticket);
 
 
             }else if(estado==SOLICITANTE && (recibido->num_ticket==ticketnum) ){ //Tenemos el mismo numero de ticket, resolvemos con el ID nodo
                 if(recibido->id_nodo<nodos[0]){
                     //Entra el nodo con ID menor, le mando el ACK
-                    NetworkSend(red,nodos[0], recibido->id_nodo, SOLICITANTE,0,ACK,0);
+                    NetworkSend(red,nodos[0], recibido->id_nodo, SOLICITANTE,0,ACK,lastticket);
 
                 }else{
                     //No autoricé al nodo, tengo que despertarlo cuando termine
@@ -282,6 +282,7 @@ void * procesomutex(int * param){
             if(necesariasolicitud){
                 printf("[Nodo %i]IF 2",nodos[0]);
                 ticketnum = lastticket + rand() % NODOSVECINOS + 5;
+                lastticket=ticketnum;
                 for (int i=1;i<NODOSVECINOS; i++){
                     NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,hilo_pid,SOLICITUD,ticketnum);
                 }
@@ -294,7 +295,7 @@ void * procesomutex(int * param){
             //SECCION CRITICA
             time_t now = time(NULL);
             struct tm *t = localtime(&now);
-            int tiempoespera=rand() % 10 + 4;
+            int tiempoespera=rand() % 1 + 2;
             printf("\n%i:%i.%i [Nodo %i Hilo%i] Entra durante %i.\n",t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,tiempoespera);
             sleep(tiempoespera); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
 
@@ -304,6 +305,8 @@ void * procesomutex(int * param){
             printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
             contadorsc++;
             contadorschilo++;
+            printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+
             sem_getvalue(&sem_esperaAvisoNodos, &valorSemaforoAvisoNodos);
             sem_getvalue(&sem_SC, &valorSemaforoSC);
             cantidadnodosesperando=contarNodos(nodosenespera);
@@ -339,7 +342,7 @@ void * procesomutex(int * param){
             }
 
            
-            if (lastticket < ticketnum) lastticket=ticketnum;
+            
             
             sleep(1);
     }while(1);
