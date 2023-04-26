@@ -38,6 +38,8 @@ Paquete* networkrcv(int red,int nodo) {
     return paqueteRecibido;
 }
 void NetworkSend(int red,int nodo, int destinatario,int estado, int pid,int instruccion,int ticket) {
+    char* estadostring[3] = { "NO_INTERESADO", "SOLICITANTE", "FINALIZADO"};
+    char* tipostring[3] = { "SOLICITUD", "ACK", "NACK"};        
     //TODO: Imprimir algun dato más desde esta función Como un resumen del paquete
     // TODO: Implementar la lógica de envío de mensaje a otro proceso
     // Enviamos el paquete al buzón correspondiente
@@ -54,7 +56,9 @@ void NetworkSend(int red,int nodo, int destinatario,int estado, int pid,int inst
     if (msgsnd(red, (struct msgbuf *)&message, sizeof(Paquete), 0) == -1) {
        printf("ERROR NO ENVIADO: Red:%i  Destino: %li   Instruccion: %i\n", red, message.mtype, message.instruccion);
         exit(1);
+    }else{
+        printf("[Nodo %i][ENVIADO] Envío %s a nodo %i. Numero de ticket %i \n",nodo,tipostring[instruccion],destinatario,ticket);
     }
 
-       //printf("ENVIADO: Red:%i  Destino: %li   Instruccion: %i\n", red, message.mtype, message.instruccion);
+
 }
