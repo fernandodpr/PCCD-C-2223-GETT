@@ -40,7 +40,7 @@ int identificador_nodo = 0;
 int red =0;
 sem_t esperaRespuesta;
 Status estado = 0;
-int contadorsc=1;
+int contadorsc=0;
 
 int lastticket=78; // Este es el mayor número de ticket recibido.
 int ticketnum;  // Este es el numero de ticket que yo estoy usando
@@ -193,7 +193,7 @@ int main(int argc, char *argv[]) {
     pthread_t pthrecepcion;
     pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);   
     pthread_t pthtest[10];
-    for (int i =0; i<10; i++) {
+    for (int i =0; i<2; i++) {
         //printf("Creo hilo");
         pthread_create(&pthtest[i],NULL,(void *)procesomutex,NULL);   
     }
@@ -209,7 +209,7 @@ void * procesomutex(int * param){
     //pid_t hilo_pid = getpid();
     pid_t hilo_pid = gettid();
     
-    int contadorschilo=1;
+    int contadorschilo=0;
     int valorSemaforoSC;
     int valorSemaforoAvisoNodos;
 
@@ -302,9 +302,10 @@ void * procesomutex(int * param){
             
             now = time(NULL);
             struct tm *t2 = localtime(&now);
-            printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
             contadorsc++;
             contadorschilo++;
+            printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+
             sem_getvalue(&sem_esperaAvisoNodos, &valorSemaforoAvisoNodos);
             sem_getvalue(&sem_SC, &valorSemaforoSC);
             cantidadnodosesperando=contarNodos(nodosenespera);
