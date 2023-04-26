@@ -1,0 +1,3756 @@
+
+19:15.588 [Nodo 1 Hilo84004] Entra durante 0,5 s.
+
+19:15.933 [Nodo 1 Hilo84004] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.992 [Nodo 1 Hilo84008] Entra durante 0,5 s.
+
+19:16.184 [Nodo 1 Hilo84008] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.232 [Nodo 1 Hilo84035] Entra durante 0,5 s.
+
+19:16.743 [Nodo 1 Hilo84035] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.781 [Nodo 1 Hilo84059] Entra durante 0,5 s.
+
+19:17.250 [Nodo 1 Hilo84059] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.293 [Nodo 1 Hilo84122] Entra durante 0,5 s.
+
+19:15.816 [Nodo 10 Hilo84312] Entra durante 0,5 s.
+
+19:15.281 [Nodo 10 Hilo84312] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.317 [Nodo 10 Hilo84313] Entra durante 0,5 s.
+
+19:16.255 [Nodo 10 Hilo84313] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.290 [Nodo 10 Hilo84314] Entra durante 0,5 s.
+
+19:16.342 [Nodo 10 Hilo84314] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.378 [Nodo 10 Hilo84315] Entra durante 0,5 s.
+
+19:17.704 [Nodo 10 Hilo84315] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:15.798 [Nodo 3 Hilo84058] Entra durante 0,5 s.
+
+19:15.347 [Nodo 3 Hilo84058] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.382 [Nodo 3 Hilo84064] Entra durante 0,5 s.
+
+19:16.391 [Nodo 3 Hilo84064] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.430 [Nodo 3 Hilo84071] Entra durante 0,5 s.
+
+19:16.120 [Nodo 3 Hilo84071] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.156 [Nodo 3 Hilo84073] Entra durante 0,5 s.
+
+19:17.165 [Nodo 3 Hilo84073] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.203 [Nodo 3 Hilo84078] Entra durante 0,5 s.
+
+19:15.79 [Nodo 9 Hilo84541] Entra durante 0,5 s.
+
+19:15.911 [Nodo 9 Hilo84541] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.516 [Nodo 9 Hilo84537] Entra durante 0,5 s.
+
+19:16.447 [Nodo 9 Hilo84537] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.729 [Nodo 9 Hilo84542] Entra durante 0,5 s.
+
+19:17.654 [Nodo 9 Hilo84542] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:17.704 [Nodo 9 Hilo84560] Entra durante 0,5 s.
+
+19:15.805 [Nodo 2 Hilo84041] Entra durante 0,5 s.
+
+19:15.564 [Nodo 2 Hilo84041] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.602 [Nodo 2 Hilo84049] Entra durante 0,5 s.
+
+19:16.612 [Nodo 2 Hilo84049] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.655 [Nodo 2 Hilo84050] Entra durante 0,5 s.
+
+19:16.837 [Nodo 2 Hilo84050] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.885 [Nodo 2 Hilo84053] Entra durante 0,5 s.
+
+19:17.499 [Nodo 2 Hilo84053] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.545 [Nodo 2 Hilo84057] Entra durante 0,5 s.
+
+19:15.602 [Nodo 4 Hilo84657] Entra durante 0,5 s.
+
+19:15.874 [Nodo 4 Hilo84657] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.959 [Nodo 4 Hilo84656] Entra durante 0,5 s.
+
+19:16.736 [Nodo 4 Hilo84656] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.839 [Nodo 4 Hilo84684] Entra durante 0,5 s.
+
+19:16.666 [Nodo 4 Hilo84684] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.749 [Nodo 4 Hilo84659] Entra durante 0,5 s.
+
+19:17.18 [Nodo 4 Hilo84659] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.80 [Nodo 4 Hilo84685] Entra durante 0,5 s.
+
+19:15.801 [Nodo 5 Hilo84463] Entra durante 0,5 s.
+
+19:15.226 [Nodo 5 Hilo84463] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.262 [Nodo 5 Hilo84464] Entra durante 0,5 s.
+
+19:16.291 [Nodo 5 Hilo84464] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.330 [Nodo 5 Hilo84465] Entra durante 0,5 s.
+
+19:17.698 [Nodo 5 Hilo84465] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:17.734 [Nodo 5 Hilo84466] Entra durante 0,5 s.
+
+19:15.859 [Nodo 6 Hilo84691] Entra durante 0,5 s.
+
+19:15.120 [Nodo 6 Hilo84691] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.52 [Nodo 6 Hilo84692] Entra durante 0,5 s.
+
+19:16.106 [Nodo 6 Hilo84692] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.168 [Nodo 6 Hilo84693] Entra durante 0,5 s.
+
+19:16.504 [Nodo 6 Hilo84693] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.551 [Nodo 6 Hilo84694] Entra durante 0,5 s.
+
+19:17.984 [Nodo 6 Hilo84694] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.28 [Nodo 6 Hilo84695] Entra durante 0,5 s.
+
+19:15.965 [Nodo 7 Hilo84296] Entra durante 0,5 s.
+
+19:15.220 [Nodo 7 Hilo84296] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.585 [Nodo 7 Hilo84297] Entra durante 0,5 s.
+
+19:16.441 [Nodo 7 Hilo84297] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.516 [Nodo 7 Hilo84298] Entra durante 0,5 s.
+
+19:16.901 [Nodo 7 Hilo84298] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.946 [Nodo 7 Hilo84299] Entra durante 0,5 s.
+
+19:17.951 [Nodo 7 Hilo84299] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:15.666 [Nodo 8 Hilo84460] Entra durante 0,5 s.
+
+19:15.979 [Nodo 8 Hilo84460] Sale. Ha entrado este nodo: 1 Ha entrado este proceso: 1
+
+19:15.20 [Nodo 8 Hilo84393] Entra durante 0,5 s.
+
+19:16.482 [Nodo 8 Hilo84393] Sale. Ha entrado este nodo: 2 Ha entrado este proceso: 1
+
+19:16.826 [Nodo 8 Hilo84387] Entra durante 0,5 s.
+
+19:16.598 [Nodo 8 Hilo84387] Sale. Ha entrado este nodo: 3 Ha entrado este proceso: 1
+
+19:16.639 [Nodo 8 Hilo84388] Entra durante 0,5 s.
+
+19:17.407 [Nodo 8 Hilo84388] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.455 [Nodo 8 Hilo84389] Entra durante 0,5 s.
+
+19:17.79 [Nodo 3 Hilo84078] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:17.119 [Nodo 3 Hilo84081] Entra durante 0,5 s.
+
+19:18.50 [Nodo 3 Hilo84081] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.91 [Nodo 3 Hilo84090] Entra durante 0,5 s.
+
+19:18.765 [Nodo 3 Hilo84090] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:18.805 [Nodo 3 Hilo84093] Entra durante 0,5 s.
+
+19:19.399 [Nodo 3 Hilo84093] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.439 [Nodo 3 Hilo84099] Entra durante 0,5 s.
+
+19:19.318 [Nodo 3 Hilo84099] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:19.371 [Nodo 3 Hilo84101] Entra durante 0,5 s.
+
+19:20.582 [Nodo 3 Hilo84101] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.621 [Nodo 3 Hilo84104] Entra durante 0,5 s.
+
+19:20.73 [Nodo 3 Hilo84104] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:20.110 [Nodo 3 Hilo84107] Entra durante 0,5 s.
+
+19:21.37 [Nodo 3 Hilo84107] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.76 [Nodo 3 Hilo84054] Entra durante 0,5 s.
+
+19:17.975 [Nodo 7 Hilo84297] Entra durante 0,5 s.
+
+19:17.907 [Nodo 7 Hilo84297] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 2
+
+19:17.964 [Nodo 7 Hilo84301] Entra durante 0,5 s.
+
+19:18.564 [Nodo 7 Hilo84301] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.615 [Nodo 7 Hilo84302] Entra durante 0,5 s.
+
+19:18.980 [Nodo 7 Hilo84302] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:18.41 [Nodo 7 Hilo84303] Entra durante 0,5 s.
+
+19:19.182 [Nodo 7 Hilo84303] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.228 [Nodo 7 Hilo84304] Entra durante 0,5 s.
+
+19:20.895 [Nodo 7 Hilo84304] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:20.947 [Nodo 7 Hilo84305] Entra durante 0,5 s.
+
+19:20.60 [Nodo 7 Hilo84305] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.109 [Nodo 7 Hilo84306] Entra durante 0,5 s.
+
+19:20.785 [Nodo 7 Hilo84306] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:20.841 [Nodo 7 Hilo84307] Entra durante 0,5 s.
+
+19:21.758 [Nodo 7 Hilo84307] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.802 [Nodo 7 Hilo84308] Entra durante 0,5 s.
+
+19:17.929 [Nodo 4 Hilo84685] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:17.2 [Nodo 4 Hilo84658] Entra durante 0,5 s.
+
+19:18.170 [Nodo 4 Hilo84658] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.239 [Nodo 4 Hilo84661] Entra durante 0,5 s.
+
+19:18.164 [Nodo 4 Hilo84661] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:18.233 [Nodo 4 Hilo84686] Entra durante 0,5 s.
+
+19:19.936 [Nodo 4 Hilo84686] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.201 [Nodo 4 Hilo84662] Entra durante 0,5 s.
+
+19:19.779 [Nodo 4 Hilo84662] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:19.237 [Nodo 4 Hilo84687] Entra durante 0,5 s.
+
+19:20.468 [Nodo 4 Hilo84687] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.488 [Nodo 4 Hilo84663] Entra durante 0,5 s.
+
+19:20.191 [Nodo 4 Hilo84663] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:20.277 [Nodo 4 Hilo84688] Entra durante 0,5 s.
+
+19:21.231 [Nodo 4 Hilo84688] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.68 [Nodo 4 Hilo84664] Entra durante 0,5 s.
+
+19:17.715 [Nodo 2 Hilo84057] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:17.755 [Nodo 2 Hilo84100] Entra durante 0,5 s.
+
+19:18.948 [Nodo 2 Hilo84100] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.7 [Nodo 2 Hilo84103] Entra durante 0,5 s.
+
+19:18.752 [Nodo 2 Hilo84103] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:18.802 [Nodo 2 Hilo84105] Entra durante 0,5 s.
+
+19:19.182 [Nodo 2 Hilo84105] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.267 [Nodo 2 Hilo84063] Entra durante 0,5 s.
+
+19:20.126 [Nodo 2 Hilo84063] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:20.169 [Nodo 2 Hilo84067] Entra durante 0,5 s.
+
+19:20.999 [Nodo 2 Hilo84067] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.151 [Nodo 2 Hilo84109] Entra durante 0,5 s.
+
+19:21.696 [Nodo 2 Hilo84109] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:21.738 [Nodo 2 Hilo84072] Entra durante 0,5 s.
+
+19:21.390 [Nodo 2 Hilo84072] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:17.167 [Nodo 8 Hilo84389] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:17.212 [Nodo 8 Hilo84390] Entra durante 0,5 s.
+
+19:18.179 [Nodo 8 Hilo84390] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.240 [Nodo 8 Hilo84391] Entra durante 0,5 s.
+
+19:18.297 [Nodo 8 Hilo84391] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:18.349 [Nodo 8 Hilo84392] Entra durante 0,5 s.
+
+19:19.442 [Nodo 8 Hilo84392] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.490 [Nodo 8 Hilo84395] Entra durante 0,5 s.
+
+19:19.891 [Nodo 8 Hilo84395] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:19.939 [Nodo 8 Hilo84397] Entra durante 0,5 s.
+
+19:20.687 [Nodo 8 Hilo84397] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.750 [Nodo 8 Hilo84410] Entra durante 0,5 s.
+
+19:20.817 [Nodo 8 Hilo84410] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:20.874 [Nodo 8 Hilo84411] Entra durante 0,5 s.
+
+19:21.213 [Nodo 8 Hilo84411] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.260 [Nodo 8 Hilo84412] Entra durante 0,5 s.
+
+19:17.225 [Nodo 5 Hilo84466] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.262 [Nodo 5 Hilo84467] Entra durante 0,5 s.
+
+19:18.884 [Nodo 5 Hilo84467] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:18.924 [Nodo 5 Hilo84468] Entra durante 0,5 s.
+
+19:18.408 [Nodo 5 Hilo84468] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.460 [Nodo 5 Hilo84470] Entra durante 0,5 s.
+
+19:19.334 [Nodo 5 Hilo84470] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:19.385 [Nodo 5 Hilo84471] Entra durante 0,5 s.
+
+19:19.722 [Nodo 5 Hilo84471] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.773 [Nodo 5 Hilo84475] Entra durante 0,5 s.
+
+19:20.599 [Nodo 5 Hilo84475] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:20.648 [Nodo 5 Hilo84481] Entra durante 0,5 s.
+
+19:20.389 [Nodo 5 Hilo84481] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.442 [Nodo 5 Hilo84482] Entra durante 0,5 s.
+
+19:21.237 [Nodo 5 Hilo84482] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:21.282 [Nodo 5 Hilo84487] Entra durante 0,5 s.
+
+19:17.622 [Nodo 6 Hilo84695] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:17.662 [Nodo 6 Hilo84696] Entra durante 0,5 s.
+
+19:18.345 [Nodo 6 Hilo84696] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.389 [Nodo 6 Hilo84697] Entra durante 0,5 s.
+
+19:18.88 [Nodo 6 Hilo84697] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:18.137 [Nodo 6 Hilo84698] Entra durante 0,5 s.
+
+19:19.356 [Nodo 6 Hilo84698] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.393 [Nodo 6 Hilo84699] Entra durante 0,5 s.
+
+19:19.438 [Nodo 6 Hilo84699] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:19.479 [Nodo 6 Hilo84700] Entra durante 0,5 s.
+
+19:20.281 [Nodo 6 Hilo84700] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.320 [Nodo 6 Hilo84701] Entra durante 0,5 s.
+
+19:20.289 [Nodo 6 Hilo84701] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:20.329 [Nodo 6 Hilo84702] Entra durante 0,5 s.
+
+19:21.326 [Nodo 6 Hilo84702] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.366 [Nodo 6 Hilo84708] Entra durante 0,5 s.
+
+19:17.998 [Nodo 10 Hilo84313] Entra durante 0,5 s.
+
+19:17.722 [Nodo 10 Hilo84313] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 2
+
+19:18.695 [Nodo 10 Hilo84317] Entra durante 0,5 s.
+
+19:18.433 [Nodo 10 Hilo84317] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.577 [Nodo 10 Hilo84318] Entra durante 0,5 s.
+
+19:19.318 [Nodo 10 Hilo84318] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:19.368 [Nodo 10 Hilo84319] Entra durante 0,5 s.
+
+19:19.304 [Nodo 10 Hilo84319] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.351 [Nodo 10 Hilo84320] Entra durante 0,5 s.
+
+19:20.422 [Nodo 10 Hilo84320] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:20.464 [Nodo 10 Hilo84321] Entra durante 0,5 s.
+
+19:20.822 [Nodo 10 Hilo84321] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.872 [Nodo 10 Hilo84322] Entra durante 0,5 s.
+
+19:21.691 [Nodo 10 Hilo84322] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:21.787 [Nodo 10 Hilo84323] Entra durante 0,5 s.
+
+19:17.506 [Nodo 1 Hilo84122] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:17.545 [Nodo 1 Hilo84198] Entra durante 0,5 s.
+
+19:18.544 [Nodo 1 Hilo84198] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.33 [Nodo 1 Hilo84026] Entra durante 0,5 s.
+
+19:18.164 [Nodo 1 Hilo84026] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:18.213 [Nodo 1 Hilo84175] Entra durante 0,5 s.
+
+19:19.492 [Nodo 1 Hilo84175] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.541 [Nodo 1 Hilo84178] Entra durante 0,5 s.
+
+19:19.576 [Nodo 1 Hilo84178] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:19.663 [Nodo 1 Hilo84039] Entra durante 0,5 s.
+
+19:20.206 [Nodo 1 Hilo84039] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.264 [Nodo 1 Hilo84003] Entra durante 0,5 s.
+
+19:20.418 [Nodo 1 Hilo84003] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:20.470 [Nodo 1 Hilo84002] Entra durante 0,5 s.
+
+19:21.440 [Nodo 1 Hilo84002] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.538 [Nodo 1 Hilo84005] Entra durante 0,5 s.
+
+19:17.300 [Nodo 9 Hilo84560] Sale. Ha entrado este nodo: 4 Ha entrado este proceso: 1
+
+19:17.348 [Nodo 9 Hilo84561] Entra durante 0,5 s.
+
+19:18.360 [Nodo 9 Hilo84561] Sale. Ha entrado este nodo: 5 Ha entrado este proceso: 1
+
+19:18.450 [Nodo 9 Hilo84569] Entra durante 0,5 s.
+
+19:18.433 [Nodo 9 Hilo84569] Sale. Ha entrado este nodo: 6 Ha entrado este proceso: 1
+
+19:18.509 [Nodo 9 Hilo84562] Entra durante 0,5 s.
+
+19:19.437 [Nodo 9 Hilo84562] Sale. Ha entrado este nodo: 7 Ha entrado este proceso: 1
+
+19:19.491 [Nodo 9 Hilo84570] Entra durante 0,5 s.
+
+19:19.818 [Nodo 9 Hilo84570] Sale. Ha entrado este nodo: 8 Ha entrado este proceso: 1
+
+19:19.866 [Nodo 9 Hilo84571] Entra durante 0,5 s.
+
+19:20.412 [Nodo 9 Hilo84571] Sale. Ha entrado este nodo: 9 Ha entrado este proceso: 1
+
+19:20.671 [Nodo 9 Hilo84563] Entra durante 0,5 s.
+
+19:20.787 [Nodo 9 Hilo84563] Sale. Ha entrado este nodo: 10 Ha entrado este proceso: 1
+
+19:20.839 [Nodo 9 Hilo84573] Entra durante 0,5 s.
+
+19:21.852 [Nodo 9 Hilo84573] Sale. Ha entrado este nodo: 11 Ha entrado este proceso: 1
+
+19:21.936 [Nodo 9 Hilo84564] Entra durante 0,5 s.
+
+19:21.161 [Nodo 2 Hilo84063] Entra durante 0,5 s.
+
+19:22.502 [Nodo 2 Hilo84063] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 2
+
+19:22.412 [Nodo 2 Hilo84077] Entra durante 0,5 s.
+
+19:22.360 [Nodo 2 Hilo84077] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.422 [Nodo 2 Hilo84080] Entra durante 0,5 s.
+
+19:23.250 [Nodo 2 Hilo84080] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:23.769 [Nodo 2 Hilo84117] Entra durante 0,5 s.
+
+19:23.586 [Nodo 2 Hilo84117] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.632 [Nodo 2 Hilo84115] Entra durante 0,5 s.
+
+19:22.860 [Nodo 4 Hilo84664] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:22.946 [Nodo 4 Hilo84689] Entra durante 0,5 s.
+
+19:22.649 [Nodo 4 Hilo84689] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.701 [Nodo 4 Hilo84665] Entra durante 0,5 s.
+
+19:23.515 [Nodo 4 Hilo84665] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:23.557 [Nodo 4 Hilo84671] Entra durante 0,5 s.
+
+19:23.296 [Nodo 4 Hilo84671] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.345 [Nodo 4 Hilo84672] Entra durante 0,5 s.
+
+19:24.469 [Nodo 4 Hilo84672] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:24.517 [Nodo 4 Hilo84673] Entra durante 0,5 s.
+
+19:21.877 [Nodo 3 Hilo84054] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:21.915 [Nodo 3 Hilo84120] Entra durante 0,5 s.
+
+19:22.170 [Nodo 3 Hilo84120] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.208 [Nodo 3 Hilo84123] Entra durante 0,5 s.
+
+19:22.426 [Nodo 3 Hilo84123] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:22.463 [Nodo 3 Hilo84125] Entra durante 0,5 s.
+
+19:23.183 [Nodo 3 Hilo84125] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.223 [Nodo 3 Hilo84131] Entra durante 0,5 s.
+
+19:23.676 [Nodo 3 Hilo84131] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:23.714 [Nodo 3 Hilo84135] Entra durante 0,5 s.
+
+19:21.621 [Nodo 1 Hilo84005] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:21.673 [Nodo 1 Hilo84009] Entra durante 0,5 s.
+
+19:22.119 [Nodo 1 Hilo84009] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.168 [Nodo 1 Hilo84043] Entra durante 0,5 s.
+
+19:22.891 [Nodo 1 Hilo84043] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:22.976 [Nodo 1 Hilo84011] Entra durante 0,5 s.
+
+19:23.719 [Nodo 1 Hilo84011] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.776 [Nodo 1 Hilo84048] Entra durante 0,5 s.
+
+19:24.108 [Nodo 1 Hilo84048] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:22.790 [Nodo 7 Hilo84308] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:22.836 [Nodo 7 Hilo84309] Entra durante 0,5 s.
+
+19:22.273 [Nodo 7 Hilo84309] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.359 [Nodo 7 Hilo84243] Entra durante 0,5 s.
+
+19:23.526 [Nodo 7 Hilo84243] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:23.579 [Nodo 7 Hilo84244] Entra durante 0,5 s.
+
+19:23.487 [Nodo 7 Hilo84244] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.532 [Nodo 7 Hilo84245] Entra durante 0,5 s.
+
+19:24.401 [Nodo 7 Hilo84245] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:24.449 [Nodo 7 Hilo84246] Entra durante 0,5 s.
+
+19:21.142 [Nodo 8 Hilo84412] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:21.188 [Nodo 8 Hilo84413] Entra durante 0,5 s.
+
+19:22.701 [Nodo 8 Hilo84413] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.746 [Nodo 8 Hilo84414] Entra durante 0,5 s.
+
+19:22.928 [Nodo 8 Hilo84414] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:22.969 [Nodo 8 Hilo84417] Entra durante 0,5 s.
+
+19:23.424 [Nodo 8 Hilo84417] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.472 [Nodo 8 Hilo84424] Entra durante 0,5 s.
+
+19:23.165 [Nodo 8 Hilo84424] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:23.215 [Nodo 8 Hilo84428] Entra durante 0,5 s.
+
+19:21.650 [Nodo 10 Hilo84323] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.696 [Nodo 10 Hilo84324] Entra durante 0,5 s.
+
+19:22.581 [Nodo 10 Hilo84324] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:22.628 [Nodo 10 Hilo84325] Entra durante 0,5 s.
+
+19:22.765 [Nodo 10 Hilo84325] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.812 [Nodo 10 Hilo84326] Entra durante 0,5 s.
+
+19:23.247 [Nodo 10 Hilo84326] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:23.303 [Nodo 10 Hilo84327] Entra durante 0,5 s.
+
+19:23.543 [Nodo 10 Hilo84327] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.594 [Nodo 10 Hilo84328] Entra durante 0,5 s.
+
+19:22.305 [Nodo 6 Hilo84708] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:22.345 [Nodo 6 Hilo84709] Entra durante 0,5 s.
+
+19:22.496 [Nodo 6 Hilo84709] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.536 [Nodo 6 Hilo84713] Entra durante 0,5 s.
+
+19:23.236 [Nodo 6 Hilo84713] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:23.274 [Nodo 6 Hilo84717] Entra durante 0,5 s.
+
+19:23.538 [Nodo 6 Hilo84717] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.578 [Nodo 6 Hilo84718] Entra durante 0,5 s.
+
+19:24.185 [Nodo 6 Hilo84718] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:24.221 [Nodo 6 Hilo84719] Entra durante 0,5 s.
+
+19:21.873 [Nodo 5 Hilo84487] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:21.923 [Nodo 5 Hilo84488] Entra durante 0,5 s.
+
+19:22.858 [Nodo 5 Hilo84488] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:22.901 [Nodo 5 Hilo84493] Entra durante 0,5 s.
+
+19:22.155 [Nodo 5 Hilo84493] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:22.247 [Nodo 5 Hilo84474] Entra durante 0,5 s.
+
+19:23.623 [Nodo 5 Hilo84474] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:23.672 [Nodo 5 Hilo84477] Entra durante 0,5 s.
+
+19:23.571 [Nodo 5 Hilo84477] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:23.660 [Nodo 5 Hilo84494] Entra durante 0,5 s.
+
+19:21.749 [Nodo 9 Hilo84564] Sale. Ha entrado este nodo: 12 Ha entrado este proceso: 1
+
+19:22.572 [Nodo 9 Hilo84574] Entra durante 0,5 s.
+
+19:22.659 [Nodo 9 Hilo84574] Sale. Ha entrado este nodo: 13 Ha entrado este proceso: 1
+
+19:22.743 [Nodo 9 Hilo84575] Entra durante 0,5 s.
+
+19:23.943 [Nodo 9 Hilo84575] Sale. Ha entrado este nodo: 14 Ha entrado este proceso: 1
+
+19:23.49 [Nodo 9 Hilo84592] Entra durante 0,5 s.
+
+19:23.322 [Nodo 9 Hilo84592] Sale. Ha entrado este nodo: 15 Ha entrado este proceso: 1
+
+19:23.380 [Nodo 9 Hilo84576] Entra durante 0,5 s.
+
+19:24.240 [Nodo 9 Hilo84576] Sale. Ha entrado este nodo: 16 Ha entrado este proceso: 1
+
+19:24.330 [Nodo 9 Hilo84593] Entra durante 0,5 s.
+
+19:24.144 [Nodo 3 Hilo84135] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:24.183 [Nodo 3 Hilo84136] Entra durante 0,5 s.
+
+19:24.69 [Nodo 3 Hilo84136] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:24.106 [Nodo 3 Hilo84146] Entra durante 0,5 s.
+
+19:25.744 [Nodo 3 Hilo84146] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:25.787 [Nodo 3 Hilo84151] Entra durante 0,5 s.
+
+19:26.514 [Nodo 3 Hilo84151] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.554 [Nodo 3 Hilo84157] Entra durante 0,5 s.
+
+19:26.198 [Nodo 3 Hilo84157] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:26.244 [Nodo 3 Hilo84160] Entra durante 0,5 s.
+
+19:27.348 [Nodo 3 Hilo84160] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.396 [Nodo 3 Hilo84163] Entra durante 0,5 s.
+
+19:27.432 [Nodo 3 Hilo84163] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:27.485 [Nodo 3 Hilo84166] Entra durante 0,5 s.
+
+19:24.67 [Nodo 5 Hilo84494] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:24.173 [Nodo 5 Hilo84479] Entra durante 0,5 s.
+
+19:24.459 [Nodo 5 Hilo84479] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:24.699 [Nodo 5 Hilo84510] Entra durante 0,5 s.
+
+19:25.683 [Nodo 5 Hilo84510] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.767 [Nodo 5 Hilo84485] Entra durante 0,5 s.
+
+19:25.447 [Nodo 5 Hilo84485] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:25.496 [Nodo 5 Hilo84486] Entra durante 0,5 s.
+
+19:26.440 [Nodo 5 Hilo84486] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.521 [Nodo 5 Hilo84511] Entra durante 0,5 s.
+
+19:26.345 [Nodo 5 Hilo84511] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:26.401 [Nodo 5 Hilo84520] Entra durante 0,5 s.
+
+19:27.59 [Nodo 5 Hilo84520] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.108 [Nodo 5 Hilo84492] Entra durante 0,5 s.
+
+19:24.60 [Nodo 4 Hilo84673] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:24.718 [Nodo 4 Hilo84681] Entra durante 0,5 s.
+
+19:25.544 [Nodo 4 Hilo84681] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.581 [Nodo 4 Hilo84682] Entra durante 0,5 s.
+
+19:25.102 [Nodo 4 Hilo84682] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:25.140 [Nodo 4 Hilo84683] Entra durante 0,5 s.
+
+19:26.561 [Nodo 4 Hilo84683] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.795 [Nodo 4 Hilo84615] Entra durante 0,5 s.
+
+19:26.257 [Nodo 4 Hilo84615] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:26.858 [Nodo 4 Hilo84617] Entra durante 0,5 s.
+
+19:27.362 [Nodo 4 Hilo84617] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.410 [Nodo 4 Hilo84618] Entra durante 0,5 s.
+
+19:24.2 [Nodo 2 Hilo84115] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:24.54 [Nodo 2 Hilo84083] Entra durante 0,5 s.
+
+19:25.648 [Nodo 2 Hilo84083] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:25.693 [Nodo 2 Hilo84086] Entra durante 0,5 s.
+
+19:25.45 [Nodo 2 Hilo84086] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.96 [Nodo 2 Hilo84088] Entra durante 0,5 s.
+
+19:26.740 [Nodo 2 Hilo84088] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:26.824 [Nodo 2 Hilo84091] Entra durante 0,5 s.
+
+19:26.378 [Nodo 2 Hilo84091] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.427 [Nodo 2 Hilo84095] Entra durante 0,5 s.
+
+19:27.770 [Nodo 2 Hilo84095] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:27.844 [Nodo 2 Hilo84126] Entra durante 0,5 s.
+
+19:27.425 [Nodo 2 Hilo84126] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:24.696 [Nodo 6 Hilo84719] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:24.749 [Nodo 6 Hilo84724] Entra durante 0,5 s.
+
+19:25.169 [Nodo 6 Hilo84724] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.220 [Nodo 6 Hilo84725] Entra durante 0,5 s.
+
+19:25.254 [Nodo 6 Hilo84725] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:25.303 [Nodo 6 Hilo84726] Entra durante 0,5 s.
+
+19:26.533 [Nodo 6 Hilo84726] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.584 [Nodo 6 Hilo84727] Entra durante 0,5 s.
+
+19:26.943 [Nodo 6 Hilo84727] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:26.987 [Nodo 6 Hilo84745] Entra durante 0,5 s.
+
+19:27.145 [Nodo 6 Hilo84745] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.184 [Nodo 6 Hilo84746] Entra durante 0,5 s.
+
+19:24.896 [Nodo 8 Hilo84428] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:24.984 [Nodo 8 Hilo84433] Entra durante 0,5 s.
+
+19:24.446 [Nodo 8 Hilo84433] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:24.490 [Nodo 8 Hilo84434] Entra durante 0,5 s.
+
+19:25.42 [Nodo 8 Hilo84434] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:25.97 [Nodo 8 Hilo84435] Entra durante 0,5 s.
+
+19:26.930 [Nodo 8 Hilo84435] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.974 [Nodo 8 Hilo84461] Entra durante 0,5 s.
+
+19:26.431 [Nodo 8 Hilo84461] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:26.545 [Nodo 8 Hilo84394] Entra durante 0,5 s.
+
+19:27.53 [Nodo 8 Hilo84394] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.137 [Nodo 8 Hilo84418] Entra durante 0,5 s.
+
+19:27.98 [Nodo 8 Hilo84418] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:27.151 [Nodo 8 Hilo84419] Entra durante 0,5 s.
+
+19:24.107 [Nodo 10 Hilo84328] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:24.159 [Nodo 10 Hilo84329] Entra durante 0,5 s.
+
+19:24.705 [Nodo 10 Hilo84329] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:24.763 [Nodo 10 Hilo84330] Entra durante 0,5 s.
+
+19:25.817 [Nodo 10 Hilo84330] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.865 [Nodo 10 Hilo84331] Entra durante 0,5 s.
+
+19:25.518 [Nodo 10 Hilo84331] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:25.567 [Nodo 10 Hilo84332] Entra durante 0,5 s.
+
+19:26.181 [Nodo 10 Hilo84332] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.232 [Nodo 10 Hilo84333] Entra durante 0,5 s.
+
+19:26.943 [Nodo 10 Hilo84333] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:26.3 [Nodo 10 Hilo84334] Entra durante 0,5 s.
+
+19:27.938 [Nodo 10 Hilo84334] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.992 [Nodo 10 Hilo84335] Entra durante 0,5 s.
+
+19:24.487 [Nodo 9 Hilo84593] Sale. Ha entrado este nodo: 17 Ha entrado este proceso: 1
+
+19:24.537 [Nodo 9 Hilo84577] Entra durante 0,5 s.
+
+19:25.492 [Nodo 9 Hilo84577] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:25.579 [Nodo 9 Hilo84594] Entra durante 0,5 s.
+
+19:25.578 [Nodo 9 Hilo84594] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.643 [Nodo 9 Hilo84597] Entra durante 0,5 s.
+
+19:26.607 [Nodo 9 Hilo84597] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:26.691 [Nodo 9 Hilo84595] Entra durante 0,5 s.
+
+19:26.537 [Nodo 9 Hilo84595] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.626 [Nodo 9 Hilo84598] Entra durante 0,5 s.
+
+19:27.663 [Nodo 9 Hilo84598] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:27.728 [Nodo 9 Hilo84596] Entra durante 0,5 s.
+
+19:24.176 [Nodo 1 Hilo84043] Entra durante 0,5 s.
+
+19:24.722 [Nodo 1 Hilo84043] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 2
+
+19:24.776 [Nodo 1 Hilo84046] Entra durante 0,5 s.
+
+19:25.79 [Nodo 1 Hilo84046] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.153 [Nodo 1 Hilo84061] Entra durante 0,5 s.
+
+19:26.127 [Nodo 1 Hilo84061] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:26.526 [Nodo 1 Hilo84051] Entra durante 0,5 s.
+
+19:26.854 [Nodo 1 Hilo84051] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.902 [Nodo 1 Hilo84065] Entra durante 0,5 s.
+
+19:27.268 [Nodo 1 Hilo84065] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:27.334 [Nodo 1 Hilo84075] Entra durante 0,5 s.
+
+19:24.906 [Nodo 7 Hilo84246] Sale. Ha entrado este nodo: 18 Ha entrado este proceso: 1
+
+19:24.962 [Nodo 7 Hilo84247] Entra durante 0,5 s.
+
+19:25.537 [Nodo 7 Hilo84247] Sale. Ha entrado este nodo: 19 Ha entrado este proceso: 1
+
+19:25.582 [Nodo 7 Hilo84248] Entra durante 0,5 s.
+
+19:25.544 [Nodo 7 Hilo84248] Sale. Ha entrado este nodo: 20 Ha entrado este proceso: 1
+
+19:25.593 [Nodo 7 Hilo84249] Entra durante 0,5 s.
+
+19:26.238 [Nodo 7 Hilo84249] Sale. Ha entrado este nodo: 21 Ha entrado este proceso: 1
+
+19:26.289 [Nodo 7 Hilo84253] Entra durante 0,5 s.
+
+19:26.319 [Nodo 7 Hilo84253] Sale. Ha entrado este nodo: 22 Ha entrado este proceso: 1
+
+19:26.379 [Nodo 7 Hilo84255] Entra durante 0,5 s.
+
+19:27.397 [Nodo 7 Hilo84255] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.445 [Nodo 7 Hilo84259] Entra durante 0,5 s.
+
+19:27.354 [Nodo 6 Hilo84746] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:27.974 [Nodo 2 Hilo84088] Entra durante 0,5 s.
+
+19:27.511 [Nodo 7 Hilo84259] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:27.595 [Nodo 7 Hilo84254] Entra durante 0,5 s.
+
+19:28.568 [Nodo 7 Hilo84254] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:28.646 [Nodo 7 Hilo84265] Entra durante 0,5 s.
+
+19:28.334 [Nodo 7 Hilo84265] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:28.375 [Nodo 7 Hilo84235] Entra durante 0,5 s.
+
+19:29.939 [Nodo 7 Hilo84235] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:29.17 [Nodo 7 Hilo84266] Entra durante 0,5 s.
+
+19:28.902 [Nodo 8 Hilo84419] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:28.957 [Nodo 8 Hilo84420] Entra durante 0,5 s.
+
+19:28.572 [Nodo 8 Hilo84420] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:28.638 [Nodo 8 Hilo84425] Entra durante 0,5 s.
+
+19:29.150 [Nodo 8 Hilo84425] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:29.193 [Nodo 8 Hilo84426] Entra durante 0,5 s.
+
+19:28.854 [Nodo 9 Hilo84596] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:28.656 [Nodo 9 Hilo84572] Entra durante 0,5 s.
+
+19:28.650 [Nodo 9 Hilo84572] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:28.710 [Nodo 9 Hilo84568] Entra durante 0,5 s.
+
+19:29.650 [Nodo 9 Hilo84568] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:29.691 [Nodo 9 Hilo84540] Entra durante 0,5 s.
+
+19:27.699 [Nodo 10 Hilo84335] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:27.742 [Nodo 10 Hilo84336] Entra durante 0,5 s.
+
+19:28.690 [Nodo 10 Hilo84336] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:28.734 [Nodo 10 Hilo84337] Entra durante 0,5 s.
+
+19:28.261 [Nodo 10 Hilo84337] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:28.305 [Nodo 10 Hilo84338] Entra durante 0,5 s.
+
+19:29.540 [Nodo 10 Hilo84338] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:29.585 [Nodo 10 Hilo84339] Entra durante 0,5 s.
+
+19:28.126 [Nodo 2 Hilo84088] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 2
+
+19:28.316 [Nodo 2 Hilo84129] Entra durante 0,5 s.
+
+19:28.740 [Nodo 2 Hilo84129] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:28.786 [Nodo 2 Hilo84132] Entra durante 0,5 s.
+
+19:29.401 [Nodo 2 Hilo84132] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:29.452 [Nodo 2 Hilo84174] Entra durante 0,5 s.
+
+19:27.25 [Nodo 4 Hilo84618] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:27.65 [Nodo 4 Hilo84619] Entra durante 0,5 s.
+
+19:28.714 [Nodo 4 Hilo84619] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:28.756 [Nodo 4 Hilo84620] Entra durante 0,5 s.
+
+19:29.532 [Nodo 4 Hilo84620] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:28.359 [Nodo 3 Hilo84166] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:28.408 [Nodo 3 Hilo84167] Entra durante 0,5 s.
+
+19:28.385 [Nodo 3 Hilo84167] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:28.441 [Nodo 3 Hilo84171] Entra durante 0,5 s.
+
+19:29.982 [Nodo 3 Hilo84171] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:29.37 [Nodo 3 Hilo84047] Entra durante 0,5 s.
+
+19:27.605 [Nodo 1 Hilo84075] Sale. Ha entrado este nodo: 23 Ha entrado este proceso: 1
+
+19:27.694 [Nodo 1 Hilo84066] Entra durante 0,5 s.
+
+19:28.799 [Nodo 1 Hilo84066] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:28.892 [Nodo 1 Hilo84079] Entra durante 0,5 s.
+
+19:28.411 [Nodo 1 Hilo84079] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:29.231 [Nodo 1 Hilo84070] Entra durante 0,5 s.
+
+19:27.192 [Nodo 6 Hilo84727] Entra durante 0,5 s.
+
+19:28.651 [Nodo 6 Hilo84727] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 2
+
+19:28.705 [Nodo 6 Hilo84748] Entra durante 0,5 s.
+
+19:28.178 [Nodo 6 Hilo84748] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:28.242 [Nodo 6 Hilo84749] Entra durante 0,5 s.
+
+19:29.776 [Nodo 6 Hilo84749] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:29.820 [Nodo 6 Hilo84750] Entra durante 0,5 s.
+
+19:28.588 [Nodo 5 Hilo84492] Sale. Ha entrado este nodo: 24 Ha entrado este proceso: 1
+
+19:28.720 [Nodo 5 Hilo84506] Entra durante 0,5 s.
+
+19:28.714 [Nodo 5 Hilo84506] Sale. Ha entrado este nodo: 25 Ha entrado este proceso: 1
+
+19:28.736 [Nodo 5 Hilo84521] Entra durante 0,5 s.
+
+19:29.407 [Nodo 5 Hilo84521] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:29.457 [Nodo 5 Hilo84522] Entra durante 0,5 s.
+
+19:29.551 [Nodo 4 Hilo84619] Entra durante 0,5 s.
+
+19:29.729 [Nodo 3 Hilo84047] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:29.39 [Nodo 9 Hilo84540] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:29.98 [Nodo 9 Hilo84599] Entra durante 0,5 s.
+
+19:30.113 [Nodo 4 Hilo84619] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 2
+
+19:30.181 [Nodo 4 Hilo84622] Entra durante 0,5 s.
+
+19:30.133 [Nodo 4 Hilo84622] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:30.211 [Nodo 4 Hilo84623] Entra durante 0,5 s.
+
+19:29.577 [Nodo 5 Hilo84522] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:29.625 [Nodo 5 Hilo84508] Entra durante 0,5 s.
+
+19:30.977 [Nodo 5 Hilo84508] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:30.74 [Nodo 5 Hilo84523] Entra durante 0,5 s.
+
+19:30.20 [Nodo 7 Hilo84266] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:30.698 [Nodo 7 Hilo84236] Entra durante 0,5 s.
+
+19:30.858 [Nodo 7 Hilo84236] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:30.914 [Nodo 7 Hilo84237] Entra durante 0,5 s.
+
+19:30.759 [Nodo 9 Hilo84599] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:30.845 [Nodo 9 Hilo84601] Entra durante 0,5 s.
+
+19:30.28 [Nodo 9 Hilo84601] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:30.64 [Nodo 10 Hilo84339] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:30.107 [Nodo 10 Hilo84340] Entra durante 0,5 s.
+
+19:30.295 [Nodo 10 Hilo84340] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:30.342 [Nodo 10 Hilo84341] Entra durante 0,5 s.
+
+19:30.889 [Nodo 1 Hilo84070] Sale. Ha entrado este nodo: 26 Ha entrado este proceso: 1
+
+19:30.877 [Nodo 1 Hilo84094] Entra durante 0,5 s.
+
+19:30.296 [Nodo 1 Hilo84094] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:30.138 [Nodo 1 Hilo84082] Entra durante 0,5 s.
+
+19:29.826 [Nodo 2 Hilo84174] Sale. Ha entrado este nodo: 27 Ha entrado este proceso: 1
+
+19:29.875 [Nodo 2 Hilo84133] Entra durante 0,5 s.
+
+19:30.376 [Nodo 2 Hilo84133] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:30.427 [Nodo 2 Hilo84137] Entra durante 0,5 s.
+
+19:29.717 [Nodo 3 Hilo84167] Entra durante 0,5 s.
+
+19:30.358 [Nodo 3 Hilo84167] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 2
+
+19:30.455 [Nodo 3 Hilo84196] Entra durante 0,5 s.
+
+19:29.79 [Nodo 6 Hilo84750] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:29.121 [Nodo 6 Hilo84751] Entra durante 0,5 s.
+
+19:30.223 [Nodo 6 Hilo84751] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:30.266 [Nodo 6 Hilo84752] Entra durante 0,5 s.
+
+19:29.550 [Nodo 8 Hilo84426] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:29.597 [Nodo 8 Hilo84427] Entra durante 0,5 s.
+
+19:30.595 [Nodo 8 Hilo84427] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:30.642 [Nodo 8 Hilo84429] Entra durante 0,5 s.
+
+19:30.96 [Nodo 8 Hilo84429] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:30.143 [Nodo 8 Hilo84436] Entra durante 0,5 s.
+
+19:31.129 [Nodo 4 Hilo84623] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:31.183 [Nodo 4 Hilo84624] Entra durante 0,5 s.
+
+19:31.174 [Nodo 4 Hilo84624] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:31.210 [Nodo 4 Hilo84625] Entra durante 0,5 s.
+
+19:32.367 [Nodo 4 Hilo84625] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:32.903 [Nodo 4 Hilo84626] Entra durante 0,5 s.
+
+19:32.500 [Nodo 4 Hilo84626] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:32.540 [Nodo 4 Hilo84627] Entra durante 0,5 s.
+
+19:33.856 [Nodo 4 Hilo84627] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:33.929 [Nodo 4 Hilo84631] Entra durante 0,5 s.
+
+19:33.857 [Nodo 4 Hilo84631] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.900 [Nodo 4 Hilo84634] Entra durante 0,5 s.
+
+19:34.213 [Nodo 4 Hilo84634] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:34.261 [Nodo 4 Hilo84635] Entra durante 0,5 s.
+
+19:34.990 [Nodo 4 Hilo84635] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.29 [Nodo 4 Hilo84637] Entra durante 0,5 s.
+
+19:35.121 [Nodo 4 Hilo84637] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:35.170 [Nodo 4 Hilo84638] Entra durante 0,5 s.
+
+19:35.707 [Nodo 4 Hilo84638] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:35.756 [Nodo 4 Hilo84640] Entra durante 0,5 s.
+
+19:36.259 [Nodo 4 Hilo84640] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:36.304 [Nodo 4 Hilo84641] Entra durante 0,5 s.
+
+19:36.134 [Nodo 4 Hilo84641] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:36.177 [Nodo 4 Hilo84645] Entra durante 0,5 s.
+
+19:37.175 [Nodo 4 Hilo84645] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:37.213 [Nodo 4 Hilo84646] Entra durante 0,5 s.
+
+19:37.694 [Nodo 4 Hilo84646] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:37.777 [Nodo 4 Hilo84666] Entra durante 0,5 s.
+
+19:38.141 [Nodo 4 Hilo84666] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:38.192 [Nodo 4 Hilo84667] Entra durante 0,5 s.
+
+19:39.239 [Nodo 4 Hilo84667] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:39.282 [Nodo 4 Hilo84668] Entra durante 0,5 s.
+
+19:39.698 [Nodo 4 Hilo84668] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:39.750 [Nodo 4 Hilo84669] Entra durante 0,5 s.
+
+19:40.192 [Nodo 4 Hilo84669] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:40.233 [Nodo 4 Hilo84670] Entra durante 0,5 s.
+
+19:40.311 [Nodo 4 Hilo84670] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:40.367 [Nodo 4 Hilo84678] Entra durante 0,5 s.
+
+19:41.845 [Nodo 4 Hilo84678] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:41.891 [Nodo 4 Hilo84679] Entra durante 0,5 s.
+
+19:41.306 [Nodo 4 Hilo84679] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:41.352 [Nodo 4 Hilo84680] Entra durante 0,5 s.
+
+19:42.598 [Nodo 4 Hilo84680] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:42.637 [Nodo 4 Hilo84647] Entra durante 0,5 s.
+
+19:42.745 [Nodo 4 Hilo84647] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.795 [Nodo 4 Hilo84648] Entra durante 0,5 s.
+
+19:43.892 [Nodo 4 Hilo84648] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:43.940 [Nodo 4 Hilo84649] Entra durante 0,5 s.
+
+19:43.868 [Nodo 4 Hilo84649] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.922 [Nodo 4 Hilo84650] Entra durante 0,5 s.
+
+19:44.695 [Nodo 4 Hilo84650] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:44.736 [Nodo 4 Hilo84651] Entra durante 0,5 s.
+
+19:30.433 [Nodo 5 Hilo84523] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:30.499 [Nodo 5 Hilo84509] Entra durante 0,5 s.
+
+19:31.283 [Nodo 5 Hilo84509] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:31.355 [Nodo 5 Hilo84524] Entra durante 0,5 s.
+
+19:31.900 [Nodo 5 Hilo84524] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:32.968 [Nodo 5 Hilo84536] Entra durante 0,5 s.
+
+19:32.297 [Nodo 5 Hilo84536] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:32.345 [Nodo 5 Hilo84538] Entra durante 0,5 s.
+
+19:33.165 [Nodo 5 Hilo84538] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:33.208 [Nodo 5 Hilo84539] Entra durante 0,5 s.
+
+19:33.249 [Nodo 5 Hilo84539] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.337 [Nodo 5 Hilo84527] Entra durante 0,5 s.
+
+19:34.178 [Nodo 5 Hilo84527] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:34.221 [Nodo 5 Hilo84528] Entra durante 0,5 s.
+
+19:34.627 [Nodo 5 Hilo84528] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.676 [Nodo 5 Hilo84529] Entra durante 0,5 s.
+
+19:35.136 [Nodo 5 Hilo84529] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:35.180 [Nodo 5 Hilo84530] Entra durante 0,5 s.
+
+19:35.59 [Nodo 5 Hilo84530] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:35.108 [Nodo 5 Hilo84531] Entra durante 0,5 s.
+
+19:36.335 [Nodo 5 Hilo84531] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:36.382 [Nodo 5 Hilo84532] Entra durante 0,5 s.
+
+19:36.14 [Nodo 5 Hilo84532] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:36.66 [Nodo 5 Hilo84534] Entra durante 0,5 s.
+
+19:37.191 [Nodo 5 Hilo84534] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:37.263 [Nodo 5 Hilo84497] Entra durante 0,5 s.
+
+19:37.415 [Nodo 5 Hilo84497] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:37.464 [Nodo 5 Hilo84498] Entra durante 0,5 s.
+
+19:38.655 [Nodo 5 Hilo84498] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:38.701 [Nodo 5 Hilo84499] Entra durante 0,5 s.
+
+19:38.570 [Nodo 5 Hilo84499] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:38.616 [Nodo 5 Hilo84500] Entra durante 0,5 s.
+
+19:39.197 [Nodo 5 Hilo84500] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:39.237 [Nodo 5 Hilo84501] Entra durante 0,5 s.
+
+19:39.501 [Nodo 5 Hilo84501] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:39.553 [Nodo 5 Hilo84502] Entra durante 0,5 s.
+
+19:40.589 [Nodo 5 Hilo84502] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:40.634 [Nodo 5 Hilo84503] Entra durante 0,5 s.
+
+19:40.475 [Nodo 5 Hilo84503] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:40.534 [Nodo 5 Hilo84504] Entra durante 0,5 s.
+
+19:41.494 [Nodo 5 Hilo84504] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:41.539 [Nodo 5 Hilo84505] Entra durante 0,5 s.
+
+19:41.22 [Nodo 5 Hilo84505] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:41.67 [Nodo 5 Hilo84512] Entra durante 0,5 s.
+
+19:42.66 [Nodo 5 Hilo84512] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.121 [Nodo 5 Hilo84513] Entra durante 0,5 s.
+
+19:42.48 [Nodo 5 Hilo84513] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:42.92 [Nodo 5 Hilo84514] Entra durante 0,5 s.
+
+19:43.954 [Nodo 5 Hilo84514] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.997 [Nodo 5 Hilo84515] Entra durante 0,5 s.
+
+19:43.809 [Nodo 5 Hilo84515] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:43.857 [Nodo 5 Hilo84516] Entra durante 0,5 s.
+
+19:44.73 [Nodo 5 Hilo84516] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.111 [Nodo 5 Hilo84517] Entra durante 0,5 s.
+
+19:31.348 [Nodo 7 Hilo84237] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:31.393 [Nodo 7 Hilo84238] Entra durante 0,5 s.
+
+19:31.123 [Nodo 7 Hilo84238] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:31.162 [Nodo 7 Hilo84239] Entra durante 0,5 s.
+
+19:32.33 [Nodo 7 Hilo84239] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:32.73 [Nodo 7 Hilo84269] Entra durante 0,5 s.
+
+19:32.793 [Nodo 7 Hilo84269] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:32.633 [Nodo 7 Hilo84241] Entra durante 0,5 s.
+
+19:33.31 [Nodo 7 Hilo84241] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.67 [Nodo 7 Hilo84240] Entra durante 0,5 s.
+
+19:33.747 [Nodo 7 Hilo84240] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:33.768 [Nodo 7 Hilo84273] Entra durante 0,5 s.
+
+19:34.823 [Nodo 7 Hilo84273] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.864 [Nodo 7 Hilo84242] Entra durante 0,5 s.
+
+19:34.205 [Nodo 7 Hilo84242] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:34.298 [Nodo 7 Hilo84274] Entra durante 0,5 s.
+
+19:35.402 [Nodo 7 Hilo84274] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:35.457 [Nodo 7 Hilo84270] Entra durante 0,5 s.
+
+19:35.471 [Nodo 7 Hilo84270] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:35.559 [Nodo 7 Hilo84251] Entra durante 0,5 s.
+
+19:36.78 [Nodo 7 Hilo84251] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:36.42 [Nodo 7 Hilo84276] Entra durante 0,5 s.
+
+19:37.980 [Nodo 7 Hilo84276] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:37.26 [Nodo 7 Hilo84250] Entra durante 0,5 s.
+
+19:37.137 [Nodo 7 Hilo84250] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:37.178 [Nodo 7 Hilo84252] Entra durante 0,5 s.
+
+19:38.359 [Nodo 7 Hilo84252] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:38.404 [Nodo 7 Hilo84256] Entra durante 0,5 s.
+
+19:38.552 [Nodo 7 Hilo84256] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:38.635 [Nodo 7 Hilo84258] Entra durante 0,5 s.
+
+19:39.528 [Nodo 7 Hilo84258] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:39.571 [Nodo 7 Hilo84261] Entra durante 0,5 s.
+
+19:39.212 [Nodo 7 Hilo84261] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:39.249 [Nodo 7 Hilo84263] Entra durante 0,5 s.
+
+19:40.484 [Nodo 7 Hilo84263] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:40.524 [Nodo 7 Hilo84264] Entra durante 0,5 s.
+
+19:40.325 [Nodo 7 Hilo84264] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:40.363 [Nodo 7 Hilo84267] Entra durante 0,5 s.
+
+19:41.183 [Nodo 7 Hilo84267] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:41.228 [Nodo 7 Hilo84268] Entra durante 0,5 s.
+
+19:41.323 [Nodo 7 Hilo84268] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:41.364 [Nodo 7 Hilo84271] Entra durante 0,5 s.
+
+19:42.873 [Nodo 7 Hilo84271] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.922 [Nodo 7 Hilo84272] Entra durante 0,5 s.
+
+19:42.466 [Nodo 7 Hilo84272] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:42.504 [Nodo 7 Hilo84275] Entra durante 0,5 s.
+
+19:43.165 [Nodo 7 Hilo84275] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.227 [Nodo 7 Hilo84277] Entra durante 0,5 s.
+
+19:43.195 [Nodo 7 Hilo84277] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:43.238 [Nodo 7 Hilo84278] Entra durante 0,5 s.
+
+19:44.545 [Nodo 7 Hilo84278] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.592 [Nodo 7 Hilo84257] Entra durante 0,5 s.
+
+19:30.291 [Nodo 9 Hilo84540] Entra durante 0,5 s.
+
+19:31.33 [Nodo 9 Hilo84540] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 2
+
+19:31.109 [Nodo 9 Hilo84553] Entra durante 0,5 s.
+
+19:31.179 [Nodo 9 Hilo84553] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:31.220 [Nodo 9 Hilo84554] Entra durante 0,5 s.
+
+19:32.72 [Nodo 9 Hilo84554] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:32.119 [Nodo 9 Hilo84555] Entra durante 0,5 s.
+
+19:32.15 [Nodo 9 Hilo84555] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:32.53 [Nodo 9 Hilo84556] Entra durante 0,5 s.
+
+19:33.893 [Nodo 9 Hilo84556] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:33.940 [Nodo 9 Hilo84557] Entra durante 0,5 s.
+
+19:33.897 [Nodo 9 Hilo84557] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.973 [Nodo 9 Hilo84543] Entra durante 0,5 s.
+
+19:34.404 [Nodo 9 Hilo84543] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:34.467 [Nodo 9 Hilo84544] Entra durante 0,5 s.
+
+19:34.341 [Nodo 9 Hilo84544] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.390 [Nodo 9 Hilo84545] Entra durante 0,5 s.
+
+19:35.337 [Nodo 9 Hilo84545] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:35.394 [Nodo 9 Hilo84546] Entra durante 0,5 s.
+
+19:36.124 [Nodo 9 Hilo84546] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:36.171 [Nodo 9 Hilo84547] Entra durante 0,5 s.
+
+19:36.605 [Nodo 9 Hilo84547] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:36.657 [Nodo 9 Hilo84548] Entra durante 0,5 s.
+
+19:37.711 [Nodo 9 Hilo84548] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:37.748 [Nodo 9 Hilo84549] Entra durante 0,5 s.
+
+19:37.216 [Nodo 9 Hilo84549] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:37.264 [Nodo 9 Hilo84550] Entra durante 0,5 s.
+
+19:38.409 [Nodo 9 Hilo84550] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:38.448 [Nodo 9 Hilo84551] Entra durante 0,5 s.
+
+19:38.605 [Nodo 9 Hilo84551] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:38.652 [Nodo 9 Hilo84565] Entra durante 0,5 s.
+
+19:39.394 [Nodo 9 Hilo84565] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:39.435 [Nodo 9 Hilo84566] Entra durante 0,5 s.
+
+19:39.533 [Nodo 9 Hilo84566] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:39.577 [Nodo 9 Hilo84567] Entra durante 0,5 s.
+
+19:40.535 [Nodo 9 Hilo84567] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:40.659 [Nodo 9 Hilo84587] Entra durante 0,5 s.
+
+19:40.328 [Nodo 9 Hilo84587] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:40.392 [Nodo 9 Hilo84588] Entra durante 0,5 s.
+
+19:41.794 [Nodo 9 Hilo84588] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:41.835 [Nodo 9 Hilo84589] Entra durante 0,5 s.
+
+19:41.122 [Nodo 9 Hilo84589] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:41.171 [Nodo 9 Hilo84590] Entra durante 0,5 s.
+
+19:42.86 [Nodo 9 Hilo84590] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:42.126 [Nodo 9 Hilo84591] Entra durante 0,5 s.
+
+19:42.641 [Nodo 9 Hilo84591] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.689 [Nodo 9 Hilo84610] Entra durante 0,5 s.
+
+19:43.678 [Nodo 9 Hilo84610] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:43.722 [Nodo 9 Hilo84611] Entra durante 0,5 s.
+
+19:43.738 [Nodo 9 Hilo84611] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.779 [Nodo 9 Hilo84612] Entra durante 0,5 s.
+
+19:44.651 [Nodo 9 Hilo84612] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:44.690 [Nodo 9 Hilo84613] Entra durante 0,5 s.
+
+19:30.606 [Nodo 3 Hilo84196] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:30.659 [Nodo 3 Hilo84201] Entra durante 0,5 s.
+
+19:31.365 [Nodo 3 Hilo84201] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:31.412 [Nodo 3 Hilo84204] Entra durante 0,5 s.
+
+19:31.349 [Nodo 3 Hilo84204] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:31.400 [Nodo 3 Hilo84207] Entra durante 0,5 s.
+
+19:32.537 [Nodo 3 Hilo84207] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:32.589 [Nodo 3 Hilo84216] Entra durante 0,5 s.
+
+19:33.47 [Nodo 3 Hilo84216] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.109 [Nodo 3 Hilo84219] Entra durante 0,5 s.
+
+19:33.946 [Nodo 3 Hilo84219] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:33.0 [Nodo 3 Hilo84225] Entra durante 0,5 s.
+
+19:34.703 [Nodo 3 Hilo84225] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.748 [Nodo 3 Hilo84226] Entra durante 0,5 s.
+
+19:34.856 [Nodo 3 Hilo84226] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:34.922 [Nodo 3 Hilo84227] Entra durante 0,5 s.
+
+19:35.685 [Nodo 3 Hilo84227] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:35.725 [Nodo 3 Hilo84045] Entra durante 0,5 s.
+
+19:35.390 [Nodo 3 Hilo84045] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:35.452 [Nodo 3 Hilo84173] Entra durante 0,5 s.
+
+19:36.544 [Nodo 3 Hilo84173] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:36.591 [Nodo 3 Hilo84177] Entra durante 0,5 s.
+
+19:36.878 [Nodo 3 Hilo84177] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:36.928 [Nodo 3 Hilo84180] Entra durante 0,5 s.
+
+19:37.203 [Nodo 3 Hilo84180] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:37.243 [Nodo 3 Hilo84230] Entra durante 0,5 s.
+
+19:37.56 [Nodo 3 Hilo84230] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:37.100 [Nodo 3 Hilo84231] Entra durante 0,5 s.
+
+19:38.152 [Nodo 3 Hilo84231] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:38.192 [Nodo 3 Hilo84232] Entra durante 0,5 s.
+
+19:38.346 [Nodo 3 Hilo84232] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:38.397 [Nodo 3 Hilo84233] Entra durante 0,5 s.
+
+19:39.882 [Nodo 3 Hilo84233] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:39.949 [Nodo 3 Hilo84040] Entra durante 0,5 s.
+
+19:40.466 [Nodo 3 Hilo84040] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:40.557 [Nodo 3 Hilo84036] Entra durante 0,5 s.
+
+19:40.664 [Nodo 3 Hilo84036] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:40.770 [Nodo 3 Hilo84062] Entra durante 0,5 s.
+
+19:41.876 [Nodo 3 Hilo84062] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:41.920 [Nodo 3 Hilo84076] Entra durante 0,5 s.
+
+19:41.92 [Nodo 3 Hilo84076] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:41.131 [Nodo 3 Hilo84096] Entra durante 0,5 s.
+
+19:42.910 [Nodo 3 Hilo84096] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.951 [Nodo 3 Hilo84116] Entra durante 0,5 s.
+
+19:42.626 [Nodo 3 Hilo84116] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:42.663 [Nodo 3 Hilo84140] Entra durante 0,5 s.
+
+19:43.870 [Nodo 3 Hilo84140] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.911 [Nodo 3 Hilo84143] Entra durante 0,5 s.
+
+19:43.709 [Nodo 3 Hilo84143] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:43.792 [Nodo 3 Hilo84084] Entra durante 0,5 s.
+
+19:44.644 [Nodo 3 Hilo84084] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.706 [Nodo 3 Hilo84183] Entra durante 0,5 s.
+
+19:44.639 [Nodo 3 Hilo84183] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:31.973 [Nodo 1 Hilo84082] Sale. Ha entrado este nodo: 28 Ha entrado este proceso: 1
+
+19:31.57 [Nodo 1 Hilo84098] Entra durante 0,5 s.
+
+19:31.914 [Nodo 1 Hilo84098] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:31.996 [Nodo 1 Hilo84085] Entra durante 0,5 s.
+
+19:32.961 [Nodo 1 Hilo84085] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:32.50 [Nodo 1 Hilo84102] Entra durante 0,5 s.
+
+19:32.537 [Nodo 1 Hilo84102] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:32.622 [Nodo 1 Hilo84089] Entra durante 0,5 s.
+
+19:33.806 [Nodo 1 Hilo84089] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:33.861 [Nodo 1 Hilo84106] Entra durante 0,5 s.
+
+19:33.714 [Nodo 1 Hilo84106] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:33.779 [Nodo 1 Hilo84092] Entra durante 0,5 s.
+
+19:34.624 [Nodo 1 Hilo84092] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:34.742 [Nodo 1 Hilo84114] Entra durante 0,5 s.
+
+19:35.198 [Nodo 1 Hilo84114] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:35.278 [Nodo 1 Hilo84108] Entra durante 0,5 s.
+
+19:35.604 [Nodo 1 Hilo84108] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:35.705 [Nodo 1 Hilo84118] Entra durante 0,5 s.
+
+19:36.663 [Nodo 1 Hilo84118] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:36.781 [Nodo 1 Hilo84112] Entra durante 0,5 s.
+
+19:36.603 [Nodo 1 Hilo84112] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:36.948 [Nodo 1 Hilo84138] Entra durante 0,5 s.
+
+19:37.169 [Nodo 1 Hilo84138] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:37.955 [Nodo 1 Hilo84124] Entra durante 0,5 s.
+
+19:37.629 [Nodo 1 Hilo84124] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:38.832 [Nodo 1 Hilo84139] Entra durante 0,5 s.
+
+19:38.540 [Nodo 1 Hilo84139] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:38.628 [Nodo 1 Hilo84128] Entra durante 0,5 s.
+
+19:39.610 [Nodo 1 Hilo84128] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:39.686 [Nodo 1 Hilo84144] Entra durante 0,5 s.
+
+19:39.200 [Nodo 1 Hilo84144] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:39.291 [Nodo 1 Hilo84130] Entra durante 0,5 s.
+
+19:40.604 [Nodo 1 Hilo84130] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:40.351 [Nodo 1 Hilo84147] Entra durante 0,5 s.
+
+19:40.741 [Nodo 1 Hilo84147] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:40.775 [Nodo 1 Hilo84134] Entra durante 0,5 s.
+
+19:41.520 [Nodo 1 Hilo84134] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:41.607 [Nodo 1 Hilo84149] Entra durante 0,5 s.
+
+19:42.165 [Nodo 1 Hilo84149] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:42.170 [Nodo 1 Hilo84153] Entra durante 0,5 s.
+
+19:42.841 [Nodo 1 Hilo84153] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:42.76 [Nodo 1 Hilo84181] Entra durante 0,5 s.
+
+19:43.472 [Nodo 1 Hilo84181] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:43.916 [Nodo 1 Hilo84155] Entra durante 0,5 s.
+
+19:43.250 [Nodo 1 Hilo84155] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:43.826 [Nodo 1 Hilo84184] Entra durante 0,5 s.
+
+19:44.872 [Nodo 1 Hilo84184] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:44.957 [Nodo 1 Hilo84159] Entra durante 0,5 s.
+
+19:44.874 [Nodo 1 Hilo84159] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:44.925 [Nodo 1 Hilo84187] Entra durante 0,5 s.
+
+19:31.745 [Nodo 8 Hilo84436] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:31.784 [Nodo 8 Hilo84437] Entra durante 0,5 s.
+
+19:31.825 [Nodo 8 Hilo84437] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:31.866 [Nodo 8 Hilo84438] Entra durante 0,5 s.
+
+19:32.278 [Nodo 8 Hilo84438] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:32.326 [Nodo 8 Hilo84450] Entra durante 0,5 s.
+
+19:32.104 [Nodo 8 Hilo84450] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:32.147 [Nodo 8 Hilo84451] Entra durante 0,5 s.
+
+19:33.29 [Nodo 8 Hilo84451] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:33.70 [Nodo 8 Hilo84452] Entra durante 0,5 s.
+
+19:33.147 [Nodo 8 Hilo84452] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:33.198 [Nodo 8 Hilo84453] Entra durante 0,5 s.
+
+19:34.509 [Nodo 8 Hilo84453] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:34.620 [Nodo 8 Hilo84396] Entra durante 0,5 s.
+
+19:34.646 [Nodo 8 Hilo84396] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:34.694 [Nodo 8 Hilo84399] Entra durante 0,5 s.
+
+19:35.584 [Nodo 8 Hilo84399] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:35.631 [Nodo 8 Hilo84400] Entra durante 0,5 s.
+
+19:35.32 [Nodo 8 Hilo84400] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:35.77 [Nodo 8 Hilo84401] Entra durante 0,5 s.
+
+19:36.126 [Nodo 8 Hilo84401] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:36.168 [Nodo 8 Hilo84402] Entra durante 0,5 s.
+
+19:36.843 [Nodo 8 Hilo84402] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:36.888 [Nodo 8 Hilo84403] Entra durante 0,5 s.
+
+19:37.283 [Nodo 8 Hilo84403] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:37.330 [Nodo 8 Hilo84405] Entra durante 0,5 s.
+
+19:37.552 [Nodo 8 Hilo84405] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:37.609 [Nodo 8 Hilo84406] Entra durante 0,5 s.
+
+19:38.560 [Nodo 8 Hilo84406] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:38.605 [Nodo 8 Hilo84407] Entra durante 0,5 s.
+
+19:39.413 [Nodo 8 Hilo84407] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:39.248 [Nodo 8 Hilo84404] Entra durante 0,5 s.
+
+19:39.630 [Nodo 8 Hilo84404] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:39.712 [Nodo 8 Hilo84408] Entra durante 0,5 s.
+
+19:40.440 [Nodo 8 Hilo84408] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:40.946 [Nodo 8 Hilo84439] Entra durante 0,5 s.
+
+19:40.781 [Nodo 8 Hilo84439] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:40.847 [Nodo 8 Hilo84409] Entra durante 0,5 s.
+
+19:41.551 [Nodo 8 Hilo84409] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:41.633 [Nodo 8 Hilo84440] Entra durante 0,5 s.
+
+19:42.124 [Nodo 8 Hilo84440] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.168 [Nodo 8 Hilo84441] Entra durante 0,5 s.
+
+19:42.101 [Nodo 8 Hilo84441] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:42.182 [Nodo 8 Hilo84415] Entra durante 0,5 s.
+
+19:43.493 [Nodo 8 Hilo84415] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.282 [Nodo 8 Hilo84442] Entra durante 0,5 s.
+
+19:43.672 [Nodo 8 Hilo84442] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:43.193 [Nodo 8 Hilo84416] Entra durante 0,5 s.
+
+19:44.141 [Nodo 8 Hilo84416] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.225 [Nodo 8 Hilo84443] Entra durante 0,5 s.
+
+19:30.803 [Nodo 6 Hilo84752] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:30.845 [Nodo 6 Hilo84753] Entra durante 0,5 s.
+
+19:31.110 [Nodo 6 Hilo84753] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:31.165 [Nodo 6 Hilo84754] Entra durante 0,5 s.
+
+19:31.660 [Nodo 6 Hilo84754] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:31.704 [Nodo 6 Hilo84755] Entra durante 0,5 s.
+
+19:32.915 [Nodo 6 Hilo84755] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:32.958 [Nodo 6 Hilo84756] Entra durante 0,5 s.
+
+19:33.184 [Nodo 6 Hilo84756] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.228 [Nodo 6 Hilo84757] Entra durante 0,5 s.
+
+19:33.685 [Nodo 6 Hilo84757] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:33.742 [Nodo 6 Hilo84758] Entra durante 0,5 s.
+
+19:34.934 [Nodo 6 Hilo84758] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.981 [Nodo 6 Hilo84759] Entra durante 0,5 s.
+
+19:34.451 [Nodo 6 Hilo84759] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:34.510 [Nodo 6 Hilo84760] Entra durante 0,5 s.
+
+19:35.732 [Nodo 6 Hilo84760] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:35.780 [Nodo 6 Hilo84761] Entra durante 0,5 s.
+
+19:35.354 [Nodo 6 Hilo84761] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:35.407 [Nodo 6 Hilo84762] Entra durante 0,5 s.
+
+19:36.260 [Nodo 6 Hilo84762] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:36.300 [Nodo 6 Hilo84763] Entra durante 0,5 s.
+
+19:36.271 [Nodo 6 Hilo84763] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:36.323 [Nodo 6 Hilo84764] Entra durante 0,5 s.
+
+19:37.217 [Nodo 6 Hilo84764] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:37.261 [Nodo 6 Hilo84765] Entra durante 0,5 s.
+
+19:37.117 [Nodo 6 Hilo84765] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:37.211 [Nodo 6 Hilo84728] Entra durante 0,5 s.
+
+19:38.100 [Nodo 6 Hilo84728] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:38.161 [Nodo 6 Hilo84729] Entra durante 0,5 s.
+
+19:38.529 [Nodo 6 Hilo84729] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:38.576 [Nodo 6 Hilo84730] Entra durante 0,5 s.
+
+19:39.231 [Nodo 6 Hilo84730] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:39.270 [Nodo 6 Hilo84731] Entra durante 0,5 s.
+
+19:39.100 [Nodo 6 Hilo84731] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:39.146 [Nodo 6 Hilo84732] Entra durante 0,5 s.
+
+19:40.988 [Nodo 6 Hilo84732] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:40.38 [Nodo 6 Hilo84733] Entra durante 0,5 s.
+
+19:40.360 [Nodo 6 Hilo84733] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:40.408 [Nodo 6 Hilo84734] Entra durante 0,5 s.
+
+19:41.219 [Nodo 6 Hilo84734] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:41.263 [Nodo 6 Hilo84735] Entra durante 0,5 s.
+
+19:41.286 [Nodo 6 Hilo84735] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:41.348 [Nodo 6 Hilo84736] Entra durante 0,5 s.
+
+19:42.463 [Nodo 6 Hilo84736] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:42.511 [Nodo 6 Hilo84737] Entra durante 0,5 s.
+
+19:42.478 [Nodo 6 Hilo84737] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:42.534 [Nodo 6 Hilo84738] Entra durante 0,5 s.
+
+19:43.591 [Nodo 6 Hilo84738] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:43.636 [Nodo 6 Hilo84739] Entra durante 0,5 s.
+
+19:44.457 [Nodo 6 Hilo84739] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.510 [Nodo 6 Hilo84740] Entra durante 0,5 s.
+
+19:44.457 [Nodo 6 Hilo84740] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:44.500 [Nodo 6 Hilo84741] Entra durante 0,5 s.
+
+19:31.504 [Nodo 10 Hilo84341] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:31.546 [Nodo 10 Hilo84343] Entra durante 0,5 s.
+
+19:31.524 [Nodo 10 Hilo84343] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:31.566 [Nodo 10 Hilo84344] Entra durante 0,5 s.
+
+19:32.484 [Nodo 10 Hilo84344] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:32.525 [Nodo 10 Hilo84350] Entra durante 0,5 s.
+
+19:32.313 [Nodo 10 Hilo84350] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:32.356 [Nodo 10 Hilo84362] Entra durante 0,5 s.
+
+19:33.927 [Nodo 10 Hilo84362] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.972 [Nodo 10 Hilo84363] Entra durante 0,5 s.
+
+19:33.238 [Nodo 10 Hilo84363] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:33.278 [Nodo 10 Hilo84364] Entra durante 0,5 s.
+
+19:34.154 [Nodo 10 Hilo84364] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.190 [Nodo 10 Hilo84365] Entra durante 0,5 s.
+
+19:34.998 [Nodo 10 Hilo84365] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:34.39 [Nodo 10 Hilo84366] Entra durante 0,5 s.
+
+19:35.829 [Nodo 10 Hilo84366] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:35.865 [Nodo 10 Hilo84372] Entra durante 0,5 s.
+
+19:35.317 [Nodo 10 Hilo84372] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:35.356 [Nodo 10 Hilo84373] Entra durante 0,5 s.
+
+19:36.421 [Nodo 10 Hilo84373] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:36.457 [Nodo 10 Hilo84376] Entra durante 0,5 s.
+
+19:36.929 [Nodo 10 Hilo84376] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:36.979 [Nodo 10 Hilo84380] Entra durante 0,5 s.
+
+19:37.525 [Nodo 10 Hilo84380] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:37.578 [Nodo 10 Hilo84381] Entra durante 0,5 s.
+
+19:37.928 [Nodo 10 Hilo84381] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:37.972 [Nodo 10 Hilo84383] Entra durante 0,5 s.
+
+19:38.949 [Nodo 10 Hilo84383] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:38.991 [Nodo 10 Hilo84311] Entra durante 0,5 s.
+
+19:38.642 [Nodo 10 Hilo84311] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:38.826 [Nodo 10 Hilo84346] Entra durante 0,5 s.
+
+19:39.437 [Nodo 10 Hilo84346] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:39.482 [Nodo 10 Hilo84347] Entra durante 0,5 s.
+
+19:39.564 [Nodo 10 Hilo84347] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:39.621 [Nodo 10 Hilo84348] Entra durante 0,5 s.
+
+19:40.175 [Nodo 10 Hilo84348] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:40.230 [Nodo 10 Hilo84349] Entra durante 0,5 s.
+
+19:41.524 [Nodo 10 Hilo84349] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:41.575 [Nodo 10 Hilo84352] Entra durante 0,5 s.
+
+19:41.406 [Nodo 10 Hilo84352] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:41.446 [Nodo 10 Hilo84353] Entra durante 0,5 s.
+
+19:42.186 [Nodo 10 Hilo84353] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.228 [Nodo 10 Hilo84354] Entra durante 0,5 s.
+
+19:42.986 [Nodo 10 Hilo84354] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:42.24 [Nodo 10 Hilo84357] Entra durante 0,5 s.
+
+19:43.517 [Nodo 10 Hilo84357] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.568 [Nodo 10 Hilo84358] Entra durante 0,5 s.
+
+19:43.411 [Nodo 10 Hilo84358] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:43.449 [Nodo 10 Hilo84361] Entra durante 0,5 s.
+
+19:44.197 [Nodo 10 Hilo84361] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.274 [Nodo 10 Hilo84342] Entra durante 0,5 s.
+
+19:44.175 [Nodo 10 Hilo84342] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:44.216 [Nodo 10 Hilo84369] Entra durante 0,5 s.
+
+19:31.515 [Nodo 2 Hilo84137] Sale. Ha entrado este nodo: 29 Ha entrado este proceso: 1
+
+19:31.561 [Nodo 2 Hilo84141] Entra durante 0,5 s.
+
+19:31.264 [Nodo 2 Hilo84141] Sale. Ha entrado este nodo: 30 Ha entrado este proceso: 1
+
+19:31.349 [Nodo 2 Hilo84176] Entra durante 0,5 s.
+
+19:32.230 [Nodo 2 Hilo84176] Sale. Ha entrado este nodo: 31 Ha entrado este proceso: 1
+
+19:32.315 [Nodo 2 Hilo84142] Entra durante 0,5 s.
+
+19:32.694 [Nodo 2 Hilo84142] Sale. Ha entrado este nodo: 32 Ha entrado este proceso: 1
+
+19:32.734 [Nodo 2 Hilo84145] Entra durante 0,5 s.
+
+19:33.780 [Nodo 2 Hilo84145] Sale. Ha entrado este nodo: 33 Ha entrado este proceso: 1
+
+19:33.820 [Nodo 2 Hilo84179] Entra durante 0,5 s.
+
+19:33.285 [Nodo 2 Hilo84179] Sale. Ha entrado este nodo: 34 Ha entrado este proceso: 1
+
+19:33.491 [Nodo 2 Hilo84150] Entra durante 0,5 s.
+
+19:34.102 [Nodo 2 Hilo84150] Sale. Ha entrado este nodo: 35 Ha entrado este proceso: 1
+
+19:34.185 [Nodo 2 Hilo84182] Entra durante 0,5 s.
+
+19:34.225 [Nodo 2 Hilo84182] Sale. Ha entrado este nodo: 36 Ha entrado este proceso: 1
+
+19:34.289 [Nodo 2 Hilo84186] Entra durante 0,5 s.
+
+19:35.882 [Nodo 2 Hilo84186] Sale. Ha entrado este nodo: 37 Ha entrado este proceso: 1
+
+19:35.926 [Nodo 2 Hilo84188] Entra durante 0,5 s.
+
+19:35.920 [Nodo 2 Hilo84188] Sale. Ha entrado este nodo: 38 Ha entrado este proceso: 1
+
+19:35.958 [Nodo 2 Hilo84191] Entra durante 0,5 s.
+
+19:36.612 [Nodo 2 Hilo84191] Sale. Ha entrado este nodo: 39 Ha entrado este proceso: 1
+
+19:36.655 [Nodo 2 Hilo84194] Entra durante 0,5 s.
+
+19:36.388 [Nodo 2 Hilo84194] Sale. Ha entrado este nodo: 40 Ha entrado este proceso: 1
+
+19:36.442 [Nodo 2 Hilo84197] Entra durante 0,5 s.
+
+19:37.584 [Nodo 2 Hilo84197] Sale. Ha entrado este nodo: 41 Ha entrado este proceso: 1
+
+19:37.628 [Nodo 2 Hilo84199] Entra durante 0,5 s.
+
+19:37.564 [Nodo 2 Hilo84199] Sale. Ha entrado este nodo: 42 Ha entrado este proceso: 1
+
+19:37.610 [Nodo 2 Hilo84203] Entra durante 0,5 s.
+
+19:38.616 [Nodo 2 Hilo84203] Sale. Ha entrado este nodo: 43 Ha entrado este proceso: 1
+
+19:38.659 [Nodo 2 Hilo84206] Entra durante 0,5 s.
+
+19:39.362 [Nodo 2 Hilo84206] Sale. Ha entrado este nodo: 44 Ha entrado este proceso: 1
+
+19:39.411 [Nodo 2 Hilo84019] Entra durante 0,5 s.
+
+19:39.441 [Nodo 2 Hilo84019] Sale. Ha entrado este nodo: 45 Ha entrado este proceso: 1
+
+19:39.479 [Nodo 2 Hilo84021] Entra durante 0,5 s.
+
+19:40.462 [Nodo 2 Hilo84021] Sale. Ha entrado este nodo: 46 Ha entrado este proceso: 1
+
+19:40.509 [Nodo 2 Hilo84025] Entra durante 0,5 s.
+
+19:40.565 [Nodo 2 Hilo84025] Sale. Ha entrado este nodo: 47 Ha entrado este proceso: 1
+
+19:40.614 [Nodo 2 Hilo84209] Entra durante 0,5 s.
+
+19:41.611 [Nodo 2 Hilo84209] Sale. Ha entrado este nodo: 48 Ha entrado este proceso: 1
+
+19:41.461 [Nodo 2 Hilo84152] Entra durante 0,5 s.
+
+19:41.829 [Nodo 2 Hilo84152] Sale. Ha entrado este nodo: 49 Ha entrado este proceso: 1
+
+19:41.680 [Nodo 2 Hilo84156] Entra durante 0,5 s.
+
+19:42.765 [Nodo 2 Hilo84156] Sale. Ha entrado este nodo: 50 Ha entrado este proceso: 1
+
+19:42.878 [Nodo 2 Hilo84158] Entra durante 0,5 s.
+
+19:42.513 [Nodo 2 Hilo84158] Sale. Ha entrado este nodo: 51 Ha entrado este proceso: 1
+
+19:42.573 [Nodo 2 Hilo84162] Entra durante 0,5 s.
+
+19:43.981 [Nodo 2 Hilo84162] Sale. Ha entrado este nodo: 52 Ha entrado este proceso: 1
+
+19:43.30 [Nodo 2 Hilo84165] Entra durante 0,5 s.
+
+19:43.442 [Nodo 2 Hilo84165] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:43.484 [Nodo 2 Hilo84168] Entra durante 0,5 s.
+
+19:44.392 [Nodo 2 Hilo84168] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:44.441 [Nodo 2 Hilo84172] Entra durante 0,5 s.
+
+19:44.224 [Nodo 2 Hilo84172] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:45.370 [Nodo 2 Hilo84038] Entra durante 0,5 s.
+
+19:45.735 [Nodo 2 Hilo84038] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:45.783 [Nodo 2 Hilo84211] Entra durante 0,5 s.
+
+19:46.318 [Nodo 2 Hilo84211] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:46.363 [Nodo 2 Hilo84213] Entra durante 0,5 s.
+
+19:46.413 [Nodo 2 Hilo84213] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:46.465 [Nodo 2 Hilo84214] Entra durante 0,5 s.
+
+19:47.667 [Nodo 2 Hilo84214] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:47.708 [Nodo 2 Hilo84217] Entra durante 0,5 s.
+
+19:45.628 [Nodo 6 Hilo84741] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:45.674 [Nodo 6 Hilo84742] Entra durante 0,5 s.
+
+19:45.159 [Nodo 6 Hilo84742] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:45.205 [Nodo 6 Hilo84743] Entra durante 0,5 s.
+
+19:46.997 [Nodo 6 Hilo84743] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.86 [Nodo 6 Hilo84703] Entra durante 0,5 s.
+
+19:46.221 [Nodo 6 Hilo84703] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:46.267 [Nodo 6 Hilo84704] Entra durante 0,5 s.
+
+19:47.520 [Nodo 6 Hilo84704] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:47.571 [Nodo 6 Hilo84705] Entra durante 0,5 s.
+
+19:44.658 [Nodo 8 Hilo84443] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:45.801 [Nodo 8 Hilo84421] Entra durante 0,5 s.
+
+19:45.708 [Nodo 8 Hilo84421] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:45.802 [Nodo 8 Hilo84444] Entra durante 0,5 s.
+
+19:46.25 [Nodo 8 Hilo84444] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:46.123 [Nodo 8 Hilo84422] Entra durante 0,5 s.
+
+19:46.605 [Nodo 8 Hilo84422] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.653 [Nodo 8 Hilo84423] Entra durante 0,5 s.
+
+19:47.775 [Nodo 8 Hilo84423] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:47.300 [Nodo 8 Hilo84446] Entra durante 0,5 s.
+
+19:45.281 [Nodo 10 Hilo84369] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:45.325 [Nodo 10 Hilo84345] Entra durante 0,5 s.
+
+19:45.894 [Nodo 10 Hilo84345] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:45.936 [Nodo 10 Hilo84370] Entra durante 0,5 s.
+
+19:46.503 [Nodo 10 Hilo84370] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.550 [Nodo 10 Hilo84351] Entra durante 0,5 s.
+
+19:46.150 [Nodo 10 Hilo84351] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:46.197 [Nodo 10 Hilo84371] Entra durante 0,5 s.
+
+19:47.627 [Nodo 10 Hilo84371] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:44.760 [Nodo 3 Hilo84096] Entra durante 0,5 s.
+
+19:45.509 [Nodo 3 Hilo84096] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 2
+
+19:45.574 [Nodo 3 Hilo84113] Entra durante 0,5 s.
+
+19:45.408 [Nodo 3 Hilo84113] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:45.259 [Nodo 3 Hilo84189] Entra durante 0,5 s.
+
+19:46.745 [Nodo 3 Hilo84189] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.833 [Nodo 3 Hilo84127] Entra durante 0,5 s.
+
+19:47.58 [Nodo 3 Hilo84127] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:47.108 [Nodo 3 Hilo84154] Entra durante 0,5 s.
+
+19:44.686 [Nodo 5 Hilo84517] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:44.753 [Nodo 5 Hilo84518] Entra durante 0,5 s.
+
+19:45.251 [Nodo 5 Hilo84518] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:45.293 [Nodo 5 Hilo84519] Entra durante 0,5 s.
+
+19:45.266 [Nodo 5 Hilo84519] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:45.316 [Nodo 5 Hilo84525] Entra durante 0,5 s.
+
+19:46.204 [Nodo 5 Hilo84525] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.244 [Nodo 5 Hilo84526] Entra durante 0,5 s.
+
+19:46.105 [Nodo 5 Hilo84526] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:46.143 [Nodo 5 Hilo84533] Entra durante 0,5 s.
+
+19:44.20 [Nodo 7 Hilo84257] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:44.141 [Nodo 7 Hilo84260] Entra durante 0,5 s.
+
+19:45.264 [Nodo 7 Hilo84260] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:45.353 [Nodo 7 Hilo84279] Entra durante 0,5 s.
+
+19:45.273 [Nodo 7 Hilo84279] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:45.317 [Nodo 7 Hilo84280] Entra durante 0,5 s.
+
+19:46.926 [Nodo 7 Hilo84280] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.971 [Nodo 7 Hilo84281] Entra durante 0,5 s.
+
+19:46.806 [Nodo 7 Hilo84281] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:46.847 [Nodo 7 Hilo84282] Entra durante 0,5 s.
+
+19:44.212 [Nodo 9 Hilo84613] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.281 [Nodo 9 Hilo84584] Entra durante 0,5 s.
+
+19:45.576 [Nodo 9 Hilo84584] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:45.621 [Nodo 9 Hilo84583] Entra durante 0,5 s.
+
+19:46.308 [Nodo 9 Hilo84583] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:46.352 [Nodo 9 Hilo84582] Entra durante 0,5 s.
+
+19:46.234 [Nodo 9 Hilo84582] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:46.271 [Nodo 9 Hilo84581] Entra durante 0,5 s.
+
+19:46.642 [Nodo 9 Hilo84581] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.685 [Nodo 9 Hilo84580] Entra durante 0,5 s.
+
+19:45.27 [Nodo 1 Hilo84187] Sale. Ha entrado este nodo: 53 Ha entrado este proceso: 1
+
+19:45.958 [Nodo 1 Hilo84161] Entra durante 0,5 s.
+
+19:45.560 [Nodo 1 Hilo84161] Sale. Ha entrado este nodo: 54 Ha entrado este proceso: 1
+
+19:45.192 [Nodo 1 Hilo84190] Entra durante 0,5 s.
+
+19:46.167 [Nodo 1 Hilo84190] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:46.162 [Nodo 1 Hilo84164] Entra durante 0,5 s.
+
+19:46.443 [Nodo 1 Hilo84164] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:46.702 [Nodo 1 Hilo84193] Entra durante 0,5 s.
+
+19:44.882 [Nodo 4 Hilo84651] Sale. Ha entrado este nodo: 55 Ha entrado este proceso: 1
+
+19:44.933 [Nodo 4 Hilo84652] Entra durante 0,5 s.
+
+19:45.631 [Nodo 4 Hilo84652] Sale. Ha entrado este nodo: 56 Ha entrado este proceso: 1
+
+19:45.671 [Nodo 4 Hilo84653] Entra durante 0,5 s.
+
+19:45.469 [Nodo 4 Hilo84653] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:45.523 [Nodo 4 Hilo84654] Entra durante 0,5 s.
+
+19:46.282 [Nodo 4 Hilo84654] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:46.329 [Nodo 4 Hilo84655] Entra durante 0,5 s.
+
+19:46.200 [Nodo 4 Hilo84655] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:46.250 [Nodo 4 Hilo84674] Entra durante 0,5 s.
+
+19:47.132 [Nodo 4 Hilo84674] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:47.469 [Nodo 4 Hilo84675] Entra durante 0,5 s.
+
+19:48.645 [Nodo 4 Hilo84675] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:48.724 [Nodo 4 Hilo84676] Entra durante 0,5 s.
+
+19:48.648 [Nodo 4 Hilo84676] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:48.690 [Nodo 4 Hilo84677] Entra durante 0,5 s.
+
+19:49.716 [Nodo 4 Hilo84677] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:49.743 [Nodo 4 Hilo84616] Entra durante 0,5 s.
+
+19:49.833 [Nodo 4 Hilo84616] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.873 [Nodo 4 Hilo84628] Entra durante 0,5 s.
+
+19:50.954 [Nodo 4 Hilo84628] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:50.980 [Nodo 4 Hilo84629] Entra durante 0,5 s.
+
+19:50.564 [Nodo 4 Hilo84629] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:50.591 [Nodo 4 Hilo84630] Entra durante 0,5 s.
+
+19:51.732 [Nodo 4 Hilo84630] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.759 [Nodo 4 Hilo84632] Entra durante 0,5 s.
+
+19:47.35 [Nodo 1 Hilo84193] Sale. Ha entrado este nodo: 57 Ha entrado este proceso: 1
+
+19:47.815 [Nodo 1 Hilo84169] Entra durante 0,5 s.
+
+19:48.215 [Nodo 1 Hilo84169] Sale. Ha entrado este nodo: 58 Ha entrado este proceso: 1
+
+19:48.255 [Nodo 1 Hilo84195] Entra durante 0,5 s.
+
+19:48.204 [Nodo 1 Hilo84195] Sale. Ha entrado este nodo: 59 Ha entrado este proceso: 1
+
+19:48.287 [Nodo 1 Hilo84170] Entra durante 0,5 s.
+
+19:49.865 [Nodo 1 Hilo84170] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:49.956 [Nodo 1 Hilo84200] Entra durante 0,5 s.
+
+19:49.960 [Nodo 1 Hilo84200] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:49.20 [Nodo 1 Hilo84208] Entra durante 0,5 s.
+
+19:50.364 [Nodo 1 Hilo84208] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:50.415 [Nodo 1 Hilo84006] Entra durante 0,5 s.
+
+19:51.558 [Nodo 1 Hilo84006] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:51.632 [Nodo 1 Hilo84205] Entra durante 0,5 s.
+
+19:51.593 [Nodo 1 Hilo84205] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:51.623 [Nodo 1 Hilo84202] Entra durante 0,5 s.
+
+19:47.204 [Nodo 5 Hilo84533] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:47.460 [Nodo 5 Hilo84469] Entra durante 0,5 s.
+
+19:48.253 [Nodo 5 Hilo84469] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:48.329 [Nodo 5 Hilo84472] Entra durante 0,5 s.
+
+19:48.47 [Nodo 5 Hilo84472] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:48.74 [Nodo 5 Hilo84476] Entra durante 0,5 s.
+
+19:49.635 [Nodo 5 Hilo84476] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.662 [Nodo 5 Hilo84480] Entra durante 0,5 s.
+
+19:50.380 [Nodo 5 Hilo84480] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:50.408 [Nodo 5 Hilo84483] Entra durante 0,5 s.
+
+19:50.819 [Nodo 5 Hilo84483] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:50.847 [Nodo 5 Hilo84484] Entra durante 0,5 s.
+
+19:51.336 [Nodo 5 Hilo84484] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.363 [Nodo 5 Hilo84489] Entra durante 0,5 s.
+
+19:47.707 [Nodo 7 Hilo84282] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:47.806 [Nodo 7 Hilo84283] Entra durante 0,5 s.
+
+19:48.599 [Nodo 7 Hilo84283] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:48.642 [Nodo 7 Hilo84284] Entra durante 0,5 s.
+
+19:48.519 [Nodo 7 Hilo84284] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:48.546 [Nodo 7 Hilo84285] Entra durante 0,5 s.
+
+19:49.69 [Nodo 7 Hilo84285] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.97 [Nodo 7 Hilo84286] Entra durante 0,5 s.
+
+19:50.625 [Nodo 7 Hilo84286] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:50.657 [Nodo 7 Hilo84287] Entra durante 0,5 s.
+
+19:50.47 [Nodo 7 Hilo84287] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:50.77 [Nodo 7 Hilo84288] Entra durante 0,5 s.
+
+19:51.760 [Nodo 7 Hilo84288] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.788 [Nodo 7 Hilo84289] Entra durante 0,5 s.
+
+19:47.848 [Nodo 9 Hilo84580] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:47.280 [Nodo 9 Hilo84579] Entra durante 0,5 s.
+
+19:48.832 [Nodo 9 Hilo84579] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:48.888 [Nodo 9 Hilo84578] Entra durante 0,5 s.
+
+19:48.34 [Nodo 9 Hilo84578] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:48.77 [Nodo 9 Hilo84559] Entra durante 0,5 s.
+
+19:49.523 [Nodo 9 Hilo84559] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:49.551 [Nodo 9 Hilo84558] Entra durante 0,5 s.
+
+19:49.669 [Nodo 9 Hilo84558] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.485 [Nodo 9 Hilo84585] Entra durante 0,5 s.
+
+19:50.768 [Nodo 9 Hilo84585] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:50.817 [Nodo 9 Hilo84586] Entra durante 0,5 s.
+
+19:50.829 [Nodo 9 Hilo84586] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:50.856 [Nodo 9 Hilo84602] Entra durante 0,5 s.
+
+19:51.277 [Nodo 9 Hilo84602] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.305 [Nodo 9 Hilo84603] Entra durante 0,5 s.
+
+19:47.391 [Nodo 6 Hilo84705] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:47.434 [Nodo 6 Hilo84706] Entra durante 0,5 s.
+
+19:48.991 [Nodo 6 Hilo84706] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:48.17 [Nodo 6 Hilo84707] Entra durante 0,5 s.
+
+19:48.405 [Nodo 6 Hilo84707] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:48.430 [Nodo 6 Hilo84710] Entra durante 0,5 s.
+
+19:49.627 [Nodo 6 Hilo84710] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:49.654 [Nodo 6 Hilo84711] Entra durante 0,5 s.
+
+19:49.193 [Nodo 6 Hilo84711] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:49.219 [Nodo 6 Hilo84712] Entra durante 0,5 s.
+
+19:50.814 [Nodo 6 Hilo84712] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:50.842 [Nodo 6 Hilo84714] Entra durante 0,5 s.
+
+19:51.910 [Nodo 6 Hilo84714] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.937 [Nodo 6 Hilo84715] Entra durante 0,5 s.
+
+19:51.863 [Nodo 6 Hilo84715] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:51.888 [Nodo 6 Hilo84716] Entra durante 0,5 s.
+
+19:47.154 [Nodo 8 Hilo84446] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:47.220 [Nodo 8 Hilo84430] Entra durante 0,5 s.
+
+19:48.71 [Nodo 8 Hilo84430] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:48.148 [Nodo 8 Hilo84447] Entra durante 0,5 s.
+
+19:49.28 [Nodo 8 Hilo84447] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:49.158 [Nodo 8 Hilo84431] Entra durante 0,5 s.
+
+19:49.421 [Nodo 8 Hilo84431] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.892 [Nodo 8 Hilo84448] Entra durante 0,5 s.
+
+19:50.526 [Nodo 8 Hilo84448] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:50.597 [Nodo 8 Hilo84432] Entra durante 0,5 s.
+
+19:50.579 [Nodo 8 Hilo84432] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:50.602 [Nodo 8 Hilo84449] Entra durante 0,5 s.
+
+19:51.563 [Nodo 8 Hilo84449] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.617 [Nodo 8 Hilo84454] Entra durante 0,5 s.
+
+19:47.16 [Nodo 10 Hilo84370] Entra durante 0,5 s.
+
+19:48.783 [Nodo 10 Hilo84370] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 2
+
+19:48.863 [Nodo 10 Hilo84378] Entra durante 0,5 s.
+
+19:48.797 [Nodo 10 Hilo84378] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:48.278 [Nodo 10 Hilo84356] Entra durante 0,5 s.
+
+19:49.431 [Nodo 10 Hilo84356] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.502 [Nodo 10 Hilo84379] Entra durante 0,5 s.
+
+19:49.166 [Nodo 10 Hilo84379] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:49.238 [Nodo 10 Hilo84359] Entra durante 0,5 s.
+
+19:50.747 [Nodo 10 Hilo84359] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:50.827 [Nodo 10 Hilo84382] Entra durante 0,5 s.
+
+19:50.629 [Nodo 10 Hilo84382] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.691 [Nodo 10 Hilo84360] Entra durante 0,5 s.
+
+19:51.749 [Nodo 10 Hilo84360] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.777 [Nodo 10 Hilo84367] Entra durante 0,5 s.
+
+19:47.242 [Nodo 2 Hilo84217] Sale. Ha entrado este nodo: 60 Ha entrado este proceso: 1
+
+19:47.290 [Nodo 2 Hilo84218] Entra durante 0,5 s.
+
+19:48.668 [Nodo 2 Hilo84218] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:48.725 [Nodo 2 Hilo84220] Entra durante 0,5 s.
+
+19:48.707 [Nodo 2 Hilo84220] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:48.756 [Nodo 2 Hilo84222] Entra durante 0,5 s.
+
+19:49.694 [Nodo 2 Hilo84222] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:49.744 [Nodo 2 Hilo84037] Entra durante 0,5 s.
+
+19:49.376 [Nodo 2 Hilo84037] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.404 [Nodo 2 Hilo84014] Entra durante 0,5 s.
+
+19:50.376 [Nodo 2 Hilo84014] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:50.403 [Nodo 2 Hilo84012] Entra durante 0,5 s.
+
+19:51.416 [Nodo 2 Hilo84012] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:51.478 [Nodo 2 Hilo84044] Entra durante 0,5 s.
+
+19:47.878 [Nodo 3 Hilo84154] Sale. Ha entrado este nodo: 61 Ha entrado este proceso: 1
+
+19:47.981 [Nodo 3 Hilo84210] Entra durante 0,5 s.
+
+19:48.695 [Nodo 3 Hilo84210] Sale. Ha entrado este nodo: 62 Ha entrado este proceso: 1
+
+19:48.776 [Nodo 3 Hilo84212] Entra durante 0,5 s.
+
+19:48.891 [Nodo 3 Hilo84212] Sale. Ha entrado este nodo: 63 Ha entrado este proceso: 1
+
+19:48.931 [Nodo 3 Hilo84215] Entra durante 0,5 s.
+
+19:49.264 [Nodo 3 Hilo84215] Sale. Ha entrado este nodo: 64 Ha entrado este proceso: 1
+
+19:49.292 [Nodo 3 Hilo84221] Entra durante 0,5 s.
+
+19:49.635 [Nodo 3 Hilo84221] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:49.667 [Nodo 3 Hilo84223] Entra durante 0,5 s.
+
+19:50.776 [Nodo 3 Hilo84223] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:50.800 [Nodo 3 Hilo84224] Entra durante 0,5 s.
+
+19:51.460 [Nodo 3 Hilo84224] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.487 [Nodo 3 Hilo84228] Entra durante 0,5 s.
+
+19:51.477 [Nodo 3 Hilo84228] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.25 [Nodo 9 Hilo84603] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.53 [Nodo 9 Hilo84604] Entra durante 0,5 s.
+
+19:52.535 [Nodo 9 Hilo84604] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:52.564 [Nodo 9 Hilo84605] Entra durante 0,5 s.
+
+19:52.385 [Nodo 9 Hilo84605] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:52.413 [Nodo 9 Hilo84606] Entra durante 0,5 s.
+
+19:53.642 [Nodo 9 Hilo84606] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.674 [Nodo 9 Hilo84607] Entra durante 0,5 s.
+
+19:54.259 [Nodo 9 Hilo84607] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:54.286 [Nodo 9 Hilo84608] Entra durante 0,5 s.
+
+19:54.797 [Nodo 9 Hilo84608] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.822 [Nodo 9 Hilo84609] Entra durante 0,5 s.
+
+19:52.468 [Nodo 1 Hilo84202] Sale. Ha entrado este nodo: 65 Ha entrado este proceso: 1
+
+19:52.536 [Nodo 1 Hilo84013] Entra durante 0,5 s.
+
+19:52.622 [Nodo 1 Hilo84013] Sale. Ha entrado este nodo: 66 Ha entrado este proceso: 1
+
+19:52.652 [Nodo 1 Hilo84022] Entra durante 0,5 s.
+
+19:53.951 [Nodo 1 Hilo84022] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:53.4 [Nodo 1 Hilo84016] Entra durante 0,5 s.
+
+19:53.781 [Nodo 1 Hilo84016] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:53.809 [Nodo 1 Hilo84024] Entra durante 0,5 s.
+
+19:54.577 [Nodo 1 Hilo84024] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:54.606 [Nodo 1 Hilo84020] Entra durante 0,5 s.
+
+19:51.514 [Nodo 7 Hilo84289] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.541 [Nodo 7 Hilo84290] Entra durante 0,5 s.
+
+19:52.409 [Nodo 7 Hilo84290] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:52.437 [Nodo 7 Hilo84291] Entra durante 0,5 s.
+
+19:52.887 [Nodo 7 Hilo84291] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:52.915 [Nodo 7 Hilo84292] Entra durante 0,5 s.
+
+19:53.363 [Nodo 7 Hilo84292] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.390 [Nodo 7 Hilo84293] Entra durante 0,5 s.
+
+19:53.282 [Nodo 7 Hilo84293] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:53.308 [Nodo 7 Hilo84294] Entra durante 0,5 s.
+
+19:54.238 [Nodo 7 Hilo84294] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.263 [Nodo 7 Hilo84295] Entra durante 0,5 s.
+
+19:51.98 [Nodo 4 Hilo84632] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.124 [Nodo 4 Hilo84633] Entra durante 0,5 s.
+
+19:52.132 [Nodo 4 Hilo84633] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:52.159 [Nodo 4 Hilo84636] Entra durante 0,5 s.
+
+19:53.761 [Nodo 4 Hilo84636] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:53.788 [Nodo 4 Hilo84639] Entra durante 0,5 s.
+
+19:53.704 [Nodo 4 Hilo84639] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.731 [Nodo 4 Hilo84642] Entra durante 0,5 s.
+
+19:54.630 [Nodo 4 Hilo84642] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:54.658 [Nodo 4 Hilo84643] Entra durante 0,5 s.
+
+19:51.196 [Nodo 8 Hilo84454] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.221 [Nodo 8 Hilo84455] Entra durante 0,5 s.
+
+19:52.862 [Nodo 8 Hilo84455] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:52.894 [Nodo 8 Hilo84456] Entra durante 0,5 s.
+
+19:52.668 [Nodo 8 Hilo84456] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:52.697 [Nodo 8 Hilo84457] Entra durante 0,5 s.
+
+19:53.425 [Nodo 8 Hilo84457] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.452 [Nodo 8 Hilo84458] Entra durante 0,5 s.
+
+19:53.606 [Nodo 8 Hilo84458] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:53.632 [Nodo 8 Hilo84459] Entra durante 0,5 s.
+
+19:54.849 [Nodo 8 Hilo84459] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.877 [Nodo 8 Hilo84398] Entra durante 0,5 s.
+
+19:51.870 [Nodo 5 Hilo84489] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:51.897 [Nodo 5 Hilo84490] Entra durante 0,5 s.
+
+19:52.861 [Nodo 5 Hilo84490] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:52.887 [Nodo 5 Hilo84495] Entra durante 0,5 s.
+
+19:52.972 [Nodo 5 Hilo84495] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:52.999 [Nodo 5 Hilo84496] Entra durante 0,5 s.
+
+19:53.805 [Nodo 5 Hilo84496] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.323 [Nodo 5 Hilo84473] Entra durante 0,5 s.
+
+19:53.506 [Nodo 5 Hilo84473] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:53.537 [Nodo 5 Hilo84491] Entra durante 0,5 s.
+
+19:54.651 [Nodo 5 Hilo84491] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.679 [Nodo 5 Hilo84507] Entra durante 0,5 s.
+
+19:52.530 [Nodo 10 Hilo84367] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:52.557 [Nodo 10 Hilo84368] Entra durante 0,5 s.
+
+19:52.311 [Nodo 10 Hilo84368] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:52.340 [Nodo 10 Hilo84374] Entra durante 0,5 s.
+
+19:53.114 [Nodo 10 Hilo84374] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.140 [Nodo 10 Hilo84375] Entra durante 0,5 s.
+
+19:53.950 [Nodo 10 Hilo84375] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:53.978 [Nodo 10 Hilo84377] Entra durante 0,5 s.
+
+19:54.45 [Nodo 10 Hilo84377] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.73 [Nodo 10 Hilo84384] Entra durante 0,5 s.
+
+19:52.373 [Nodo 6 Hilo84716] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:52.401 [Nodo 6 Hilo84720] Entra durante 0,5 s.
+
+19:52.682 [Nodo 6 Hilo84720] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:52.709 [Nodo 6 Hilo84721] Entra durante 0,5 s.
+
+19:53.894 [Nodo 6 Hilo84721] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:53.922 [Nodo 6 Hilo84722] Entra durante 0,5 s.
+
+19:53.1 [Nodo 6 Hilo84722] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:53.33 [Nodo 6 Hilo84723] Entra durante 0,5 s.
+
+19:54.659 [Nodo 6 Hilo84723] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:54.436 [Nodo 6 Hilo84744] Entra durante 0,5 s.
+
+19:54.834 [Nodo 6 Hilo84744] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:51.673 [Nodo 3 Hilo84223] Entra durante 0,5 s.
+
+19:52.524 [Nodo 3 Hilo84223] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 2
+
+19:52.579 [Nodo 3 Hilo84068] Entra durante 0,5 s.
+
+19:52.642 [Nodo 3 Hilo84068] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:52.677 [Nodo 3 Hilo84052] Entra durante 0,5 s.
+
+19:53.923 [Nodo 3 Hilo84052] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.5 [Nodo 3 Hilo84042] Entra durante 0,5 s.
+
+19:53.942 [Nodo 3 Hilo84042] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:53.16 [Nodo 3 Hilo84031] Entra durante 0,5 s.
+
+19:54.982 [Nodo 3 Hilo84031] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.17 [Nodo 3 Hilo84034] Entra durante 0,5 s.
+
+19:51.869 [Nodo 2 Hilo84044] Sale. Ha entrado este nodo: 67 Ha entrado este proceso: 1
+
+19:51.917 [Nodo 2 Hilo84015] Entra durante 0,5 s.
+
+19:52.640 [Nodo 2 Hilo84015] Sale. Ha entrado este nodo: 68 Ha entrado este proceso: 1
+
+19:52.668 [Nodo 2 Hilo84023] Entra durante 0,5 s.
+
+19:52.667 [Nodo 2 Hilo84023] Sale. Ha entrado este nodo: 69 Ha entrado este proceso: 1
+
+19:52.694 [Nodo 2 Hilo84017] Entra durante 0,5 s.
+
+19:53.400 [Nodo 2 Hilo84017] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:53.475 [Nodo 2 Hilo84029] Entra durante 0,5 s.
+
+19:53.425 [Nodo 2 Hilo84029] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:53.454 [Nodo 2 Hilo84032] Entra durante 0,5 s.
+
+19:54.6 [Nodo 2 Hilo84032] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 1
+
+19:54.34 [Nodo 2 Hilo84060] Entra durante 0,5 s.
+
+19:54.483 [Nodo 8 Hilo84398] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:54.356 [Nodo 1 Hilo84020] Sale. Ha entrado este nodo: 70 Ha entrado este proceso: 1
+
+19:54.388 [Nodo 1 Hilo84018] Entra durante 0,5 s.
+
+19:54.20 [Nodo 2 Hilo84060] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.96 [Nodo 2 Hilo84121] Entra durante 0,5 s.
+
+19:54.11 [Nodo 6 Hilo84691] Entra durante 0,5 s.
+
+19:54.367 [Nodo 7 Hilo84295] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:54.395 [Nodo 7 Hilo84262] Entra durante 0,5 s.
+
+19:54.770 [Nodo 10 Hilo84384] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:54.800 [Nodo 10 Hilo84385] Entra durante 0,5 s.
+
+19:54.633 [Nodo 4 Hilo84643] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:54.669 [Nodo 4 Hilo84644] Entra durante 0,5 s.
+
+19:54.195 [Nodo 5 Hilo84507] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:55.557 [Nodo 8 Hilo84445] Entra durante 0,5 s.
+
+19:54.722 [Nodo 3 Hilo84034] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:54.796 [Nodo 3 Hilo84185] Entra durante 0,5 s.
+
+19:55.3 [Nodo 5 Hilo84478] Entra durante 0,5 s.
+
+19:54.637 [Nodo 9 Hilo84609] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:54.665 [Nodo 9 Hilo84600] Entra durante 0,5 s.
+
+19:55.255 [Nodo 4 Hilo84644] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:55.623 [Nodo 7 Hilo84262] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:55.833 [Nodo 10 Hilo84385] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:55.301 [Nodo 6 Hilo84691] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:55.760 [Nodo 1 Hilo84018] Sale. Ha entrado este nodo: 71 Ha entrado este proceso: 1
+
+19:55.530 [Nodo 10 Hilo84312] Entra durante 0,5 s.
+
+19:55.859 [Nodo 1 Hilo84024] Entra durante 0,5 s.
+
+19:55.866 [Nodo 2 Hilo84121] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:55.955 [Nodo 4 Hilo84660] Entra durante 0,5 s.
+
+19:55.216 [Nodo 7 Hilo84294] Entra durante 0,5 s.
+
+19:55.967 [Nodo 9 Hilo84600] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:55.346 [Nodo 3 Hilo84185] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:55.215 [Nodo 8 Hilo84445] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:55.671 [Nodo 5 Hilo84478] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:55.318 [Nodo 8 Hilo84393] Entra durante 0,5 s.
+
+19:55.915 [Nodo 7 Hilo84294] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:55.554 [Nodo 4 Hilo84660] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:55.304 [Nodo 9 Hilo84541] Entra durante 0,5 s.
+
+19:55.487 [Nodo 10 Hilo84312] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:55.520 [Nodo 10 Hilo84316] Entra durante 0,5 s.
+
+19:55.797 [Nodo 1 Hilo84024] Sale. Ha entrado este nodo: 72 Ha entrado este proceso: 2
+
+19:55.866 [Nodo 1 Hilo84030] Entra durante 0,5 s.
+
+19:55.890 [Nodo 3 Hilo84058] Entra durante 0,5 s.
+
+19:56.919 [Nodo 4 Hilo84657] Entra durante 0,5 s.
+
+19:55.947 [Nodo 7 Hilo84300] Entra durante 0,5 s.
+
+19:56.674 [Nodo 3 Hilo84058] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:56.487 [Nodo 8 Hilo84393] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:56.524 [Nodo 9 Hilo84541] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:56.485 [Nodo 3 Hilo84064] Entra durante 0,5 s.
+
+19:56.660 [Nodo 8 Hilo84460] Entra durante 0,5 s.
+
+19:56.334 [Nodo 1 Hilo84030] Sale. Ha entrado este nodo: 73 Ha entrado este proceso: 1
+
+19:56.361 [Nodo 1 Hilo84033] Entra durante 0,5 s.
+
+19:56.366 [Nodo 10 Hilo84316] Sale. Ha entrado este nodo: 77 Ha entrado este proceso: 1
+
+19:56.392 [Nodo 10 Hilo84314] Entra durante 0,5 s.
+
+19:56.70 [Nodo 9 Hilo84537] Entra durante 0,5 s.
+
+19:56.475 [Nodo 4 Hilo84657] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:56.413 [Nodo 7 Hilo84300] Sale. Ha entrado este nodo: 77 Ha entrado este proceso: 1
+
+19:56.621 [Nodo 4 Hilo84684] Entra durante 0,5 s.
+
+19:56.447 [Nodo 7 Hilo84298] Entra durante 0,5 s.
+
+19:56.584 [Nodo 8 Hilo84460] Sale. Ha entrado este nodo: 77 Ha entrado este proceso: 2
+
+19:56.658 [Nodo 8 Hilo84387] Entra durante 0,5 s.
+
+19:56.327 [Nodo 10 Hilo84314] Sale. Ha entrado este nodo: 78 Ha entrado este proceso: 2
+
+19:56.619 [Nodo 3 Hilo84064] Sale. Ha entrado este nodo: 77 Ha entrado este proceso: 2
+
+19:56.767 [Nodo 3 Hilo84071] Entra durante 0,5 s.
+
+19:56.555 [Nodo 1 Hilo84033] Sale. Ha entrado este nodo: 74 Ha entrado este proceso: 1
+
+19:56.611 [Nodo 1 Hilo84074] Entra durante 0,5 s.
+
+19:56.796 [Nodo 9 Hilo84537] Sale. Ha entrado este nodo: 77 Ha entrado este proceso: 2
+
+19:56.41 [Nodo 10 Hilo84315] Entra durante 0,5 s.
+
+19:57.182 [Nodo 4 Hilo84684] Sale. Ha entrado este nodo: 77 Ha entrado este proceso: 2
+
+19:57.76 [Nodo 8 Hilo84387] Sale. Ha entrado este nodo: 78 Ha entrado este proceso: 2
+
+19:57.249 [Nodo 8 Hilo84388] Entra durante 0,5 s.
+
+19:57.647 [Nodo 3 Hilo84071] Sale. Ha entrado este nodo: 78 Ha entrado este proceso: 2
+
+19:57.825 [Nodo 4 Hilo84656] Entra durante 0,5 s.
+
+19:57.40 [Nodo 7 Hilo84298] Sale. Ha entrado este nodo: 78 Ha entrado este proceso: 2
+
+19:57.79 [Nodo 7 Hilo84299] Entra durante 0,5 s.
+
+19:57.868 [Nodo 10 Hilo84315] Sale. Ha entrado este nodo: 79 Ha entrado este proceso: 2
+
+19:57.424 [Nodo 1 Hilo84074] Sale. Ha entrado este nodo: 75 Ha entrado este proceso: 1
+
+19:57.176 [Nodo 3 Hilo84073] Entra durante 0,5 s.
+
+19:57.516 [Nodo 10 Hilo84313] Entra durante 0,5 s.
+
+19:57.146 [Nodo 4 Hilo84656] Sale. Ha entrado este nodo: 78 Ha entrado este proceso: 2
+
+19:57.389 [Nodo 8 Hilo84388] Sale. Ha entrado este nodo: 79 Ha entrado este proceso: 2
+
+19:57.52 [Nodo 1 Hilo84004] Entra durante 0,5 s.
+
+19:57.707 [Nodo 4 Hilo84659] Entra durante 0,5 s.
+
+19:57.155 [Nodo 8 Hilo84389] Entra durante 0,5 s.
+
+19:58.943 [Nodo 3 Hilo84073] Sale. Ha entrado este nodo: 79 Ha entrado este proceso: 2
+
+19:58.759 [Nodo 7 Hilo84299] Sale. Ha entrado este nodo: 79 Ha entrado este proceso: 2
+
+19:58.85 [Nodo 3 Hilo84078] Entra durante 0,5 s.
+
+19:58.439 [Nodo 7 Hilo84301] Entra durante 0,5 s.
+
+19:58.411 [Nodo 10 Hilo84313] Sale. Ha entrado este nodo: 80 Ha entrado este proceso: 3
+
+19:58.23 [Nodo 1 Hilo84004] Sale. Ha entrado este nodo: 76 Ha entrado este proceso: 2
+
+19:58.254 [Nodo 4 Hilo84659] Sale. Ha entrado este nodo: 79 Ha entrado este proceso: 2
+
+19:58.594 [Nodo 8 Hilo84389] Sale. Ha entrado este nodo: 80 Ha entrado este proceso: 2
+
+19:58.30 [Nodo 3 Hilo84078] Sale. Ha entrado este nodo: 80 Ha entrado este proceso: 2
+
+19:58.899 [Nodo 10 Hilo84317] Entra durante 0,5 s.
+
+19:58.875 [Nodo 7 Hilo84301] Sale. Ha entrado este nodo: 80 Ha entrado este proceso: 2
+
+19:59.53 [Nodo 10 Hilo84317] Sale. Ha entrado este nodo: 81 Ha entrado este proceso: 2
+
+19:59.85 [Nodo 10 Hilo84318] Entra durante 0,5 s.
+
+19:59.570 [Nodo 10 Hilo84318] Sale. Ha entrado este nodo: 82 Ha entrado este proceso: 2
+
+19:58.183 [Nodo 7 Hilo84297] Entra durante 0,5 s.
+
+19:59.914 [Nodo 7 Hilo84297] Sale. Ha entrado este nodo: 81 Ha entrado este proceso: 3
+
+19:59.542 [Nodo 7 Hilo84302] Entra durante 0,5 s.
+
+19:58.830 [Nodo 3 Hilo84081] Entra durante 0,5 s.
+
+19:59.990 [Nodo 3 Hilo84081] Sale. Ha entrado este nodo: 81 Ha entrado este proceso: 2
+
+19:59.21 [Nodo 3 Hilo84090] Entra durante 0,5 s.
+
+19:59.641 [Nodo 7 Hilo84302] Sale. Ha entrado este nodo: 82 Ha entrado este proceso: 2
+
+19:59.248 [Nodo 10 Hilo84319] Entra durante 0,5 s.
+
+19:59.179 [Nodo 3 Hilo84090] Sale. Ha entrado este nodo: 82 Ha entrado este proceso: 2
+
+20:0.806 [Nodo 10 Hilo84319] Sale. Ha entrado este nodo: 83 Ha entrado este proceso: 2
+
+19:59.192 [Nodo 7 Hilo84303] Entra durante 0,5 s.
+
+20:0.977 [Nodo 7 Hilo84303] Sale. Ha entrado este nodo: 83 Ha entrado este proceso: 2
+
+20:0.907 [Nodo 10 Hilo84320] Entra durante 0,5 s.
+
+20:0.278 [Nodo 7 Hilo84304] Entra durante 0,5 s.
+
+20:0.614 [Nodo 10 Hilo84320] Sale. Ha entrado este nodo: 84 Ha entrado este proceso: 2
+
+20:0.4 [Nodo 10 Hilo84321] Entra durante 0,5 s.
+
+20:1.376 [Nodo 7 Hilo84304] Sale. Ha entrado este nodo: 84 Ha entrado este proceso: 2
+
+20:1.982 [Nodo 7 Hilo84305] Entra durante 0,5 s.
+
+20:1.575 [Nodo 10 Hilo84321] Sale. Ha entrado este nodo: 85 Ha entrado este proceso: 2
+
+20:1.716 [Nodo 10 Hilo84322] Entra durante 0,5 s.
+
+20:1.435 [Nodo 7 Hilo84305] Sale. Ha entrado este nodo: 85 Ha entrado este proceso: 2
+
+20:1.767 [Nodo 10 Hilo84322] Sale. Ha entrado este nodo: 86 Ha entrado este proceso: 2
+
+20:1.578 [Nodo 7 Hilo84306] Entra durante 0,5 s.
+
+20:2.870 [Nodo 7 Hilo84306] Sale. Ha entrado este nodo: 86 Ha entrado este proceso: 2
+
+20:2.999 [Nodo 10 Hilo84323] Entra durante 0,5 s.
+
+20:2.591 [Nodo 7 Hilo84307] Entra durante 0,5 s.
+
+20:2.351 [Nodo 10 Hilo84323] Sale. Ha entrado este nodo: 87 Ha entrado este proceso: 2
+
+20:3.738 [Nodo 7 Hilo84307] Sale. Ha entrado este nodo: 87 Ha entrado este proceso: 2
+
+20:2.898 [Nodo 10 Hilo84324] Entra durante 0,5 s.
+
+20:3.849 [Nodo 10 Hilo84324] Sale. Ha entrado este nodo: 88 Ha entrado este proceso: 2
+
+20:3.886 [Nodo 7 Hilo84309] Entra durante 0,5 s.
+
+20:3.967 [Nodo 10 Hilo84325] Entra durante 0,5 s.
+
+20:3.312 [Nodo 7 Hilo84309] Sale. Ha entrado este nodo: 88 Ha entrado este proceso: 2
+
+20:3.311 [Nodo 10 Hilo84325] Sale. Ha entrado este nodo: 89 Ha entrado este proceso: 2
+
+20:3.441 [Nodo 7 Hilo84308] Entra durante 0,5 s.
+
+20:4.722 [Nodo 7 Hilo84308] Sale. Ha entrado este nodo: 89 Ha entrado este proceso: 2
+
+20:3.430 [Nodo 10 Hilo84326] Entra durante 0,5 s.
+
+20:4.243 [Nodo 10 Hilo84326] Sale. Ha entrado este nodo: 90 Ha entrado este proceso: 2
+
+20:4.323 [Nodo 10 Hilo84327] Entra durante 0,5 s.
+
+20:4.137 [Nodo 10 Hilo84327] Sale. Ha entrado este nodo: 91 Ha entrado este proceso: 2
+
+20:4.948 [Nodo 7 Hilo84244] Entra durante 0,5 s.
+
+20:4.824 [Nodo 7 Hilo84244] Sale. Ha entrado este nodo: 90 Ha entrado este proceso: 2
+
+20:4.513 [Nodo 10 Hilo84329] Entra durante 0,5 s.
+
+20:5.844 [Nodo 10 Hilo84329] Sale. Ha entrado este nodo: 92 Ha entrado este proceso: 2
+
+20:5.453 [Nodo 10 Hilo84328] Entra durante 0,5 s.
+
+20:5.655 [Nodo 10 Hilo84328] Sale. Ha entrado este nodo: 93 Ha entrado este proceso: 2
+
+20:5.683 [Nodo 10 Hilo84330] Entra durante 0,5 s.
+
+20:6.69 [Nodo 10 Hilo84330] Sale. Ha entrado este nodo: 94 Ha entrado este proceso: 2
+
+20:6.431 [Nodo 10 Hilo84331] Entra durante 0,5 s.
+
+20:7.731 [Nodo 10 Hilo84331] Sale. Ha entrado este nodo: 95 Ha entrado este proceso: 2
+
+20:7.990 [Nodo 10 Hilo84332] Entra durante 0,5 s.
+
+20:7.435 [Nodo 10 Hilo84332] Sale. Ha entrado este nodo: 96 Ha entrado este proceso: 2
+
+20:7.183 [Nodo 10 Hilo84333] Entra durante 0,5 s.
+
+20:8.251 [Nodo 10 Hilo84333] Sale. Ha entrado este nodo: 97 Ha entrado este proceso: 2
+
+20:8.111 [Nodo 10 Hilo84334] Entra durante 0,5 s.
+
+20:9.301 [Nodo 10 Hilo84334] Sale. Ha entrado este nodo: 98 Ha entrado este proceso: 2
+
+20:9.457 [Nodo 10 Hilo84335] Entra durante 0,5 s.
+
+20:9.750 [Nodo 10 Hilo84335] Sale. Ha entrado este nodo: 99 Ha entrado este proceso: 2
+
+20:9.877 [Nodo 10 Hilo84336] Entra durante 0,5 s.
+
+20:10.235 [Nodo 10 Hilo84336] Sale. Ha entrado este nodo: 100 Ha entrado este proceso: 2
+
+20:10.368 [Nodo 10 Hilo84337] Entra durante 0,5 s.
+
+20:10.67 [Nodo 10 Hilo84337] Sale. Ha entrado este nodo: 101 Ha entrado este proceso: 2
+
+20:10.230 [Nodo 10 Hilo84338] Entra durante 0,5 s.
+
+20:11.353 [Nodo 10 Hilo84338] Sale. Ha entrado este nodo: 102 Ha entrado este proceso: 2
+
+20:11.637 [Nodo 10 Hilo84339] Entra durante 0,5 s.
+
+20:11.163 [Nodo 10 Hilo84339] Sale. Ha entrado este nodo: 103 Ha entrado este proceso: 2
+
+20:11.315 [Nodo 10 Hilo84340] Entra durante 0,5 s.
+
+20:12.41 [Nodo 10 Hilo84340] Sale. Ha entrado este nodo: 104 Ha entrado este proceso: 2
+
+20:12.198 [Nodo 10 Hilo84341] Entra durante 0,5 s.
+
+20:12.307 [Nodo 10 Hilo84341] Sale. Ha entrado este nodo: 105 Ha entrado este proceso: 2
+
+20:12.901 [Nodo 10 Hilo84343] Entra durante 0,5 s.
+
+20:13.896 [Nodo 10 Hilo84343] Sale. Ha entrado este nodo: 106 Ha entrado este proceso: 2
+
+20:13.67 [Nodo 10 Hilo84344] Entra durante 0,5 s.
+
+20:14.890 [Nodo 10 Hilo84344] Sale. Ha entrado este nodo: 107 Ha entrado este proceso: 2
+
+20:14.979 [Nodo 10 Hilo84350] Entra durante 0,5 s.
+
+20:14.904 [Nodo 10 Hilo84350] Sale. Ha entrado este nodo: 108 Ha entrado este proceso: 2
+
+20:14.80 [Nodo 10 Hilo84363] Entra durante 0,5 s.
+
+20:15.213 [Nodo 10 Hilo84363] Sale. Ha entrado este nodo: 109 Ha entrado este proceso: 2
+
+20:15.349 [Nodo 10 Hilo84364] Entra durante 0,5 s.
+
+20:15.485 [Nodo 10 Hilo84364] Sale. Ha entrado este nodo: 110 Ha entrado este proceso: 2
+
+20:15.516 [Nodo 10 Hilo84362] Entra durante 0,5 s.
+
+20:16.106 [Nodo 10 Hilo84362] Sale. Ha entrado este nodo: 111 Ha entrado este proceso: 2
+
+20:16.703 [Nodo 10 Hilo84365] Entra durante 0,5 s.
+
+20:17.839 [Nodo 10 Hilo84365] Sale. Ha entrado este nodo: 112 Ha entrado este proceso: 2
+
+20:17.51 [Nodo 10 Hilo84366] Entra durante 0,5 s.
+
+20:17.939 [Nodo 10 Hilo84366] Sale. Ha entrado este nodo: 113 Ha entrado este proceso: 2
+
+20:17.463 [Nodo 10 Hilo84372] Entra durante 0,5 s.
+
+20:18.784 [Nodo 10 Hilo84372] Sale. Ha entrado este nodo: 114 Ha entrado este proceso: 2
+
+20:18.104 [Nodo 10 Hilo84373] Entra durante 0,5 s.
+
+20:18.410 [Nodo 10 Hilo84373] Sale. Ha entrado este nodo: 115 Ha entrado este proceso: 2
+
+20:18.721 [Nodo 10 Hilo84376] Entra durante 0,5 s.
+
+20:19.308 [Nodo 10 Hilo84376] Sale. Ha entrado este nodo: 116 Ha entrado este proceso: 2
+
+20:19.342 [Nodo 10 Hilo84380] Entra durante 0,5 s.
+
+20:20.319 [Nodo 10 Hilo84380] Sale. Ha entrado este nodo: 117 Ha entrado este proceso: 2
+
+20:20.410 [Nodo 10 Hilo84381] Entra durante 0,5 s.
+
+20:20.648 [Nodo 10 Hilo84381] Sale. Ha entrado este nodo: 118 Ha entrado este proceso: 2
+
+20:20.678 [Nodo 10 Hilo84383] Entra durante 0,5 s.
+
+20:21.44 [Nodo 10 Hilo84383] Sale. Ha entrado este nodo: 119 Ha entrado este proceso: 2
+
+20:21.137 [Nodo 10 Hilo84311] Entra durante 0,5 s.
+
+20:21.146 [Nodo 10 Hilo84311] Sale. Ha entrado este nodo: 120 Ha entrado este proceso: 2
+
+20:21.259 [Nodo 10 Hilo84346] Entra durante 0,5 s.
+
+20:22.199 [Nodo 10 Hilo84346] Sale. Ha entrado este nodo: 121 Ha entrado este proceso: 2
+
+20:22.374 [Nodo 10 Hilo84347] Entra durante 0,5 s.
+
+20:22.440 [Nodo 10 Hilo84347] Sale. Ha entrado este nodo: 122 Ha entrado este proceso: 2
+
+20:22.551 [Nodo 10 Hilo84348] Entra durante 0,5 s.
+
+20:23.427 [Nodo 10 Hilo84348] Sale. Ha entrado este nodo: 123 Ha entrado este proceso: 2
+
+20:23.534 [Nodo 10 Hilo84349] Entra durante 0,5 s.
+
+20:23.946 [Nodo 10 Hilo84349] Sale. Ha entrado este nodo: 124 Ha entrado este proceso: 2
+
+20:23.40 [Nodo 10 Hilo84352] Entra durante 0,5 s.
+
+20:24.625 [Nodo 10 Hilo84352] Sale. Ha entrado este nodo: 125 Ha entrado este proceso: 2
+
+20:24.584 [Nodo 10 Hilo84353] Entra durante 0,5 s.
+
+20:24.20 [Nodo 10 Hilo84353] Sale. Ha entrado este nodo: 126 Ha entrado este proceso: 2
+
+20:24.119 [Nodo 10 Hilo84354] Entra durante 0,5 s.
+
+20:25.361 [Nodo 10 Hilo84354] Sale. Ha entrado este nodo: 127 Ha entrado este proceso: 2
+
+20:25.467 [Nodo 10 Hilo84358] Entra durante 0,5 s.
+
+20:25.899 [Nodo 10 Hilo84358] Sale. Ha entrado este nodo: 128 Ha entrado este proceso: 2
+
+20:25.928 [Nodo 10 Hilo84361] Entra durante 0,5 s.
+
+20:26.333 [Nodo 10 Hilo84361] Sale. Ha entrado este nodo: 129 Ha entrado este proceso: 2
+
+20:26.427 [Nodo 10 Hilo84357] Entra durante 0,5 s.
+
+20:26.355 [Nodo 10 Hilo84357] Sale. Ha entrado este nodo: 130 Ha entrado este proceso: 2
+
+20:26.384 [Nodo 10 Hilo84342] Entra durante 0,5 s.
+
+20:27.419 [Nodo 10 Hilo84342] Sale. Ha entrado este nodo: 131 Ha entrado este proceso: 2
+
+20:27.825 [Nodo 10 Hilo84369] Entra durante 0,5 s.
+
+20:27.364 [Nodo 10 Hilo84369] Sale. Ha entrado este nodo: 132 Ha entrado este proceso: 2
+
+20:27.533 [Nodo 10 Hilo84345] Entra durante 0,5 s.
+
+20:28.646 [Nodo 10 Hilo84345] Sale. Ha entrado este nodo: 133 Ha entrado este proceso: 2
+
+20:28.677 [Nodo 10 Hilo84355] Entra durante 0,5 s.
+
+20:28.763 [Nodo 10 Hilo84355] Sale. Ha entrado este nodo: 134 Ha entrado este proceso: 1
+
+20:28.844 [Nodo 10 Hilo84351] Entra durante 0,5 s.
+
+20:29.158 [Nodo 10 Hilo84351] Sale. Ha entrado este nodo: 135 Ha entrado este proceso: 2
+
+20:29.406 [Nodo 10 Hilo84370] Entra durante 0,5 s.
+
+20:30.208 [Nodo 10 Hilo84370] Sale. Ha entrado este nodo: 136 Ha entrado este proceso: 3
+
+20:30.529 [Nodo 10 Hilo84371] Entra durante 0,5 s.
+
+20:30.96 [Nodo 10 Hilo84371] Sale. Ha entrado este nodo: 137 Ha entrado este proceso: 2
+
+20:30.163 [Nodo 10 Hilo84378] Entra durante 0,5 s.
+
+20:31.740 [Nodo 10 Hilo84378] Sale. Ha entrado este nodo: 138 Ha entrado este proceso: 2
+
+20:31.470 [Nodo 10 Hilo84356] Entra durante 0,5 s.
+
+20:31.19 [Nodo 10 Hilo84356] Sale. Ha entrado este nodo: 139 Ha entrado este proceso: 2
+
+20:32.248 [Nodo 10 Hilo84379] Entra durante 0,5 s.
+
+20:32.872 [Nodo 10 Hilo84379] Sale. Ha entrado este nodo: 140 Ha entrado este proceso: 2
+
+20:32.607 [Nodo 10 Hilo84359] Entra durante 0,5 s.
+
+20:33.274 [Nodo 10 Hilo84359] Sale. Ha entrado este nodo: 141 Ha entrado este proceso: 2
+
+20:33.443 [Nodo 10 Hilo84382] Entra durante 0,5 s.
+
+20:33.419 [Nodo 10 Hilo84382] Sale. Ha entrado este nodo: 142 Ha entrado este proceso: 2
+
+20:33.755 [Nodo 10 Hilo84360] Entra durante 0,5 s.
+
+20:34.967 [Nodo 10 Hilo84360] Sale. Ha entrado este nodo: 143 Ha entrado este proceso: 2
+
+20:34.245 [Nodo 10 Hilo84367] Entra durante 0,5 s.
+
+20:34.392 [Nodo 10 Hilo84367] Sale. Ha entrado este nodo: 144 Ha entrado este proceso: 2
+
+20:34.659 [Nodo 10 Hilo84368] Entra durante 0,5 s.
+
+20:35.910 [Nodo 10 Hilo84368] Sale. Ha entrado este nodo: 145 Ha entrado este proceso: 2
+
+20:35.164 [Nodo 10 Hilo84374] Entra durante 0,5 s.
+
+20:35.889 [Nodo 10 Hilo84374] Sale. Ha entrado este nodo: 146 Ha entrado este proceso: 2
+
+20:35.44 [Nodo 10 Hilo84375] Entra durante 0,5 s.
+
+20:36.213 [Nodo 10 Hilo84375] Sale. Ha entrado este nodo: 147 Ha entrado este proceso: 2
+
+20:36.379 [Nodo 10 Hilo84377] Entra durante 0,5 s.
+
+20:37.992 [Nodo 10 Hilo84377] Sale. Ha entrado este nodo: 148 Ha entrado este proceso: 2
+
+20:37.159 [Nodo 10 Hilo84384] Entra durante 0,5 s.
+
+20:37.728 [Nodo 10 Hilo84384] Sale. Ha entrado este nodo: 149 Ha entrado este proceso: 2
+
+20:37.864 [Nodo 10 Hilo84385] Entra durante 0,5 s.
+
+20:38.264 [Nodo 10 Hilo84385] Sale. Ha entrado este nodo: 150 Ha entrado este proceso: 2
+
+20:38.506 [Nodo 10 Hilo84312] Entra durante 0,5 s.
+
+20:38.724 [Nodo 10 Hilo84312] Sale. Ha entrado este nodo: 151 Ha entrado este proceso: 3
+
+20:38.724 [Nodo 10 Hilo84316] Entra durante 0,5 s.
+
+20:39.949 [Nodo 10 Hilo84316] Sale. Ha entrado este nodo: 152 Ha entrado este proceso: 2
+
+20:39.197 [Nodo 10 Hilo84314] Entra durante 0,5 s.
+
+20:39.185 [Nodo 10 Hilo84314] Sale. Ha entrado este nodo: 153 Ha entrado este proceso: 3
+
+20:39.488 [Nodo 10 Hilo84315] Entra durante 0,5 s.
+
+20:40.541 [Nodo 10 Hilo84315] Sale. Ha entrado este nodo: 154 Ha entrado este proceso: 3
+
+20:40.704 [Nodo 10 Hilo84313] Entra durante 0,5 s.
+
+20:40.686 [Nodo 10 Hilo84313] Sale. Ha entrado este nodo: 155 Ha entrado este proceso: 4
+
+20:40.853 [Nodo 10 Hilo84317] Entra durante 0,5 s.
+
+20:41.832 [Nodo 10 Hilo84317] Sale. Ha entrado este nodo: 156 Ha entrado este proceso: 3
+
+20:41.908 [Nodo 10 Hilo84318] Entra durante 0,5 s.
+
+20:42.850 [Nodo 10 Hilo84318] Sale. Ha entrado este nodo: 157 Ha entrado este proceso: 3
+
+20:42.924 [Nodo 10 Hilo84319] Entra durante 0,5 s.
+
+20:42.966 [Nodo 10 Hilo84319] Sale. Ha entrado este nodo: 158 Ha entrado este proceso: 3
+
+20:42.185 [Nodo 10 Hilo84320] Entra durante 0,5 s.
+
+20:43.439 [Nodo 10 Hilo84320] Sale. Ha entrado este nodo: 159 Ha entrado este proceso: 3
+
+20:43.453 [Nodo 10 Hilo84321] Entra durante 0,5 s.
+
+20:44.533 [Nodo 10 Hilo84321] Sale. Ha entrado este nodo: 160 Ha entrado este proceso: 3
+
+20:44.716 [Nodo 10 Hilo84322] Entra durante 0,5 s.
+
+20:44.632 [Nodo 10 Hilo84322] Sale. Ha entrado este nodo: 161 Ha entrado este proceso: 3
+
+20:44.852 [Nodo 10 Hilo84323] Entra durante 0,5 s.
+
+20:44.188 [Nodo 10 Hilo84323] Sale. Ha entrado este nodo: 162 Ha entrado este proceso: 3
+
+20:45.44 [Nodo 10 Hilo84324] Entra durante 0,5 s.
+
+20:45.216 [Nodo 10 Hilo84324] Sale. Ha entrado este nodo: 163 Ha entrado este proceso: 3
+
+20:45.578 [Nodo 10 Hilo84325] Entra durante 0,5 s.
+
+20:46.557 [Nodo 10 Hilo84325] Sale. Ha entrado este nodo: 164 Ha entrado este proceso: 3
+
+20:46.770 [Nodo 10 Hilo84326] Entra durante 0,5 s.
+
+20:46.884 [Nodo 10 Hilo84326] Sale. Ha entrado este nodo: 165 Ha entrado este proceso: 3
+
+20:46.34 [Nodo 10 Hilo84327] Entra durante 0,5 s.
+
+20:47.211 [Nodo 10 Hilo84327] Sale. Ha entrado este nodo: 166 Ha entrado este proceso: 3
+
+20:47.311 [Nodo 10 Hilo84329] Entra durante 0,5 s.
+
+20:47.318 [Nodo 10 Hilo84329] Sale. Ha entrado este nodo: 167 Ha entrado este proceso: 3
+
+20:47.668 [Nodo 10 Hilo84328] Entra durante 0,5 s.
+
+20:48.141 [Nodo 10 Hilo84328] Sale. Ha entrado este nodo: 168 Ha entrado este proceso: 3
+
+20:48.95 [Nodo 10 Hilo84330] Entra durante 0,5 s.
+
+20:49.52 [Nodo 10 Hilo84330] Sale. Ha entrado este nodo: 169 Ha entrado este proceso: 3
+
+20:49.199 [Nodo 10 Hilo84331] Entra durante 0,5 s.
+
+20:49.770 [Nodo 10 Hilo84331] Sale. Ha entrado este nodo: 170 Ha entrado este proceso: 3
+
+20:49.920 [Nodo 10 Hilo84332] Entra durante 0,5 s.
+
+20:50.864 [Nodo 10 Hilo84332] Sale. Ha entrado este nodo: 171 Ha entrado este proceso: 3
+
+20:50.891 [Nodo 10 Hilo84334] Entra durante 0,5 s.
+
+20:50.741 [Nodo 10 Hilo84334] Sale. Ha entrado este nodo: 172 Ha entrado este proceso: 3
+
+20:50.77 [Nodo 10 Hilo84333] Entra durante 0,5 s.
+
+20:51.884 [Nodo 10 Hilo84333] Sale. Ha entrado este nodo: 173 Ha entrado este proceso: 3
+
+20:51.50 [Nodo 10 Hilo84335] Entra durante 0,5 s.
+
+20:51.417 [Nodo 10 Hilo84335] Sale. Ha entrado este nodo: 174 Ha entrado este proceso: 3
+
+20:51.444 [Nodo 10 Hilo84336] Entra durante 0,5 s.
+
+20:52.299 [Nodo 10 Hilo84336] Sale. Ha entrado este nodo: 175 Ha entrado este proceso: 3
+
+20:52.449 [Nodo 10 Hilo84337] Entra durante 0,5 s.
+
+20:52.990 [Nodo 10 Hilo84337] Sale. Ha entrado este nodo: 176 Ha entrado este proceso: 3
+
+20:52.17 [Nodo 10 Hilo84338] Entra durante 0,5 s.
+
+20:53.406 [Nodo 10 Hilo84338] Sale. Ha entrado este nodo: 177 Ha entrado este proceso: 3
+
+20:53.153 [Nodo 10 Hilo84339] Entra durante 0,5 s.
+
+20:54.892 [Nodo 10 Hilo84339] Sale. Ha entrado este nodo: 178 Ha entrado este proceso: 3
+
+20:54.138 [Nodo 10 Hilo84340] Entra durante 0,5 s.
+
+20:54.89 [Nodo 10 Hilo84340] Sale. Ha entrado este nodo: 179 Ha entrado este proceso: 3
+
+20:54.973 [Nodo 10 Hilo84341] Entra durante 0,5 s.
+
+20:55.959 [Nodo 10 Hilo84341] Sale. Ha entrado este nodo: 180 Ha entrado este proceso: 3
+
+20:55.137 [Nodo 10 Hilo84343] Entra durante 0,5 s.
+
+20:55.114 [Nodo 10 Hilo84343] Sale. Ha entrado este nodo: 181 Ha entrado este proceso: 3
+
+20:55.330 [Nodo 10 Hilo84344] Entra durante 0,5 s.
+
+20:56.210 [Nodo 10 Hilo84344] Sale. Ha entrado este nodo: 182 Ha entrado este proceso: 3
+
+20:56.419 [Nodo 10 Hilo84350] Entra durante 0,5 s.
+
+20:57.126 [Nodo 10 Hilo84350] Sale. Ha entrado este nodo: 183 Ha entrado este proceso: 3
+
+20:57.232 [Nodo 10 Hilo84363] Entra durante 0,5 s.
+
+20:57.932 [Nodo 10 Hilo84363] Sale. Ha entrado este nodo: 184 Ha entrado este proceso: 3
+
+20:57.466 [Nodo 10 Hilo84364] Entra durante 0,5 s.
+
+20:58.169 [Nodo 10 Hilo84364] Sale. Ha entrado este nodo: 185 Ha entrado este proceso: 3
+
+20:58.339 [Nodo 10 Hilo84365] Entra durante 0,5 s.
+
+20:58.114 [Nodo 10 Hilo84365] Sale. Ha entrado este nodo: 186 Ha entrado este proceso: 3
+
+20:58.322 [Nodo 10 Hilo84362] Entra durante 0,5 s.
+
+20:59.413 [Nodo 10 Hilo84362] Sale. Ha entrado este nodo: 187 Ha entrado este proceso: 3
+
+20:59.559 [Nodo 10 Hilo84366] Entra durante 0,5 s.
+
+20:59.665 [Nodo 10 Hilo84366] Sale. Ha entrado este nodo: 188 Ha entrado este proceso: 3
+
+21:0.428 [Nodo 10 Hilo84373] Entra durante 0,5 s.
+
+21:0.7 [Nodo 10 Hilo84373] Sale. Ha entrado este nodo: 189 Ha entrado este proceso: 3
+
+21:0.456 [Nodo 10 Hilo84372] Entra durante 0,5 s.
+
+21:1.728 [Nodo 10 Hilo84372] Sale. Ha entrado este nodo: 190 Ha entrado este proceso: 3
+
+21:1.762 [Nodo 10 Hilo84376] Entra durante 0,5 s.
+
+21:1.176 [Nodo 10 Hilo84376] Sale. Ha entrado este nodo: 191 Ha entrado este proceso: 3
+
+21:1.341 [Nodo 10 Hilo84380] Entra durante 0,5 s.
+
+21:2.240 [Nodo 10 Hilo84380] Sale. Ha entrado este nodo: 192 Ha entrado este proceso: 3
+
+21:2.203 [Nodo 10 Hilo84381] Entra durante 0,5 s.
+
+21:3.383 [Nodo 10 Hilo84381] Sale. Ha entrado este nodo: 193 Ha entrado este proceso: 3
+
+21:3.527 [Nodo 10 Hilo84383] Entra durante 0,5 s.
+
+21:3.575 [Nodo 10 Hilo84383] Sale. Ha entrado este nodo: 194 Ha entrado este proceso: 3
+
+21:3.680 [Nodo 10 Hilo84311] Entra durante 0,5 s.
+
+21:4.371 [Nodo 10 Hilo84311] Sale. Ha entrado este nodo: 195 Ha entrado este proceso: 3
+
+21:4.47 [Nodo 10 Hilo84346] Entra durante 0,5 s.
+
+21:4.73 [Nodo 10 Hilo84346] Sale. Ha entrado este nodo: 196 Ha entrado este proceso: 3
+
+21:5.204 [Nodo 10 Hilo84347] Entra durante 0,5 s.
+
+21:5.261 [Nodo 10 Hilo84347] Sale. Ha entrado este nodo: 197 Ha entrado este proceso: 3
+
+21:5.75 [Nodo 10 Hilo84348] Entra durante 0,5 s.
+
+21:6.146 [Nodo 10 Hilo84348] Sale. Ha entrado este nodo: 198 Ha entrado este proceso: 3
+
+21:6.26 [Nodo 10 Hilo84349] Entra durante 0,5 s.
+
+21:6.386 [Nodo 10 Hilo84349] Sale. Ha entrado este nodo: 199 Ha entrado este proceso: 3
+
+21:6.78 [Nodo 10 Hilo84352] Entra durante 0,5 s.
+
+21:7.920 [Nodo 10 Hilo84352] Sale. Ha entrado este nodo: 200 Ha entrado este proceso: 3
+
+21:7.948 [Nodo 10 Hilo84353] Entra durante 0,5 s.
+
+21:7.540 [Nodo 10 Hilo84353] Sale. Ha entrado este nodo: 201 Ha entrado este proceso: 3
+
+21:7.414 [Nodo 10 Hilo84354] Entra durante 0,5 s.
+
+21:8.754 [Nodo 10 Hilo84354] Sale. Ha entrado este nodo: 202 Ha entrado este proceso: 3
+
+21:8.175 [Nodo 10 Hilo84358] Entra durante 0,5 s.
+
+21:8.41 [Nodo 10 Hilo84358] Sale. Ha entrado este nodo: 203 Ha entrado este proceso: 3
+
+21:8.350 [Nodo 10 Hilo84361] Entra durante 0,5 s.
+
+21:9.778 [Nodo 10 Hilo84361] Sale. Ha entrado este nodo: 204 Ha entrado este proceso: 3
+
+21:9.860 [Nodo 10 Hilo84357] Entra durante 0,5 s.
+
+21:10.975 [Nodo 10 Hilo84357] Sale. Ha entrado este nodo: 205 Ha entrado este proceso: 3
+
+21:10.156 [Nodo 10 Hilo84342] Entra durante 0,5 s.
+
+21:10.863 [Nodo 10 Hilo84342] Sale. Ha entrado este nodo: 206 Ha entrado este proceso: 3
+
+21:10.759 [Nodo 10 Hilo84369] Entra durante 0,5 s.
+
+21:11.291 [Nodo 10 Hilo84369] Sale. Ha entrado este nodo: 207 Ha entrado este proceso: 3
+
+21:11.937 [Nodo 10 Hilo84357] Entra durante 0,5 s.
+
+21:11.644 [Nodo 10 Hilo84357] Sale. Ha entrado este nodo: 208 Ha entrado este proceso: 4
+
+21:11.876 [Nodo 10 Hilo84355] Entra durante 0,5 s.
+
+21:12.859 [Nodo 10 Hilo84355] Sale. Ha entrado este nodo: 209 Ha entrado este proceso: 2
+
+21:12.445 [Nodo 10 Hilo84351] Entra durante 0,5 s.
+
+21:12.613 [Nodo 10 Hilo84351] Sale. Ha entrado este nodo: 210 Ha entrado este proceso: 3
+
+21:12.722 [Nodo 10 Hilo84370] Entra durante 0,5 s.
+
+21:13.172 [Nodo 10 Hilo84370] Sale. Ha entrado este nodo: 211 Ha entrado este proceso: 4
+
+21:13.204 [Nodo 10 Hilo84378] Entra durante 0,5 s.
+
+21:13.368 [Nodo 10 Hilo84378] Sale. Ha entrado este nodo: 212 Ha entrado este proceso: 3
+
+21:13.396 [Nodo 10 Hilo84371] Entra durante 0,5 s.
+
+21:14.504 [Nodo 10 Hilo84371] Sale. Ha entrado este nodo: 213 Ha entrado este proceso: 3
+
+21:14.641 [Nodo 10 Hilo84356] Entra durante 0,5 s.
+
+21:14.577 [Nodo 10 Hilo84356] Sale. Ha entrado este nodo: 214 Ha entrado este proceso: 3
+
+21:14.683 [Nodo 10 Hilo84379] Entra durante 0,5 s.
+
+21:15.76 [Nodo 10 Hilo84379] Sale. Ha entrado este nodo: 215 Ha entrado este proceso: 3
+
+21:15.170 [Nodo 10 Hilo84359] Entra durante 0,5 s.
+
+21:15.818 [Nodo 10 Hilo84359] Sale. Ha entrado este nodo: 216 Ha entrado este proceso: 3
+
+21:15.911 [Nodo 10 Hilo84382] Entra durante 0,5 s.
+
+21:16.597 [Nodo 10 Hilo84382] Sale. Ha entrado este nodo: 217 Ha entrado este proceso: 3
+
+21:16.774 [Nodo 10 Hilo84360] Entra durante 0,5 s.
+
+21:17.555 [Nodo 10 Hilo84360] Sale. Ha entrado este nodo: 218 Ha entrado este proceso: 3
+
+21:17.910 [Nodo 10 Hilo84374] Entra durante 0,5 s.
+
+21:17.410 [Nodo 10 Hilo84374] Sale. Ha entrado este nodo: 219 Ha entrado este proceso: 3
+
+21:17.529 [Nodo 10 Hilo84375] Entra durante 0,5 s.
+
+21:18.519 [Nodo 10 Hilo84375] Sale. Ha entrado este nodo: 220 Ha entrado este proceso: 3
+
+21:18.331 [Nodo 10 Hilo84367] Entra durante 0,5 s.
+
+21:18.290 [Nodo 10 Hilo84367] Sale. Ha entrado este nodo: 221 Ha entrado este proceso: 3
+
+21:18.321 [Nodo 10 Hilo84368] Entra durante 0,5 s.
+
+21:19.251 [Nodo 10 Hilo84368] Sale. Ha entrado este nodo: 222 Ha entrado este proceso: 3
+
+
+
+
+
+ESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : 76   veces
+Se ha presionado Ctrl+C eliminando buzones....
+
+
+
+
+
+ESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : 91   veces
+Se ha presionado Ctrl+C eliminando buzones....
+
+21:19.41 [Nodo 10 Hilo84377] Entra durante 0,5 s.
+
+
+
+
+
+ESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : 83   veces
+Se ha presionado Ctrl+C eliminando buzones....
+
+
+
+
+
+ESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : 75   veces
+Se ha presionado Ctrl+C eliminando buzones....
+Procesos detenidos
+Todos los procesos han terminado.
