@@ -1,9 +1,9 @@
 clear
 
 #Matar procesos 
-killall receptor.o
-killall multiproceso.o
-killall multinodo.o
+#killall receptor.o
+#killall multiproceso.o
+#killall multinodo.o
 
 #Borrar ejecutables
 rm receptor.o
