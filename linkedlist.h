@@ -29,5 +29,6 @@
 
     void borrarLista(struct Proceso** cabeza);
     void agregarProceso(struct Proceso** cabeza, int valor);
+    void ordenarCola(struct Proceso** cabeza);
     int contarProcesos(struct Proceso* cabeza);
 #endif

@@ -48,6 +48,8 @@ int contadorsc=1;
 int lastticket=78; // Este es el mayor número de ticket recibido.
 int ticketnum;  // Este es el numero de ticket que yo estoy usando
 struct Proceso* procesosenespera = NULL; //Lista con los nodos en espera
+struct Proceso* historicodeoperaciones = NULL; //Lista con los nodos en espera
+
 int NODOSVECINOS = 0;
 
 char* estadostring[3] = { "NO_INTERESADO", "SOLICITANTE", "FINALIZADO"};
@@ -72,15 +74,7 @@ sem_t sem_protec_var_estado;
 
 void* procesoHilo(int * param);
 /////////////////////////////////////////////////////////////////////////////////
-Paquete creaPaquete(){
-    // Crea un paquete
-    Paquete paquete;
-    paquete.id_nodo = 1;
-    paquete.id_proceso = 123;
-    paquete.num_ticket = 456;
-    paquete.estado = SOLICITANTE;
-    return paquete;
-}
+
 
 
 // Inicializa la cola de mensajes
@@ -100,7 +94,6 @@ void* recepcion(void* args){
     //Tenemos que definir los tipos de cada uno de los paquetes.
     // Espera a recibir un mensaje en la cola de mensajes
     int acks = 0;
-    //printf("Escuchando... por la red: %i\n",red);
     while(1){
         
         Paquete* recibido = networkrcv(red,nodos[0]);
@@ -110,40 +103,32 @@ void* recepcion(void* args){
             
             if(estado==NO_INTERESADO){
                 //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
-                if(recibido->process->ticket>lastticket){
-                    lastticket=recibido->process->ticket;
+                if(recibido->process.ticket>lastticket){
+                    lastticket=recibido->process.ticket;
                     //printf("####### Nuevo numero de ticket minimo %i.\n",lastticket);
                 }  // Si el ticket que recibo es mayor actualizo
 
                 //Mando el ACK
-                NetworkSend(red,nodos[0], recibido->id_nodo, NO_INTERESADO,0,ACK,lastticket);
+                NetworkSend(red,nodos[0], recibido->process.idNodo, NO_INTERESADO,0,ACK,lastticket);
+            //En estos casos existe contienda.
+            }else if (estado==SOLICITANTE){ //Pasa el nodo con ticket menor, el otro
+            //Existe contienda en el no
 
+            //Para gestionar la parte de algoritmia llamamos a la función de la linkedlist
+            //Nos va a ordenar la lista con las prioridades, tickets, gestión de contiendas etc
 
-
-    //En estos casos existe contienda.
-            }else if (estado==SOLICITANTE && (recibido->num_ticket<ticketnum) ){ //Pasa el nodo con ticket menor, el otro
-                //Dejamos que pase el otro proceso:   MOTIVO --> //Su ticket es menor
-                //Mando el ACK
-                NetworkSend(red,nodos[0],recibido->id_nodo, SOLICITANTE,0,ACK,lastticket);
-
-
-            }else if(estado==SOLICITANTE && (recibido->num_ticket==ticketnum) ){ //Tenemos el mismo numero de ticket, resolvemos con el ID nodo
-                if(recibido->id_nodo<nodos[0]){
-                    //Entra el nodo con ID menor, le mando el ACK
-                    NetworkSend(red,nodos[0], recibido->id_nodo, SOLICITANTE,0,ACK,lastticket);
-
-                }else{
-                    //No autoricé al nodo, tengo que despertarlo cuando termine
-                    agregarProceso(&procesosenespera,recibido->id_nodo);
-                    printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
-                }
-
-            }else if(estado==SOLICITANTE && (recibido->num_ticket>ticketnum)){
-                //Tengo un ticket menor al del solicitante asi que lo agrego a la lista
-                agregarProceso(&procesosenespera,recibido->id_nodo);
-                printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
-
+            //Van a existir 3 casos:
+                // Tenemos un proceso nuestro de mutex en la cabeza de la lista que no se está ejecutando:
+                    // Lo llamamos a que despierte
+                    // 
+                // Que le toque a consultas y no haya nadie mas en ejecución
+                    //Llamar a todas las consultas a que se despierten
+                //Tenemos un proceso de otro nodo en mutex que hay que dejar pasar
+                    //Darle el permiso y marcar el siguiente proceso nuestro como que tiene que pedir permiso
+            
+            
             }
+
         }else if(recibido->instruccion==ACK){
             //Nos están dando permiso para entrar SC
             //Primera comprobación, realmente, queremos?
