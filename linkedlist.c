@@ -7,14 +7,14 @@
 #include <semaphore.h>
 #include <pthread.h>
 #include <unistd.h>
-#include "network.h"
+
 #include "datatypes.h"
 #include "linkedlist.h"
 
 
-void agregarProceso(struct Proceso** cabeza, int valor) {
+void agregarProceso(struct Proceso** cabeza, struct Proceso valor) {
     struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
-    nuevoProceso->valor = valor;
+    nuevoProceso = &valor;
     nuevoProceso->siguiente = *cabeza;
     *cabeza = nuevoProceso;
 }
@@ -67,10 +67,10 @@ void ordenarCola(struct Proceso** cabeza) {
                 cambio = true;
             }
             // Si la prioridad y el nodo son iguales, ordenar por tamaño de grupo (de mayor a menor)
-            else if (actual->prioridad == siguiente->prioridad && actual->idNodo == siguiente->idNodo && actual->idProceso < siguiente->idProceso) {
-                temp = actual->idProceso;
-                actual->idProceso = siguiente->idProceso;
-                siguiente->idProceso = temp;
+            else if (actual->prioridad == siguiente->prioridad && actual->idNodo == siguiente->idNodo && actual->ticket < siguiente->ticket) {
+                temp = actual->ticket;
+                actual->ticket = siguiente->ticket;
+                siguiente->ticket = temp;
                 cambio = true;
             }
             actual = actual->siguiente;
@@ -86,21 +86,62 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     }
     
     struct Proceso* procesoActual = cabeza;
+        fprintf(archivo, "Valor,ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,Retardo\n");
     
     while (procesoActual != NULL) {
-        fprintf(archivo, "Valor: %d\n", procesoActual->valor);
-        fprintf(archivo, "ID Proceso: %d\n", procesoActual->idProceso);
-        fprintf(archivo, "Prioridad: %d\n", procesoActual->prioridad);
-        fprintf(archivo, "ID Nodo: %d\n", procesoActual->idNodo);
-        fprintf(archivo, "Ticket: %d\n", procesoActual->ticket);
-        fprintf(archivo, "Hora de creación del proceso: %ld\n", procesoActual->inicio);
-        fprintf(archivo, "Hora de entrada a la SC: %ld\n", procesoActual->creado);
-        fprintf(archivo, "Hora de salida de la SC: %ld\n", procesoActual->atendido);
-        fprintf(archivo, "Hora de muerte del proceso: %ld\n", procesoActual->fin);
-        fprintf(archivo, "Retardo: %d\n", procesoActual->retardo);
+        struct tm *tm_info = localtime(&procesoActual->inicio);
+        char tiempo_inicio[20];
+        strftime(tiempo_inicio, 20, "%H:%M:%S", tm_info);
+        fprintf(archivo, "%d,%d,%d,%d,%d,%s.%03ld,", procesoActual->valor, procesoActual->idProceso, procesoActual->prioridad, procesoActual->idNodo, procesoActual->ticket, tiempo_inicio, procesoActual->inicio % 1000);
+        
+        tm_info = localtime(&procesoActual->creado);
+        char tiempo_creado[20];
+        strftime(tiempo_creado, 20, "%H:%M:%S", tm_info);
+        fprintf(archivo, "%s.%03ld,", tiempo_creado, procesoActual->creado % 1000);
+        
+        tm_info = localtime(&procesoActual->atendido);
+        char tiempo_atendido[20];
+        strftime(tiempo_atendido, 20, "%H:%M:%S", tm_info);
+        fprintf(archivo, "%s.%03ld,", tiempo_atendido, procesoActual->atendido % 1000);
+        
+        tm_info = localtime(&procesoActual->fin);
+        char tiempo_fin[20];
+        strftime(tiempo_fin, 20, "%H:%M:%S", tm_info);
+        fprintf(archivo, "%s.%03ld,%d\n", tiempo_fin, procesoActual->fin % 1000, procesoActual->retardo);
+        
         procesoActual = procesoActual->siguiente;
     }
     
     fclose(archivo);
 }
 
+struct Proceso* generarListaAleatoria(int cantidad) {
+    struct Proceso* cabeza = NULL;
+    srand(time(NULL));  // Inicializar el generador de números aleatorios
+    
+    for (int i = 0; i < cantidad; i++) {
+        struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
+        nuevoProceso->valor = rand() % 100;   // Valor aleatorio entre 0 y 99
+        nuevoProceso->idProceso = rand() % 1000;   // ID de proceso aleatorio entre 0 y 999
+        nuevoProceso->prioridad = rand() % 4;   // Prioridad aleatoria entre 0 y 3
+        nuevoProceso->idNodo = rand() % 10;   // ID de nodo aleatorio entre 0 y 9
+        nuevoProceso->ticket = rand() % 10000;   // Ticket aleatorio entre 0 y 9999
+        nuevoProceso->inicio = time(NULL) - rand() % 3600;   // Hora de creación aleatoria en la última hora
+        nuevoProceso->creado = nuevoProceso->inicio + rand() % 60;   // Hora de entrada a la SC aleatoria en la última hora
+        nuevoProceso->atendido = nuevoProceso->creado + rand() % 60;   // Hora de salida de la SC aleatoria en la última hora
+        nuevoProceso->fin = nuevoProceso->atendido + rand() % 3600;   // Hora de muerte aleatoria en la siguiente hora
+        nuevoProceso->retardo = rand() % 10;   // Retardo aleatorio entre 0 y 9
+        
+        nuevoProceso->siguiente = cabeza;
+        cabeza = nuevoProceso;
+    }
+    
+    return cabeza;
+}
+
+bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
+    if (cabeza == NULL || proceso == NULL) {
+        return false;
+    }
+    return cabeza == proceso;
+}

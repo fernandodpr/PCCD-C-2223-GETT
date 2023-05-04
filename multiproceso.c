@@ -166,7 +166,7 @@ void sigint_handler(int sig) {
 }
 
 int main(int argc, char *argv[]) {
-
+    /*
     //Signal de salida
     //printf("Presione Ctrl+C para salir del programa.\n");
     signal(SIGINT, sigint_handler);
@@ -186,7 +186,8 @@ int main(int argc, char *argv[]) {
    
     while (1) {
     
-    }
+    }*/
+    probarlista();
     return 0;
 }
 
@@ -514,4 +515,14 @@ void initparam(int argc, char *argv[]){
     //Prioridades
     
 
+}
+
+
+int probarlista() {
+    struct Proceso* listaAleatoria = generarListaAleatoria(60);   // Generar una lista aleatoria de 10 elementos
+    imprimirLista("listasinordenar.txt",listaAleatoria);
+    ordenarCola(&listaAleatoria);
+    imprimirLista("listaordenada.txt",listaAleatoria);    
+    borrarLista(&listaAleatoria);   // Liberar la memoria de la lista
+    return 0;
 }

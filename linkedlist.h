@@ -25,7 +25,10 @@
     //FUNCIONES
 
     void borrarLista(struct Proceso** cabeza);
-    void agregarProceso(struct Proceso** cabeza, int valor);
+void agregarProceso(struct Proceso** cabeza, struct Proceso valor);
     void ordenarCola(struct Proceso** cabeza);
     int contarProcesos(struct Proceso* cabeza);
+    void imprimirLista(char* rutaArchivo, struct Proceso* cabeza);
+    struct Proceso* generarListaAleatoria(int cantidad);
+    bool esIgual(struct Proceso* cabeza, struct Proceso* proceso);
 #endif
