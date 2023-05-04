@@ -18,6 +18,7 @@ void agregarProceso(struct Proceso** cabeza, int valor) {
     nuevoProceso->siguiente = *cabeza;
     *cabeza = nuevoProceso;
 }
+
 void borrarLista(struct Proceso** cabeza) {
     struct Proceso* procesoActual = *cabeza;
     struct Proceso* procesoSiguiente = NULL;
@@ -41,3 +42,4 @@ int contarProcesos(struct Proceso* cabeza) {
     
     return contador;
 }
+
