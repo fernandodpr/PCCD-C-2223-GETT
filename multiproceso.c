@@ -104,16 +104,14 @@ void* recepcion(void* args){
     while(1){
         
         Paquete* recibido = networkrcv(red,nodos[0]);
-        printf("[Nodo %i][RECEPTOR] Nuevo paquete recibido: Mi estado es %s y he recibido de tipo %s. Tiene ticket %i y yo tengo ticket %i \n",nodos[0],estadostring[estado],tipostring[recibido->instruccion],recibido->num_ticket,lastticket);
-
         if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
             //Primero es necesario conocer si hay contienda mediante mi estado
             
             if(estado==NO_INTERESADO){
                 //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
-                if(recibido->num_ticket>lastticket){
-                    lastticket=recibido->num_ticket;
+                if(recibido->process->ticket>lastticket){
+                    lastticket=recibido->process->ticket;
                     //printf("####### Nuevo numero de ticket minimo %i.\n",lastticket);
                 }  // Si el ticket que recibo es mayor actualizo
 
@@ -152,12 +150,12 @@ void* recepcion(void* args){
             if(estado!=NO_INTERESADO){ // Confirmo que quiero entrar
                 //Cuando puedo entar a SC? Cuando tengo permiso de todos los nodos
                 acks++; //Hemos recibido un ACK
-                printf("[Nodo %i] Nuevo ACK recibido. %i\n",nodos[0],acks);
+                //printf("[Nodo %i] Nuevo ACK recibido. %i\n",nodos[0],acks);
                 if (acks==NODOSVECINOS-1){
                     //Tenemos los permisos necesarios para acceder a SC
                     //Aviso al proceso de que pase
                     sem_post(&sem_espera_ACK);
-                    printf("[Nodo %i] RECEPTOR: Se ha notificado al proceso de que tiene permisos para entar.\n",nodos[0]);
+                    //printf("[Nodo %i] RECEPTOR: Se ha notificado al proceso de que tiene permisos para entar.\n",nodos[0]);
                     acks=0;
                 }
             }
@@ -171,25 +169,25 @@ void* recepcion(void* args){
 
 
 void sigint_handler(int sig) {
-    printf("\n\n\n\n");
-    printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces\n",contadorsc);
-    printf("Se ha presionado Ctrl+C eliminando buzones....\n");
+    //printf("\n\n\n\n");
+    //printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces\n",contadorsc);
+    //printf("Se ha presionado Ctrl+C eliminando buzones....\n");
     if (msgctl(red, IPC_RMID, NULL) == -1) {
         perror("msgctl");
         exit(EXIT_FAILURE);
     }
-    printf("Buzón eliminado.\n");
+    //printf("Buzón eliminado.\n");
     exit(EXIT_SUCCESS);
 }
 
 int main(int argc, char *argv[]) {
 
     //Signal de salida
-    printf("Presione Ctrl+C para salir del programa.\n");
+    //printf("Presione Ctrl+C para salir del programa.\n");
     signal(SIGINT, sigint_handler);
 
     red=msgget(99999, IPC_CREAT | 0777);
-    printf("red establecida: %i\n",red);
+    //printf("red establecida: %i\n",red);
 
     initparam(argc, argv);
 
@@ -246,10 +244,10 @@ void * procesomutex(int * param){
                 printf("[Nodo %i] Valor semaforo SC: %i",nodos[0],valorSemaforoSC);
 
                 if(cantidadnodosesperando>0){
-                    printf("[Nodo %i]IF 1.1",nodos[0]);
+                    //printf("[Nodo %i]IF 1.1",nodos[0]);
  
                     //Hay más nodos en espera no puedo entrar en SC sin solicitud
-                    printf("[Proceso %d] -> He entrado en cantidad Nodos esperando %d\n", hilo_pid, cantidadnodosesperando);
+                    //printf("[Proceso %d] -> He entrado en cantidad Nodos esperando %d\n", hilo_pid, cantidadnodosesperando);
                     necesariasolicitud=true;
                     sem_wait(&sem_esperaAvisoNodos);
 
@@ -258,7 +256,7 @@ void * procesomutex(int * param){
                     estado=SOLICITANTE;
                     sem_post(&sem_protec_var_estado);
                 }else if(estado==SOLICITANTE){
-                    printf("[Nodo %i]IF 1.2",nodos[0]);
+                    //printf("[Nodo %i]IF 1.2",nodos[0]);
                     //Mi nodo ya está en SC y no hay solicitudes entrantes nuevas
                     //No es necesario pedir permiso nuevamente para entrar en SC
                     necesariasolicitud=false;
@@ -268,7 +266,7 @@ void * procesomutex(int * param){
                         sem_post(&sem_protec_var_estado);
                     }
                 }else{
-                    printf("[Nodo %i]IF 1.3",nodos[0]);
+                    //printf("[Nodo %i]IF 1.3",nodos[0]);
                     //En este caso tiene pinta de que soy el primer hilo interesado entrar en SC o el primero con acceso
                     necesariasolicitud=true;
                     sem_wait(&sem_protec_var_estado);
@@ -278,21 +276,21 @@ void * procesomutex(int * param){
                 }
             
             
-            printf("\n[Nodo %i Hilo %i] Espero en semaforo SC del nodo.\n",nodos[0],hilo_pid);
+            //printf("\n[Nodo %i Hilo %i] Espero en semaforo SC del nodo.\n",nodos[0],hilo_pid);
             sem_wait(&sem_SC);
-            printf("\n[Nodo %i Hilo %i] Nadie en mi nodo tiene SC, me ha liberado del semSC.\n",nodos[0],hilo_pid);
+            //printf("\n[Nodo %i Hilo %i] Nadie en mi nodo tiene SC, me ha liberado del semSC.\n",nodos[0],hilo_pid);
 
             //En caso de ser necesario se notifica a los nodos vecinos mi deseo de entar en SC
             if(necesariasolicitud){
-                printf("[Nodo %i]IF 2",nodos[0]);
+                //printf("[Nodo %i]IF 2",nodos[0]);
                 ticketnum = lastticket + rand() % NODOSVECINOS + 5;
                 lastticket=ticketnum;
                 for (int i=1;i<NODOSVECINOS; i++){
                     NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,hilo_pid,SOLICITUD,ticketnum);
                 }
-                printf("\n[Nodo %i Hilo %i] Nodos vecinos notificados, espero respuestas.\n",nodos[0],hilo_pid);
+                //printf("\n[Nodo %i Hilo %i] Nodos vecinos notificados, espero respuestas.\n",nodos[0],hilo_pid);
                 if(NODOSVECINOS>1)sem_wait(&sem_espera_ACK); //Nos manda el permiso el receptor
-                printf("\n[Nodo %i Hilo %i] ACK's recibidos.\n",nodos[0],hilo_pid);
+                //printf("\n[Nodo %i Hilo %i] ACK's recibidos.\n",nodos[0],hilo_pid);
 
             }
 
@@ -300,16 +298,18 @@ void * procesomutex(int * param){
             time_t now = time(NULL);
             struct tm *t = localtime(&now);
             int tiempoespera=rand() % 1 + 2;
-            printf("\n%i:%i.%i [Nodo %i Hilo%i] Entra durante %i.\n",t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,tiempoespera);
-            sleep(tiempoespera); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
-
-            
+            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Entra durante %i.\n",t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,tiempoespera);
+            //sleep(tiempoespera); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
+            sleep(1);
+            //usleep(500000); // Espera 500000 microsegundos (medio segundo)
+            printf("%i:%i:%i.%i,%i,%i,ENTRA,%i,%i\n",t->tm_hour,t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
             now = time(NULL);
             struct tm *t2 = localtime(&now);
-            printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+            printf("%i:%i:%i.%i,%i,%i,SALE,%i,%i\n",t->tm_hour,t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
             contadorsc++;
             contadorschilo++;
-            printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
 
             sem_getvalue(&sem_esperaAvisoNodos, &valorSemaforoAvisoNodos);
             sem_getvalue(&sem_SC, &valorSemaforoSC);
@@ -322,7 +322,7 @@ void * procesomutex(int * param){
 
             
             if((cantidadnodosesperando!=0 && valorSemaforoSC==0)||valorSemaforoSC==0){
-                    printf("[Nodo %i]IF 3.1",nodos[0]);
+                    //printf("[Nodo %i]IF 3.1",nodos[0]);
                     //Hay nodos esperando y ha terminado la ráfaga de procesos
                     sem_wait(&sem_protec_var_estado);
                     estado=NO_INTERESADO;
@@ -331,7 +331,7 @@ void * procesomutex(int * param){
                     sem_post(&sem_esperaAvisoNodos);
                         struct Proceso* actual = procesosenespera;
                         while (actual != NULL) {
-                            printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
+                            //printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
                     
                             NetworkSend(red,nodos[0], actual->valor, NO_INTERESADO,hilo_pid, ACK, ticketnum);
                             actual = actual->siguiente;
@@ -340,7 +340,153 @@ void * procesomutex(int * param){
                         borrarLista(&procesosenespera);
                     sem_post(&sem_SC);
             }else{
-                                    printf("[Nodo %i]IF 3.2",nodos[0]);
+                                    //printf("[Nodo %i]IF 3.2",nodos[0]);
+                //Hay hilos esperando en una posición donde podrían (o  no) pedir permiso
+                sem_post(&sem_SC);
+            }
+
+           
+            
+            
+            sleep(1);
+    }while(1);
+    
+}
+void * consultas(int * param){
+    //pid_t hilo_pid = getpid();
+    pid_t hilo_pid = gettid();
+    
+    int contadorschilo=1;
+    int valorSemaforoSC;
+    int valorSemaforoAvisoNodos;
+
+    do{
+
+        //Aleatorizar la entrada en SC
+            bool aleatoriaentrada=true;
+            do {
+
+                aleatoriaentrada = (double)rand() / RAND_MAX < PROBABILIDAD_ENTRADA;
+                if (!aleatoriaentrada) {
+                    // Si no quiero entrar espero
+                    sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
+                }else{}
+            }while (!aleatoriaentrada); // 0 No interesado 1 SOLICITANTE
+
+            //PASOS NECESARIOS PARA ENTRAR EN LA SC
+            // 1 NOTIFICAR
+            // 2 ESPERAR RESPUESTA
+            // 3 EVALUAR RESPUESTA
+            // SI OK: ENTRO -> Esta espera al OK se puede hacer con un semaforo
+
+        //Comprobar si alguien en el nodo está en SC
+
+            //Comprobar si hay nodos esperando por una respuesta
+                bool necesariasolicitud=true;
+                sem_getvalue(&sem_SC, &valorSemaforoSC);
+
+                int cantidadnodosesperando=contarNodos(nodosenespera);
+               //printf("[Nodo %i] Nodos en espera: %i",nodos[0],cantidadnodosesperando);
+                //printf("[Nodo %i] Valor semaforo SC: %i",nodos[0],valorSemaforoSC);
+
+                if(cantidadnodosesperando>0){
+                    //printf("[Nodo %i]IF 1.1",nodos[0]);
+ 
+                    //Hay más nodos en espera no puedo entrar en SC sin solicitud
+                    //printf("[Proceso %d] -> He entrado en cantidad Nodos esperando %d\n", hilo_pid, cantidadnodosesperando);
+                    necesariasolicitud=true;
+                    sem_wait(&sem_esperaAvisoNodos);
+
+                    //Antes de que llegue un post aquí se ha cambiado el estado del nodo para pasar de nuevo a no interesado
+                    sem_wait(&sem_protec_var_estado);
+                    estado=SOLICITANTE;
+                    sem_post(&sem_protec_var_estado);
+                }else if(estado==SOLICITANTE){
+                    //printf("[Nodo %i]IF 1.2",nodos[0]);
+                    //Mi nodo ya está en SC y no hay solicitudes entrantes nuevas
+                    //No es necesario pedir permiso nuevamente para entrar en SC
+                    necesariasolicitud=false;
+                    if(estado!=SOLICITANTE){ //Esto es una medida de seguridad un poco tonta...
+                        sem_wait(&sem_protec_var_estado);
+                        estado=SOLICITANTE;
+                        sem_post(&sem_protec_var_estado);
+                    }
+                }else{
+                    //printf("[Nodo %i]IF 1.3",nodos[0]);
+                    //En este caso tiene pinta de que soy el primer hilo interesado entrar en SC o el primero con acceso
+                    necesariasolicitud=true;
+                    sem_wait(&sem_protec_var_estado);
+                    estado=SOLICITANTE;
+                    sem_post(&sem_protec_var_estado);
+
+                }
+            
+            
+            //printf("\n[Nodo %i Hilo %i] Espero en semaforo SC del nodo.\n",nodos[0],hilo_pid);
+            sem_wait(&sem_SC);
+            //printf("\n[Nodo %i Hilo %i] Nadie en mi nodo tiene SC, me ha liberado del semSC.\n",nodos[0],hilo_pid);
+
+            //En caso de ser necesario se notifica a los nodos vecinos mi deseo de entar en SC
+            if(necesariasolicitud){
+                //printf("[Nodo %i]IF 2",nodos[0]);
+                ticketnum = lastticket + rand() % NODOSVECINOS + 5;
+                lastticket=ticketnum;
+                for (int i=1;i<NODOSVECINOS; i++){
+                    NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,hilo_pid,SOLICITUD,ticketnum);
+                }
+                //printf("\n[Nodo %i Hilo %i] Nodos vecinos notificados, espero respuestas.\n",nodos[0],hilo_pid);
+                if(NODOSVECINOS>1)sem_wait(&sem_espera_ACK); //Nos manda el permiso el receptor
+                //printf("\n[Nodo %i Hilo %i] ACK's recibidos.\n",nodos[0],hilo_pid);
+
+            }
+
+            //SECCION CRITICA
+            time_t now = time(NULL);
+            struct tm *t = localtime(&now);
+            int tiempoespera=rand() % 1 + 2;
+            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Entra durante %i.\n",t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,tiempoespera);
+            //sleep(tiempoespera); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
+            sleep(1);
+            //usleep(500000); // Espera 500000 microsegundos (medio segundo)
+            printf("%i:%i:%i.%i,%i,%i,ENTRA,%i,%i\n",t->tm_hour,t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+            now = time(NULL);
+            struct tm *t2 = localtime(&now);
+            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+            printf("%i:%i:%i.%i,%i,%i,SALE,%i,%i\n",t->tm_hour,t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+            contadorsc++;
+            contadorschilo++;
+            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
+
+            sem_getvalue(&sem_esperaAvisoNodos, &valorSemaforoAvisoNodos);
+            sem_getvalue(&sem_SC, &valorSemaforoSC);
+            cantidadnodosesperando=contarNodos(nodosenespera);
+            
+            //printf("\n[Nodo %i Hilo%i] Valor sem SC %i.\n",nodos[0],hilo_pid,valorSemaforoSC);
+            //printf("\n[Nodo %i Hilo%i] Valor sem Avisa nodos %i.\n",nodos[0],hilo_pid,valorSemaforoAvisoNodos);
+            //printf("\n[Nodo %i Hilo%i] Nodos en cola. %i\n",nodos[0],hilo_pid,cantidadnodosesperando);
+            
+
+            
+            if((cantidadnodosesperando!=0 && valorSemaforoSC==0)||valorSemaforoSC==0){
+                    //printf("[Nodo %i]IF 3.1",nodos[0]);
+                    //Hay nodos esperando y ha terminado la ráfaga de procesos
+                    sem_wait(&sem_protec_var_estado);
+                    estado=NO_INTERESADO;
+                    sem_post(&sem_protec_var_estado);
+
+                    sem_post(&sem_esperaAvisoNodos);
+                        struct Nodo* actual = nodosenespera;
+                        while (actual != NULL) {
+                            //printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
+                    
+                            NetworkSend(red,nodos[0], actual->valor, NO_INTERESADO,hilo_pid, ACK, ticketnum);
+                            actual = actual->siguiente;
+                        }
+                        
+                        borrarLista(&nodosenespera);
+                    sem_post(&sem_SC);
+            }else{
+                                    //printf("[Nodo %i]IF 3.2",nodos[0]);
                 //Hay hilos esperando en una posición donde podrían (o  no) pedir permiso
                 sem_post(&sem_SC);
             }
@@ -353,11 +499,10 @@ void * procesomutex(int * param){
     
 }
 
-
 void initparam(int argc, char *argv[]){
     //Parametros con las ID
     NODOSVECINOS=argc-1;
-    printf("Se van a iniciar %i nodos\n",NODOSVECINOS);
+    //printf("Se van a iniciar %i nodos\n",NODOSVECINOS);
 
     //Parametros a entero
     for (int i = 1; i < argc; i++) {
@@ -368,7 +513,7 @@ void initparam(int argc, char *argv[]){
 
     //printf("Nodos vecinos son:\n");
     for (int i=0; i<NODOSVECINOS; i++) {
-        printf("ID de nodo %i: %i \n",i,nodos[i]);
+        //printf("ID de nodo %i: %i \n",i,nodos[i]);
     }
 
     //INICIALIZACIÓN DE SEMAFOROS
@@ -379,6 +524,9 @@ void initparam(int argc, char *argv[]){
     sem_init(&sem_saleSC,0,0);
     sem_init(&sem_avisar_nodos_en_espera,0,0);
     sem_init(&sem_protec_var_estado,0,1);
+    
+
+    //Prioridades
     
 
 }

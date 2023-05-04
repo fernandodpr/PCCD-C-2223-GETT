@@ -24,7 +24,7 @@ for (( i=0; i<$n; i++ )); do
   procs+=($!)  # Añadir el PID del proceso a la lista
 done
 
-echo "Los procesos se están ejecutando..."
+#echo "Los procesos se están ejecutando..."
 
 # Capturar la señal SIGINT (Ctrl+C) y detener los procesos
 function stop_processes {
