@@ -8,12 +8,16 @@
 
 
     struct Proceso {
-        int idProceso;
-        int prioridad;
-        int idNodo;
-        time_t inicio;
-        time_t fin;
-        int retardo;
+        int valor;
+       /*int idProceso;         // Id del proceso
+        int prioridad;          // Prioridad (Anulaciones, Pagos, Admin y Reservas, Consultas)
+        int idNodo;             // Id del nodo del 
+        int ticket;
+        time_t inicio;       //Hora de creacion del proceso
+        time_t creado;       
+        time_t atendido;     //Hora de salida de la SC
+        time_t fin;          //Hora en el que se mata al proceso
+        int retardo;*/
         struct Proceso* siguiente;
     };
 

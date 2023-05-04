@@ -47,7 +47,7 @@ int contadorsc=1;
 
 int lastticket=78; // Este es el mayor número de ticket recibido.
 int ticketnum;  // Este es el numero de ticket que yo estoy usando
-struct Nodo* nodosenespera = NULL; //Lista con los nodos en espera
+struct Proceso* procesosenespera = NULL; //Lista con los nodos en espera
 int NODOSVECINOS = 0;
 
 char* estadostring[3] = { "NO_INTERESADO", "SOLICITANTE", "FINALIZADO"};
@@ -136,13 +136,13 @@ void* recepcion(void* args){
 
                 }else{
                     //No autoricé al nodo, tengo que despertarlo cuando termine
-                    agregarProceso(&nodosenespera,recibido->id_nodo);
+                    agregarProceso(&procesosenespera,recibido->id_nodo);
                     printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
                 }
 
             }else if(estado==SOLICITANTE && (recibido->num_ticket>ticketnum)){
                 //Tengo un ticket menor al del solicitante asi que lo agrego a la lista
-                agregarProceso(&nodosenespera,recibido->id_nodo);
+                agregarProceso(&procesosenespera,recibido->id_nodo);
                 printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
 
             }
@@ -241,7 +241,7 @@ void * procesomutex(int * param){
                 bool necesariasolicitud=true;
                 sem_getvalue(&sem_SC, &valorSemaforoSC);
 
-                int cantidadnodosesperando=contarProcesos(nodosenespera);
+                int cantidadnodosesperando=contarProcesos(procesosenespera);
                 printf("[Nodo %i] Nodos en espera: %i",nodos[0],cantidadnodosesperando);
                 printf("[Nodo %i] Valor semaforo SC: %i",nodos[0],valorSemaforoSC);
 
@@ -313,7 +313,7 @@ void * procesomutex(int * param){
 
             sem_getvalue(&sem_esperaAvisoNodos, &valorSemaforoAvisoNodos);
             sem_getvalue(&sem_SC, &valorSemaforoSC);
-            cantidadnodosesperando=contarNodos(nodosenespera);
+            cantidadnodosesperando=contarProcesos(procesosenespera);
             
             //printf("\n[Nodo %i Hilo%i] Valor sem SC %i.\n",nodos[0],hilo_pid,valorSemaforoSC);
             //printf("\n[Nodo %i Hilo%i] Valor sem Avisa nodos %i.\n",nodos[0],hilo_pid,valorSemaforoAvisoNodos);
@@ -329,7 +329,7 @@ void * procesomutex(int * param){
                     sem_post(&sem_protec_var_estado);
 
                     sem_post(&sem_esperaAvisoNodos);
-                        struct Nodo* actual = nodosenespera;
+                        struct Proceso* actual = procesosenespera;
                         while (actual != NULL) {
                             printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
                     
@@ -337,7 +337,7 @@ void * procesomutex(int * param){
                             actual = actual->siguiente;
                         }
                         
-                        borrarLista(&nodosenespera);
+                        borrarLista(&procesosenespera);
                     sem_post(&sem_SC);
             }else{
                                     printf("[Nodo %i]IF 3.2",nodos[0]);
