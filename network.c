@@ -29,7 +29,7 @@ Paquete* networkrcv(int red,int nodo) {
 
     return paqueteRecibido;
 }
-void NetworkSend(int red,int nodo, int destinatario,int estado, int pid,int instruccion,int ticket) {
+void NetworkSend(int red, int destinatario,int estado,int instruccion,struct Proceso processinc) {
     char* estadostring[3] = { "NO_INTERESADO", "SOLICITANTE", "FINALIZADO"};
     char* tipostring[3] = { "SOLICITUD", "ACK", "NACK"};        
     //TODO: Imprimir algun dato más desde esta función Como un resumen del paquete
@@ -37,11 +37,9 @@ void NetworkSend(int red,int nodo, int destinatario,int estado, int pid,int inst
     // Enviamos el paquete al buzón correspondiente
     Paquete message;
     message.estado=estado;
-    message.id_nodo=nodo;
-    message.id_proceso=pid;
+    message.process=processinc;
     message.instruccion=instruccion;
     message.mtype=destinatario;
-    message.num_ticket=ticket;
     
     //printf("Soy la función Send y me han pasado el parámetro RED: %i\n", red);
     

@@ -110,8 +110,8 @@ void* recepcion(void* args){
             
             if(estado==NO_INTERESADO){
                 //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
-                if(recibido->num_ticket>lastticket){
-                    lastticket=recibido->num_ticket;
+                if(recibido->process->ticket>lastticket){
+                    lastticket=recibido->process->ticket;
                     //printf("####### Nuevo numero de ticket minimo %i.\n",lastticket);
                 }  // Si el ticket que recibo es mayor actualizo
 
