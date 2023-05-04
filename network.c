@@ -23,14 +23,6 @@ Paquete* networkrcv(int red,int nodo) {
         exit(1);
     }
 
-    // Imprime el paquete recibido
-    //printf("Paquete recibido:  ");
-    //printf("  id_nodo: %d  ", paquete.id_nodo);
-    //printf("  destinatario mtype: %ld  ", paquete.mtype);
-    //printf("  id_proceso: %d  ", paquete.id_proceso);
-    //printf("  num_ticket: %d  ", paquete.num_ticket);
-    //printf("  estado: %d\n", paquete.estado);
-
     // Hacer una copia del paquete y devolver un puntero a la misma
     Paquete* paqueteRecibido = malloc(sizeof(Paquete));
     memcpy(paqueteRecibido, &paquete, sizeof(Paquete));
@@ -53,11 +45,17 @@ void NetworkSend(int red,int nodo, int destinatario,int estado, int pid,int inst
     
     //printf("Soy la función Send y me han pasado el parámetro RED: %i\n", red);
     
+    //Simulacion de retardo de red Hemos elegido valores aleatorios de entre 1ms y 10ms    
+    int tiempo_dormido = rand() % 9000 + 1000; // generar un número aleatorio entre 1000 y 10000
+    usleep(tiempo_dormido); // dormir el programa durante el tiempo generado
+
+
+
     if (msgsnd(red, (struct msgbuf *)&message, sizeof(Paquete), 0) == -1) {
        printf("ERROR NO ENVIADO: Red:%i  Destino: %li   Instruccion: %i\n", red, message.mtype, message.instruccion);
         exit(1);
     }else{
-        printf("[Nodo %i][ENVIADO] Envío %s a nodo %i. Numero de ticket %i \n",nodo,tipostring[instruccion],destinatario,ticket);
+        //printf("[Nodo %i][ENVIADO] Envío %s a nodo %i. Numero de ticket %i \n",nodo,tipostring[instruccion],destinatario,ticket);
     }
 
 

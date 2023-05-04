@@ -1,5 +1,4 @@
-
-
+#include "linkedlist.h"
 #ifndef NETWORK_H
     #define NETWORK_H
     #include "datatypes.h"
@@ -10,6 +9,7 @@
         int num_ticket;     //El número de ticket  
         Instruccion instruccion;
         Status estado;      //En que estado se encuentra
+        Proceso process;
     } Paquete;
 
     Paquete* networkrcv(int red,int nodo);
