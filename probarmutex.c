@@ -57,6 +57,7 @@ void * procesomutex(int * param){
     //pid_t hilo_pid = getpid();
 
     pid_t hilo_pid = gettid();
+    srand(getpid());
     
     //int contadorschilo=1;
     //int valorSemaforoSC;
@@ -65,7 +66,7 @@ void * procesomutex(int * param){
     nodos[0]=1;
     printf("Acabo de entrar en procesomutex\n");
     
-    do{
+    //do{
 
         //Aleatorizar la entrada en SC
             bool aleatoriaentrada=true;
@@ -79,7 +80,7 @@ void * procesomutex(int * param){
                     sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
                 }else{}
             }while (!aleatoriaentrada); // 0 No interesado 1 SOLICITANTE
-            printf("Entro en SC");
+            printf("Entro en SC\n");
             
             struct Proceso yomismo;
             yomismo.idProceso=hilo_pid;
@@ -90,10 +91,13 @@ void * procesomutex(int * param){
             yomismo.prioridad=1;
             yomismo.ticket=rand() % 20; 
             
-            agregarProceso(&cola, yomismo);
-            
-            
+            agregarProceso(&cola, yomismo.prioridad, yomismo.ticket, yomismo.idNodo);
+            printf("He salido de agregarProceso. Mostrando variable cola...\n");
+            printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", cola->prioridad, cola->ticket, cola->idNodo);
+                   
             ordenarCola(&cola);
+            printf("Cola ordenada con exito\n");
+            /*  
 
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
@@ -124,8 +128,8 @@ void * procesomutex(int * param){
             }
            
             
-            sleep(1);
-        }while(1);
+            sleep(1);*/
+        //}while(1);
 
     return NULL;
     

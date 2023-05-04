@@ -12,11 +12,15 @@
 #include "linkedlist.h"
 
 
-void agregarProceso(struct Proceso** cabeza, struct Proceso valor) {
+void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo) {
     struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
-    nuevoProceso = &valor;
+    nuevoProceso->prioridad = prioridad;
+    nuevoProceso->ticket = ticket;
+    nuevoProceso->idNodo = nodo;
+
     nuevoProceso->siguiente = *cabeza;
     *cabeza = nuevoProceso;
+    printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", (*cabeza)->prioridad, (*cabeza)->ticket, (*cabeza)->idNodo);
 }
 
 void borrarLista(struct Proceso** cabeza) {
@@ -47,14 +51,26 @@ void ordenarCola(struct Proceso** cabeza) {
     struct Proceso* siguiente = NULL;
     int temp;
     bool cambio = true;
-    
+
+    printf("Acabo de entrar en ordenarCola\n");
+   
     while (cambio) {
         cambio = false;
         actual = *cabeza;
+
+        printf("Dentro del bucle 1\n");
+         
         while (actual->siguiente != NULL) {
             siguiente = actual->siguiente;
+            
+            printf("Dentro del bucle 2\n");
+            
+            printf("%d < %d es %d  (Prioridad actual < Prioridad siguiente)\n", actual->prioridad, siguiente->prioridad, actual->prioridad < siguiente->prioridad);
+            printf("%d > %d es %d  (Nodo actual > Nodo siguiente)\n", actual->idNodo, siguiente->idNodo, actual->idNodo > siguiente->idNodo);
+            printf("%d < %d es %d  (Ticket actual < Ticket siguiente)\n", actual->ticket, siguiente->ticket, actual->ticket < siguiente->ticket);
             // Ordenar por prioridad (de mayor a menor)
             if (actual->prioridad < siguiente->prioridad) {
+                printf("Prioridad ordenada de mayor a menor\n");
                 temp = actual->prioridad;
                 actual->prioridad = siguiente->prioridad;
                 siguiente->prioridad = temp;
@@ -62,6 +78,7 @@ void ordenarCola(struct Proceso** cabeza) {
             }
             // Si la prioridad es igual, ordenar por nodo (de menor a mayor)
             else if (actual->prioridad == siguiente->prioridad && actual->idNodo > siguiente->idNodo) {
+                printf("Nodo ordenado de menor a mayor\n");
                 temp = actual->idNodo;
                 actual->idNodo = siguiente->idNodo;
                 siguiente->idNodo = temp;
@@ -69,6 +86,7 @@ void ordenarCola(struct Proceso** cabeza) {
             }
             // Si la prioridad y el nodo son iguales, ordenar por tamaño de grupo (de mayor a menor)
             else if (actual->prioridad == siguiente->prioridad && actual->idNodo == siguiente->idNodo && actual->ticket < siguiente->ticket) {
+                printf("ticket ordenado de mayor a menor\n");
                 temp = actual->ticket;
                 actual->ticket = siguiente->ticket;
                 siguiente->ticket = temp;

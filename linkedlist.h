@@ -28,7 +28,7 @@
     //FUNCIONES
 
     void borrarLista(struct Proceso** cabeza);
-void agregarProceso(struct Proceso** cabeza, struct Proceso valor);
+void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo);
     void ordenarCola(struct Proceso** cabeza);
     int contarProcesos(struct Proceso* cabeza);
     void imprimirLista(char* rutaArchivo, struct Proceso* cabeza);
