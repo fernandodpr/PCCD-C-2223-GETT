@@ -12,31 +12,31 @@
 #include "linkedlist.h"
 
 
-void agregarNodo(struct Nodo** cabeza, int valor) {
-    struct Nodo* nuevoNodo = (struct Nodo*) malloc(sizeof(struct Nodo));
-    nuevoNodo->valor = valor;
-    nuevoNodo->siguiente = *cabeza;
+void agregarProceso(struct Proceso** cabeza, int valor) {
+    struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
+    nuevoProceso->valor = valor;
+    nuevoProceso->siguiente = *cabeza;
     *cabeza = nuevoNodo;
 }
-void borrarLista(struct Nodo** cabeza) {
-    struct Nodo* nodoActual = *cabeza;
-    struct Nodo* nodoSiguiente = NULL;
+void borrarLista(struct Proceso** cabeza) {
+    struct Proceso* procesoActual = *cabeza;
+    struct Proceso* procesoSiguiente = NULL;
     
-    while (nodoActual != NULL) {
-        nodoSiguiente = nodoActual->siguiente;
-        free(nodoActual);
-        nodoActual = nodoSiguiente;
+    while (procesoActual != NULL) {
+        procesoSiguiente = procesoActual->siguiente;
+        free(procesoActual);
+        procesoActual = procesoSiguiente;
     }
     
     *cabeza = NULL;
 }
-int contarNodos(struct Nodo* cabeza) {
+int contarProcesos(struct Proceso* cabeza) {
     int contador = 0;
-    struct Nodo* nodoActual = cabeza;
+    struct Proceso* procesoActual = cabeza;
     
-    while (nodoActual != NULL) {
+    while (procesoActual != NULL) {
         contador++;
-        nodoActual = nodoActual->siguiente;
+        procesoActual = procesoActual->siguiente;
     }
     
     return contador;

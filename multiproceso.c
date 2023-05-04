@@ -11,7 +11,10 @@ multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <time.h> 
+#ifndef TIMER
+#define TIMER
+#include <time.h>
+#endif
 #include <string.h>
 #include <signal.h>
 #include <sys/msg.h>
@@ -131,14 +134,14 @@ void* recepcion(void* args){
 
                 }else{
                     //No autoricé al nodo, tengo que despertarlo cuando termine
-                    agregarNodo(&nodosenespera,recibido->id_nodo);
-                    //printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
+                    agregarProceso(&nodosenespera,recibido->id_nodo);
+                    printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
                 }
 
             }else if(estado==SOLICITANTE && (recibido->num_ticket>ticketnum)){
                 //Tengo un ticket menor al del solicitante asi que lo agrego a la lista
-                agregarNodo(&nodosenespera,recibido->id_nodo);
-                //printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
+                agregarProceso(&nodosenespera,recibido->id_nodo);
+                printf("[Nodo %i] Nueva solicitud agregada a la cola de pendientes.\n",nodos[0]);
 
             }
         }else if(recibido->instruccion==ACK){
@@ -236,9 +239,9 @@ void * procesomutex(int * param){
                 bool necesariasolicitud=true;
                 sem_getvalue(&sem_SC, &valorSemaforoSC);
 
-                int cantidadnodosesperando=contarNodos(nodosenespera);
-               //printf("[Nodo %i] Nodos en espera: %i",nodos[0],cantidadnodosesperando);
-                //printf("[Nodo %i] Valor semaforo SC: %i",nodos[0],valorSemaforoSC);
+                int cantidadnodosesperando=contarProcesos(nodosenespera);
+                printf("[Nodo %i] Nodos en espera: %i",nodos[0],cantidadnodosesperando);
+                printf("[Nodo %i] Valor semaforo SC: %i",nodos[0],valorSemaforoSC);
 
                 if(cantidadnodosesperando>0){
                     //printf("[Nodo %i]IF 1.1",nodos[0]);
