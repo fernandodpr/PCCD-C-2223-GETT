@@ -34,4 +34,7 @@ void agregarProceso(struct Proceso** cabeza, struct Proceso valor);
     void imprimirLista(char* rutaArchivo, struct Proceso* cabeza);
     struct Proceso* generarListaAleatoria(int cantidad);
     bool esIgual(struct Proceso* cabeza, struct Proceso* proceso);
+    void eliminarCabeza(struct Proceso** cabeza);
+
+bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado);
 #endif

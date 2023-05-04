@@ -55,31 +55,35 @@ struct Proceso* historial = NULL;   // Generar una lista aleatoria de 10 element
 
 void * procesomutex(int * param){
     //pid_t hilo_pid = getpid();
+
     pid_t hilo_pid = gettid();
     
     int contadorschilo=1;
     int valorSemaforoSC;
     int valorSemaforoAvisoNodos;
-
+    int nodos[1];
+    nodos[0]=1;
     do{
 
         //Aleatorizar la entrada en SC
             bool aleatoriaentrada=true;
+                        printf("Entro en SC");
             do {
 
                 aleatoriaentrada = (double)rand() / RAND_MAX < PROBABILIDAD_ENTRADA;
                 if (!aleatoriaentrada) {
                     // Si no quiero entrar espero
+
                     sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
                 }else{}
             }while (!aleatoriaentrada); // 0 No interesado 1 SOLICITANTE
-
+            printf("Entro en SC");
             struct Proceso yomismo;
             yomismo.idProceso=hilo_pid;
             yomismo.atendido=0;
             yomismo.creado=time(NULL);
             //yomismo.idNodo=nodos[0];
-            yomismo.idNodo=1;
+            yomismo.idNodo=nodos[0];
             yomismo.prioridad=1;
             yomismo.ticket=rand() % 20; 
             
@@ -90,8 +94,8 @@ void * procesomutex(int * param){
 
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
-                cola.ejecucion=1;
-                cola.pedirPermiso=0;
+                cola->ejecucion=1;
+                cola->pedirPermiso=0;
 
             }else{
                 //Me espero
@@ -101,24 +105,21 @@ void * procesomutex(int * param){
             }
 
             //SECCION CRITICA
-            time_t now = time(NULL);
-            struct tm *t = localtime(&now);
+            cola->inicio= time(NULL);
             int tiempoespera=rand() % 1 + 2;
-            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Entra durante %i.\n",t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,tiempoespera);
-            //sleep(tiempoespera); // Dormir una cantidad de tiempo aleatoria entre 4 y 8 segundos    }
-            sleep(1);
-            //usleep(500000); // Espera 500000 microsegundos (medio segundo)
-            printf("%i:%i:%i.%i,%i,%i,ENTRA,%i,%i\n",t->tm_hour,t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
-            now = time(NULL);
-            struct tm *t2 = localtime(&now);
-            //printf("\n%i:%i.%i [Nodo %i Hilo%i] Sale. Ha entrado este nodo: %i Ha entrado este proceso: %i\n",t2->tm_min,t2->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
-            printf("%i:%i:%i.%i,%i,%i,SALE,%i,%i\n",t->tm_hour,t->tm_min,t->tm_sec,(int) clock() % 1000,nodos[0],hilo_pid,contadorsc,contadorschilo);
-            contadorsc++;
-            contadorschilo++;
-            
+            sleep(tiempoespera);
+            cola->fin = time(NULL);       
 
+            agregarProceso(historial, *cola);
+            eliminarCabeza(cola);
+
+            if(compararIdNodo(cola,nodos[0])){
+                //El sigueinte proceso está esperando en mi nodo
+                sem_post(&sem_prioridades[cola->prioridad]);
+            }else{
+                //El siguinte proceso esta esperando fuera de mi nodo
+            }
            
-            
             
             sleep(1);
     }while(1);
@@ -126,29 +127,24 @@ void * procesomutex(int * param){
 }
 
 int main(int argc, char *argv[]) {
+            printf("Hola");
     initparam();
     pthread_t pthtest[10];
-    for (int i =0; i<10; i++) {
-        //printf("Creo hilo");
+    for (int i =0; i<2; i++) {
+        printf("Creo hilo");
         pthread_create(&pthtest[i],NULL,(void *)procesomutex,NULL);   
     }
    
     while (1) {
     
     }
-    probarlista();
+    
     return 0;
 }
 
 
 
-int probarlista() {
-    imprimirLista("listasinordenar.txt",listaAleatoria);
-    ordenarCola(&listaAleatoria);
-    imprimirLista("listaordenada.txt",listaAleatoria);    
-    borrarLista(&listaAleatoria);   // Liberar la memoria de la lista
-    return 0;
-}
+
 
 void initparam(){
     //INICIALIZACIÓN DE SEMAFOROS

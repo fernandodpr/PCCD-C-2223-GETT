@@ -87,13 +87,13 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     }
     
     struct Proceso* procesoActual = cabeza;
-        fprintf(archivo, "Valor,ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,Retardo\n");
+        fprintf(archivo, "ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,Retardo\n");
     
     while (procesoActual != NULL) {
         struct tm *tm_info = localtime(&procesoActual->inicio);
         char tiempo_inicio[20];
         strftime(tiempo_inicio, 20, "%H:%M:%S", tm_info);
-        fprintf(archivo, "%d,%d,%d,%d,%d,%s.%03ld,", procesoActual->valor, procesoActual->idProceso, procesoActual->prioridad, procesoActual->idNodo, procesoActual->ticket, tiempo_inicio, procesoActual->inicio % 1000);
+        fprintf(archivo, "%d,%d,%d,%d,%s.%03ld,", procesoActual->idProceso, procesoActual->prioridad, procesoActual->idNodo, procesoActual->ticket, tiempo_inicio, procesoActual->inicio % 1000);
         
         tm_info = localtime(&procesoActual->creado);
         char tiempo_creado[20];
@@ -119,10 +119,8 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
 struct Proceso* generarListaAleatoria(int cantidad) {
     struct Proceso* cabeza = NULL;
     srand(time(NULL));  // Inicializar el generador de números aleatorios
-    
     for (int i = 0; i < cantidad; i++) {
         struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
-        nuevoProceso->valor = rand() % 100;   // Valor aleatorio entre 0 y 99
         nuevoProceso->idProceso = rand() % 1000;   // ID de proceso aleatorio entre 0 y 999
         nuevoProceso->prioridad = rand() % 4;   // Prioridad aleatoria entre 0 y 3
         nuevoProceso->idNodo = rand() % 10;   // ID de nodo aleatorio entre 0 y 9
@@ -131,8 +129,7 @@ struct Proceso* generarListaAleatoria(int cantidad) {
         nuevoProceso->creado = nuevoProceso->inicio + rand() % 60;   // Hora de entrada a la SC aleatoria en la última hora
         nuevoProceso->atendido = nuevoProceso->creado + rand() % 60;   // Hora de salida de la SC aleatoria en la última hora
         nuevoProceso->fin = nuevoProceso->atendido + rand() % 3600;   // Hora de muerte aleatoria en la siguiente hora
-        nuevoProceso->retardo = rand() % 10;   // Retardo aleatorio entre 0 y 9
-        
+        nuevoProceso->retardo = rand() % 10;   // Retardo aleatorio entre 0 y 9     
         nuevoProceso->siguiente = cabeza;
         cabeza = nuevoProceso;
     }
@@ -145,4 +142,26 @@ bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
         return false;
     }
     return cabeza == proceso;
+}
+
+void eliminarCabeza(struct Proceso** cabeza) {
+    if (*cabeza == NULL || (*cabeza)->siguiente == NULL) {
+        return; // La lista está vacía o solo tiene un elemento
+    }
+    struct Proceso* segundo = (*cabeza)->siguiente;
+    *cabeza = segundo; // Cambia la cabeza por el segundo elemento
+}
+
+bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
+    if (cabeza == NULL) { // Si la cola está vacía, retorna false
+        return false;
+    }
+    else { // Si la cola tiene al menos un elemento
+        if (cabeza->idNodo == idNodoBuscado) { // Si el idNodo de la cabeza es igual al idNodo buscado, retorna true
+            return true;
+        }
+        else { // Si el idNodo de la cabeza no es igual al idNodo buscado, retorna false
+            return false;
+        }
+    }
 }
