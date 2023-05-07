@@ -43,15 +43,17 @@ int contarProcesos(struct Proceso* cabeza) {
     return contador;
 }
 void ordenarCola(struct Proceso** cabeza) {
+    printf("Hola k haces");
     struct Proceso* actual = *cabeza;
     struct Proceso* siguiente = NULL;
     int temp;
     bool cambio = true;
-    
+    printf("Hola k haces");
     while (cambio) {
         cambio = false;
         actual = *cabeza;
-        while (actual->siguiente != NULL) {
+        while (actual != NULL && actual->siguiente != NULL) {
+            
             siguiente = actual->siguiente;
             // Ordenar por prioridad (de mayor a menor)
             if (actual->prioridad < siguiente->prioridad) {

@@ -88,11 +88,8 @@ void * procesomutex(int * param){
             //yomismo.idNodo=nodos[0];
             yomismo.idNodo=nodos[0];
             yomismo.prioridad=1;
-            yomismo.ticket=rand() % 20; 
-            
-            agregarProceso(&cola, yomismo);
-            
-            
+            yomismo.ticket=rand() % 20;   
+            agregarProceso(&cola, yomismo);            
             ordenarCola(&cola);
 
             if(esIgual(cola, &yomismo)){
