@@ -81,40 +81,40 @@ void * procesomutex(int * param){
             printf("Quiero entrar en SC\n");
             
             struct Proceso yomismo;
-            yomismo.idProceso=hilo_pid;
+
+            yomismo.idProceso=0;
             yomismo.atendido=0;
-            yomismo.creado=time(NULL);
-            //yomismo.idNodo=nodos[0];
+            yomismo.contACK=0;
+            yomismo.creado=0;
             yomismo.idNodo=nodos[0];
             yomismo.prioridad=1;
             yomismo.ticket=rand() % 20; 
             
+            //Me pongo a la cola y ordeno
+            sem_wait(&sem_protec_lista);
             agregarProceso(&cola, yomismo.prioridad, yomismo.ticket, yomismo.idNodo);
-            printf("He salido de agregarProceso. Mostrando variable cola...\n");
-            //printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", cola->prioridad, cola->ticket, cola->idNodo);
-                   
             ordenarCola(&cola);
-            printf("Cola ordenada con exito\n");
-            
-            printf(cola);
-            printf(&yomismo);
+            sem_post(&sem_protec_lista);
 
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
-                printf("Tengo permisos");
+                printf("Tengo permisos\n");  
                 cola->ejecucion=1;
                 cola->pedirPermiso=0;
 
             }else{
                 //Me espero
-                printf("NO Tengo permisos");
+                printf("NO Tengo permisos\n");
                 sem_wait(&sem_prioridades[yomismo.prioridad]);
+                printf("He despertado!\n");
+
 
 
             }
 
             //SECCION CRITICA
-            printf("Acabo de llegar a SC");
+
+            printf("Acabo de llegar a SC con Ticket: %i ",yomismo.ticket);
             cola->inicio= time(NULL);
             int tiempoespera=rand() % 1 + 2;
             sleep(tiempoespera);
@@ -122,13 +122,23 @@ void * procesomutex(int * param){
 
             agregarProceso(&historial, yomismo.prioridad, yomismo.ticket, yomismo.idNodo);
 
+            sem_wait(&sem_protec_lista);
             eliminarCabeza(&cola);
+            ordenarCola(&cola);
+            sem_post(&sem_protec_lista);
 
             if(compararIdNodo(cola,nodos[0])){
                 //El sigueinte proceso está esperando en mi nodo
+                printf("EL SIGUIENTE PROCESO ESTA EN MI NODO\n");
+                printf("El sigueinte proceso es de prioridad %i\n",cola->prioridad);
+                printf("El sigueinte proceso es tiene ticket %i\n",cola->ticket);
+
                 sem_post(&sem_prioridades[cola->prioridad]);
+                printf("Ha despertado?\n");
             }else{
                 //El siguinte proceso esta esperando fuera de mi nodo
+                printf("EL SIGUIENTE PROCESO NO ESTA EN MI NODO\n");
+
             }
            
             
@@ -144,7 +154,8 @@ int main(int argc, char *argv[]) {
     srand(time(NULL)); 
     initparam();
     pthread_t pthtest[10];
-    for (int i =0; i<2; i++) {
+
+    for (int i =0; i<4; i++) {
         printf("Creo hilo\n");
         pthread_create(&pthtest[i],NULL,(void *)procesomutex,NULL);   
     }
@@ -167,4 +178,7 @@ void initparam(){
     sem_init(&sem_protec_var_estado,0,1);
     sem_init(&sem_protec_lista,0,1);
 
+    for (int i = 0; i < 5; i++) {
+        sem_init(&sem_prioridades[i], 0, 0);
+    }
 }

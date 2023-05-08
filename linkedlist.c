@@ -13,15 +13,30 @@
 
 
 void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo) {
+    
     struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
     nuevoProceso->prioridad = prioridad;
     nuevoProceso->ticket = ticket;
     nuevoProceso->idNodo = nodo;
+    nuevoProceso->idProceso = 0;
+    nuevoProceso->atendido = 0;
+    nuevoProceso->contACK = 0;
+    nuevoProceso->creado = 0;
+    nuevoProceso->siguiente = NULL; // El siguiente del último elemento siempre es NULL
 
-    nuevoProceso->siguiente = *cabeza;
-    *cabeza = nuevoProceso;
-    printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", (*cabeza)->prioridad, (*cabeza)->ticket, (*cabeza)->idNodo);
+    if (*cabeza == NULL) { // Si la lista está vacía, el nuevo proceso es la cabeza
+        *cabeza = nuevoProceso;
+    } else {
+        struct Proceso* ultimo = *cabeza;
+        while (ultimo->siguiente != NULL) { // Recorrer la lista hasta encontrar el último elemento
+            ultimo = ultimo->siguiente;
+        }
+        ultimo->siguiente = nuevoProceso; // Agregar el nuevo proceso después del último
+    }
+
+    printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", nuevoProceso->prioridad, nuevoProceso->ticket, nuevoProceso->idNodo);
 }
+
 
 void borrarLista(struct Proceso** cabeza) {
     struct Proceso* procesoActual = *cabeza;
@@ -158,39 +173,66 @@ struct Proceso* generarListaAleatoria(int cantidad) {
 
 bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
     if(cabeza->idProceso != proceso->idProceso) {
+        printf("NOEsIgual: idProceso\n");
         return false;
     }
     if(cabeza->prioridad != proceso->prioridad) {
+        printf("NOEsIgual: prioridad\n");
+                        printf("La prioridad de cabeza es %i    \n",cabeza->prioridad);
+                printf("La prioridad de proceso es %i    \n",proceso->prioridad);
+
         return false;
     }
     if(cabeza->idNodo != proceso->idNodo) {
+                printf("NOEsIgual: idNodo\n");
+
+
+
         return false;
     }
     if(cabeza->ticket != proceso->ticket) {
+                printf("NOEsIgual: ticket\n");
+
         return false;
     }
     if(cabeza->inicio != proceso->inicio) {
+                printf("NOEsIgual: inicio\n");
+
         return false;
     }
     if(cabeza->creado != proceso->creado) {
+                printf("NOEsIgual: creado\n");
+
         return false;
     }
     if(cabeza->atendido != proceso->atendido) {
+                printf("NOEsIgual: atendido\n");
+
         return false;
     }
     if(cabeza->fin != proceso->fin) {
+                printf("NOEsIgual: fin\n");
+
         return false;
     }
     if(cabeza->retardo != proceso->retardo) {
+                printf("NOEsIgual: retardo\n");
+
         return false;
     }
     if(cabeza->contACK != proceso->contACK) {
+                printf("NOEsIgual: contACK\n");
+
         return false;
     }
     if(cabeza->ejecucion != proceso->ejecucion) {
+                printf("NOEsIgual: ejecucion\n");
+
         return false;
     }
     if(cabeza->pedirPermiso != proceso->pedirPermiso) {
+                printf("NOEsIgual: pedirpermiso\n");
+
         return false;
     }
     return true;
