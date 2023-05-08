@@ -34,7 +34,6 @@ multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
 //#define NODOSVECINOS 10
 
 
-
 sem_t sem_crear_hilos;
 
 sem_t sem_consultas;
@@ -57,7 +56,6 @@ void * procesomutex(int * param){
     //pid_t hilo_pid = getpid();
 
     pid_t hilo_pid = gettid();
-    srand(getpid());
     
     //int contadorschilo=1;
     //int valorSemaforoSC;
@@ -93,7 +91,7 @@ void * procesomutex(int * param){
             
             agregarProceso(&cola, yomismo.prioridad, yomismo.ticket, yomismo.idNodo);
             printf("He salido de agregarProceso. Mostrando variable cola...\n");
-            printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", cola->prioridad, cola->ticket, cola->idNodo);
+            //printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", cola->prioridad, cola->ticket, cola->idNodo);
                    
             ordenarCola(&cola);
             printf("Cola ordenada con exito\n");
@@ -137,6 +135,7 @@ void * procesomutex(int * param){
 
 int main(int argc, char *argv[]) {
     printf("Hola\n");
+    srand(time(NULL)); 
     initparam();
     pthread_t pthtest[10];
     for (int i =0; i<2; i++) {
@@ -150,7 +149,6 @@ int main(int argc, char *argv[]) {
     
     return 0;
 }
-
 
 void initparam(){
     //INICIALIZACIÓN DE SEMAFOROS
