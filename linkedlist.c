@@ -157,11 +157,45 @@ struct Proceso* generarListaAleatoria(int cantidad) {
 }
 
 bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
-    if (cabeza == NULL || proceso == NULL) {
+    if(cabeza->idProceso != proceso->idProceso) {
         return false;
     }
-    return cabeza == proceso;
+    if(cabeza->prioridad != proceso->prioridad) {
+        return false;
+    }
+    if(cabeza->idNodo != proceso->idNodo) {
+        return false;
+    }
+    if(cabeza->ticket != proceso->ticket) {
+        return false;
+    }
+    if(cabeza->inicio != proceso->inicio) {
+        return false;
+    }
+    if(cabeza->creado != proceso->creado) {
+        return false;
+    }
+    if(cabeza->atendido != proceso->atendido) {
+        return false;
+    }
+    if(cabeza->fin != proceso->fin) {
+        return false;
+    }
+    if(cabeza->retardo != proceso->retardo) {
+        return false;
+    }
+    if(cabeza->contACK != proceso->contACK) {
+        return false;
+    }
+    if(cabeza->ejecucion != proceso->ejecucion) {
+        return false;
+    }
+    if(cabeza->pedirPermiso != proceso->pedirPermiso) {
+        return false;
+    }
+    return true;
 }
+
 
 void eliminarCabeza(struct Proceso** cabeza) {
     if (*cabeza == NULL || (*cabeza)->siguiente == NULL) {
