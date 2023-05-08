@@ -78,7 +78,7 @@ void * procesomutex(int * param){
                     sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
                 }else{}
             }while (!aleatoriaentrada); // 0 No interesado 1 SOLICITANTE
-            printf("Entro en SC\n");
+            printf("Quiero entrar en SC\n");
             
             struct Proceso yomismo;
             yomismo.idProceso=hilo_pid;
@@ -94,21 +94,27 @@ void * procesomutex(int * param){
             //printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", cola->prioridad, cola->ticket, cola->idNodo);
                    
             ordenarCola(&cola);
-            printf("Cola ordenada con exito\n");         
+            printf("Cola ordenada con exito\n");
+            
+            printf(cola);
+            printf(&yomismo);
 
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
+                printf("Tengo permisos");
                 cola->ejecucion=1;
                 cola->pedirPermiso=0;
 
             }else{
                 //Me espero
+                printf("NO Tengo permisos");
                 sem_wait(&sem_prioridades[yomismo.prioridad]);
 
 
             }
 
             //SECCION CRITICA
+            printf("Acabo de llegar a SC");
             cola->inicio= time(NULL);
             int tiempoespera=rand() % 1 + 2;
             sleep(tiempoespera);
