@@ -47,8 +47,8 @@ sem_t sem_protec_lista;
 
 sem_t sem_prioridades[5];
 
-struct Proceso* cola = NULL;   // Generar una lista aleatoria de 10 elementos
-struct Proceso* historial = NULL;   // Generar una lista aleatoria de 10 elementos
+struct Proceso* cola = NULL;  
+struct Proceso* historial = NULL;   
 
 void initparam();
 
