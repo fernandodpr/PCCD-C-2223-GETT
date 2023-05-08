@@ -94,10 +94,7 @@ void * procesomutex(int * param){
             //printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", cola->prioridad, cola->ticket, cola->idNodo);
                    
             ordenarCola(&cola);
-            printf("Cola ordenada con exito\n");
-
-
-              
+            printf("Cola ordenada con exito\n");         
 
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
