@@ -97,7 +97,9 @@ void * procesomutex(int * param){
                    
             ordenarCola(&cola);
             printf("Cola ordenada con exito\n");
-            /*  
+
+
+              
 
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
@@ -117,7 +119,8 @@ void * procesomutex(int * param){
             sleep(tiempoespera);
             cola->fin = time(NULL);       
 
-            agregarProceso(&historial, *cola);
+            agregarProceso(&historial, yomismo.prioridad, yomismo.ticket, yomismo.idNodo);
+
             eliminarCabeza(&cola);
 
             if(compararIdNodo(cola,nodos[0])){
