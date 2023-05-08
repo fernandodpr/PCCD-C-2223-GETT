@@ -129,7 +129,7 @@ void * procesomutex(int * param){
             }
            
             
-            sleep(1);*/
+            sleep(1);
         //}while(1);
 
     return NULL;
