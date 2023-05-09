@@ -80,7 +80,9 @@ void* recepcion(void* args){
     int acks = 0;
     while(1){
         
-        Paquete* recibido = networkrcv(red,nodos[0]);
+//        Paquete* recibido = networkrcv(red,nodos[0]);
+        Paquete* recibido = NULL;
+
         if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
             
