@@ -255,6 +255,17 @@ bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
         }
     }
 }
+int ACKproceso(struct Proceso* cabeza, int procesoid){
+    struct Proceso* procesoActual = cabeza;
+    while (procesoActual != NULL) {
+        if(procesoActual->idProceso==procesoid){
+            return procesoActual->contACK;
+            
+        }
+        procesoActual = procesoActual->siguiente;
+    }
+    return -1;
+}
 bool procesoSC(struct Proceso* cabeza) {
     bool respuesta = 0;
     struct Proceso* procesoActual = cabeza;
@@ -271,4 +282,15 @@ bool procesoSC(struct Proceso* cabeza) {
     }
     
     return false;
+}
+void addACK(struct Proceso* cabeza,int identificador) {  
+    struct Proceso* procesoActual = cabeza;
+    while (procesoActual != NULL) {
+        if(procesoActual->idProceso==identificador){
+            procesoActual->contACK++;
+            return;
+        }
+        procesoActual = procesoActual->siguiente;
+    }
+    return;
 }
