@@ -12,16 +12,17 @@
 #include "linkedlist.h"
 
 
-void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo) {
+void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo,int idProceso,int atendido,int contACK,time_t creado,time_t etendido) {
     
     struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
     nuevoProceso->prioridad = prioridad;
     nuevoProceso->ticket = ticket;
     nuevoProceso->idNodo = nodo;
-    nuevoProceso->idProceso = 0;
-    nuevoProceso->atendido = 0;
-    nuevoProceso->contACK = 0;
-    nuevoProceso->creado = 0;
+    nuevoProceso->idProceso = idProceso;
+    nuevoProceso->atendido = atendido;
+    nuevoProceso->contACK = contACK;
+    nuevoProceso->creado = creado;
+    nuevoProceso->atendido=atendido;
     nuevoProceso->siguiente = NULL; // El siguiente del último elemento siempre es NULL
 
     if (*cabeza == NULL) { // Si la lista está vacía, el nuevo proceso es la cabeza

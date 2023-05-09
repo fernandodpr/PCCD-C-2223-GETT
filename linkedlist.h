@@ -9,7 +9,7 @@
 
 
     struct Proceso {
-       int idProceso;         // Id del proceso
+        int idProceso;         // Id del proceso
         int prioridad;          // Prioridad (Anulaciones, Pagos, Admin y Reservas, Consultas)
         int idNodo;             // Id del nodo del 
         int ticket;
@@ -28,7 +28,7 @@
     //FUNCIONES
 
     void borrarLista(struct Proceso** cabeza);
-void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo);
+void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo,int idProceso,int atendido,int contACK,time_t creado,time_t etendido);
     void ordenarCola(struct Proceso** cabeza);
     int contarProcesos(struct Proceso* cabeza);
     void imprimirLista(char* rutaArchivo, struct Proceso* cabeza);

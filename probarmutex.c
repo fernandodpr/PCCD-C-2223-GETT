@@ -54,7 +54,7 @@ void initparam();
 
 void * procesomutex(int * param){
     //pid_t hilo_pid = getpid();
-
+    int tiempo_proceso_inicio= time(NULL);
     pid_t hilo_pid = gettid();
     
     //int contadorschilo=1;
@@ -92,7 +92,7 @@ void * procesomutex(int * param){
             
             //Me pongo a la cola y ordeno
             sem_wait(&sem_protec_lista);
-            agregarProceso(&cola, yomismo.prioridad, yomismo.ticket, yomismo.idNodo);
+            agregarProceso(&cola, yomismo.prioridad, yomismo.ticket, yomismo.idNodo,hilo_pid,0,0,tiempo_proceso_inicio,0);
             ordenarCola(&cola);
             sem_post(&sem_protec_lista);
 
@@ -115,12 +115,14 @@ void * procesomutex(int * param){
             //SECCION CRITICA
 
             printf("Acabo de llegar a SC con Ticket: %i ",yomismo.ticket);
-            cola->inicio= time(NULL);
-            int tiempoespera=rand() % 1 + 2;
+            int tiempo_sc_inicio= time(NULL);
+            int tiempoespera=rand() % 1 + 5;
             sleep(tiempoespera);
-            cola->fin = time(NULL);       
+            int tiempo_sc_fin= time(NULL);       
 
-            agregarProceso(&historial, yomismo.prioridad, yomismo.ticket, yomismo.idNodo);
+
+            agregarProceso(&cola, yomismo.prioridad, yomismo.ticket, yomismo.idNodo,hilo_pid,0,0,tiempo_proceso_inicio,tiempo_sc_fin);
+
 
             sem_wait(&sem_protec_lista);
             eliminarCabeza(&cola);
@@ -155,15 +157,25 @@ int main(int argc, char *argv[]) {
     initparam();
     pthread_t pthtest[10];
 
-    for (int i =0; i<4; i++) {
+    for (int i =0; i<20; i++) {
         printf("Creo hilo\n");
         pthread_create(&pthtest[i],NULL,(void *)procesomutex,NULL);   
     }
-   
-    while (1) {
-    
+    for (int i = 0; i < 10; i++) {
+        pthread_join(pthtest[i], NULL); // Esperar a que el hilo termine
     }
+
+   
+    imprimirLista("historialporordendeejecucion.txt", historial);
+
     
+    // Aquí continúa la ejecución después de que todos los hilos han terminado
+
+   
+    
+
+    
+
     return 0;
 }
 
