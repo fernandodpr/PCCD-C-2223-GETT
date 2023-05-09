@@ -11,7 +11,6 @@
 #include "datatypes.h"
 #include "linkedlist.h"
 
-
 void agregarProceso(struct Proceso** cabeza, struct Proceso* proceso) {
     struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
     memcpy(nuevoProceso, proceso, sizeof(struct Proceso)); // Hacer una copia del struct

@@ -57,6 +57,7 @@ char* tipostring[3] = { "SOLICITUD", "ACK", "NACK"};
 
 int nodos[100]; //IMPORTANTE en nodos[0] siempre está mi ID
 
+
 int consultasActivas = 1;
 int consultasEnSC = 0;
 
