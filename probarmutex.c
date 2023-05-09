@@ -83,52 +83,37 @@ void* recepcion(void* args){
         Paquete* recibido = networkrcv(red,nodos[0]);
         if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
-            //Primero es necesario conocer si hay contienda mediante mi estado
             
-            if(estado==NO_INTERESADO){
-                //Dejamos que pase el otro proceso:   MOTIVO --> //No estoy interesado
+
+            if(contarProcesos==0){
+                //La cola está vacía, podemos contestar directamente
+            }else{
+                //La cola no está vacía, tenemos que añadir a la cola el proceso externo y que luego cuando toque se conteste
+            }
+
+
+            if(procesoSC(cola)==true){
+                //Dejamos que pase el otro proceso:   MOTIVO --> nadie en mi nodo está en SC
                 if(recibido->process.ticket>lastticket){
                     lastticket=recibido->process.ticket;
-                    //printf("####### Nuevo numero de ticket minimo %i.\n",lastticket);
                 }  // Si el ticket que recibo es mayor actualizo
 
-                //Mando el ACK
-                //void NetworkSend(int red, int destinatario,int estado,int instruccion,struct Proceso processinc)
-                //NetworkSend(red,nodos[0], recibido->process.idNodo, NO_INTERESADO,0,ACK,lastticket);
-            //En estos casos existe contienda.
-            }else if (estado==SOLICITANTE){ //Pasa el nodo con ticket menor, el otro
-            //Existe contienda en el no
+              
+                //En estos casos existe contienda.
+            }else{ //Pasa el nodo con ticket menor, el otro
 
-            //Para gestionar la parte de algoritmia llamamos a la función de la linkedlist
-            //Nos va a ordenar la lista con las prioridades, tickets, gestión de contiendas etc
-
-            //Van a existir 3 casos:
-                // Tenemos un proceso nuestro de mutex en la cabeza de la lista que no se está ejecutando:
-                    // Lo llamamos a que despierte
-                    // 
-                // Que le toque a consultas y no haya nadie mas en ejecución
-                    //Llamar a todas las consultas a que se despierten
-                //Tenemos un proceso de otro nodo en mutex que hay que dejar pasar
-                    //Darle el permiso y marcar el siguiente proceso nuestro como que tiene que pedir permiso
-            
-            
             }
 
         }else if(recibido->instruccion==ACK){
             //Nos están dando permiso para entrar SC
             //Primera comprobación, realmente, queremos?
-            if(estado!=NO_INTERESADO){ // Confirmo que quiero entrar
-                //Cuando puedo entar a SC? Cuando tengo permiso de todos los nodos
-                acks++; //Hemos recibido un ACK
-                //printf("[Nodo %i] Nuevo ACK recibido. %i\n",nodos[0],acks);
-                if (acks==NODOSVECINOS-1){
-                    //Tenemos los permisos necesarios para acceder a SC
-                    //Aviso al proceso de que pase
-                    sem_post(&sem_espera_ACK);
-                    //printf("[Nodo %i] RECEPTOR: Se ha notificado al proceso de que tiene permisos para entar.\n",nodos[0]);
-                    acks=0;
-                }
-            }
+            sem_wait(&sem_protec_lista);
+            addACK(cola,recibido->process.idNodo);//Añadir el ack
+            sem_post(&sem_protec_lista);
+            if(ACKproceso(cola,recibido->process.idNodo)==NODOSVECINOS-1){
+                //Este proceso ya tiene todos los ack
+                sem_post(&sem_prioridades);// Después en el wait ese deberán de revisar si tienen todos los permisos necesarios pero no es cosa del receptor
+            }            
         }else if (recibido->instruccion==NACK){
             //No nos están dando el permiso para SC??
         }
