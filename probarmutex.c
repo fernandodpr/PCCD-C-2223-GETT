@@ -70,7 +70,7 @@ void * procesomutex(int* prioridad){
 
     int nodos[1];
     nodos[0]=1;
-    printf("[Proceso %d] -> Acabo de entrar en procesomutex\n", hilo_pid);
+    printf("[Proceso %d] -> Acabo de entrar en procesomutex\n", yomismo.idProceso);
     
     //do{
 
@@ -107,32 +107,18 @@ void * procesomutex(int* prioridad){
                 ordenarCola(&cola);
             sem_post(&sem_protec_lista);
 
-            char fichero[300];
-            char *pid;
-            char *str1 = "historialporordendeejecucion";
-            char *str2 = ".txt";
-
-            if(asprintf(&pid, "%d",hilo_pid) == -1);
-            else {
-                strcat(strcpy(fichero, str1), pid);
-                 strcat(fichero, str2);
-            }
-            
-            imprimirLista(fichero, cola);
-
-            sleep(20);
 
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
-                printf("[Proceso %d] -> Tengo permisos\n", hilo_pid);  
+                printf("[Proceso %d] -> Tengo permisos\n", yomismo.idProceso);  
                 cola->ejecucion=1;
                 cola->pedirPermiso=0;
 
             }else{
                 //Me espero
-                printf("[Proceso %d] -> NO Tengo permisos\n", hilo_pid);
+                printf("[Proceso %d] -> NO Tengo permisos\n", yomismo.idProceso);
                 sem_wait(&sem_prioridades[yomismo.prioridad]);
-                printf("[Proceso %d] -> He despertado!\n", hilo_pid);
+                printf("[Proceso %d] -> He despertado!\n", yomismo.idProceso);
 
 
 
