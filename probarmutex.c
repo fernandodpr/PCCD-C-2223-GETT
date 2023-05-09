@@ -9,6 +9,7 @@ Para poder ejecutar el sript de inicialización autiomática de nodos compilar c
 multiproceso.o RECEP ID_COLA_INTERNA ID_COLA_RED #########Lanza la aplicacioón receptor 
 multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #ifndef TIMER
@@ -62,13 +63,13 @@ void * procesomutex(int * param){
     //int valorSemaforoAvisoNodos;
     int nodos[1];
     nodos[0]=1;
-    printf("Acabo de entrar en procesomutex\n");
+    printf("[Proceso %d] -> Acabo de entrar en procesomutex\n", hilo_pid);
     
     //do{
 
         //Aleatorizar la entrada en SC
             bool aleatoriaentrada=true;
-            printf("Intentando entrar en la seccion critica...\n");
+            printf("[Proceso %d] -> Intentando entrar en la seccion critica...\n", hilo_pid);
             do {
 
                 aleatoriaentrada = (double)rand() / RAND_MAX < PROBABILIDAD_ENTRADA;
@@ -78,7 +79,7 @@ void * procesomutex(int * param){
                     sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
                 }else{}
             }while (!aleatoriaentrada); // 0 No interesado 1 SOLICITANTE
-            printf("Quiero entrar en SC\n");
+            printf("[Proceso %d] -> Quiero entrar en SC\n", hilo_pid);
             
             struct Proceso yomismo;
 
@@ -96,17 +97,32 @@ void * procesomutex(int * param){
             ordenarCola(&cola);
             sem_post(&sem_protec_lista);
 
+            char fichero[300];
+            char *pid;
+            char *str1 = "historialporordendeejecucion";
+            char *str2 = ".txt";
+
+            if(asprintf(&pid, "%d",hilo_pid) == -1);
+            else {
+                strcat(strcpy(fichero, str1), pid);
+                 strcat(fichero, str2);
+            }
+            
+            imprimirLista(fichero, cola);
+
+            sleep(20);
+
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
-                printf("Tengo permisos\n");  
+                printf("[Proceso %d] -> Tengo permisos\n", hilo_pid);  
                 cola->ejecucion=1;
                 cola->pedirPermiso=0;
 
             }else{
                 //Me espero
-                printf("NO Tengo permisos\n");
+                printf("[Proceso %d] -> NO Tengo permisos\n", hilo_pid);
                 sem_wait(&sem_prioridades[yomismo.prioridad]);
-                printf("He despertado!\n");
+                printf("[Proceso %d] -> He despertado!\n", hilo_pid);
 
 
 
@@ -114,7 +130,7 @@ void * procesomutex(int * param){
 
             //SECCION CRITICA
 
-            printf("Acabo de llegar a SC con Ticket: %i ",yomismo.ticket);
+            printf("[Proceso %d] -> Acabo de llegar a SC con Ticket: %i ",hilo_pid, yomismo.ticket);
             int tiempo_sc_inicio= time(NULL);
             int tiempoespera=rand() % 1 + 5;
             sleep(tiempoespera);
@@ -131,15 +147,15 @@ void * procesomutex(int * param){
 
             if(compararIdNodo(cola,nodos[0])){
                 //El sigueinte proceso está esperando en mi nodo
-                printf("EL SIGUIENTE PROCESO ESTA EN MI NODO\n");
-                printf("El sigueinte proceso es de prioridad %i\n",cola->prioridad);
-                printf("El sigueinte proceso es tiene ticket %i\n",cola->ticket);
+                printf("[Proceso %d] -> EL SIGUIENTE PROCESO ESTA EN MI NODO\n", hilo_pid);
+                printf("[Proceso %d] -> El siguiente proceso es de prioridad %i\n",hilo_pid, cola->prioridad);
+                printf("[Proceso %d] -> El sigueinte proceso es tiene ticket %i\n",hilo_pid, cola->ticket);
 
                 sem_post(&sem_prioridades[cola->prioridad]);
-                printf("Ha despertado?\n");
+                printf("[Proceso %d] -> Ha despertado?\n", hilo_pid);
             }else{
                 //El siguinte proceso esta esperando fuera de mi nodo
-                printf("EL SIGUIENTE PROCESO NO ESTA EN MI NODO\n");
+                printf("[Proceso %d] -> EL SIGUIENTE PROCESO NO ESTA EN MI NODO\n", hilo_pid);
 
             }
            
@@ -157,7 +173,7 @@ int main(int argc, char *argv[]) {
     initparam();
     pthread_t pthtest[10];
 
-    for (int i =0; i<20; i++) {
+    for (int i =0; i<4; i++) {
         printf("Creo hilo\n");
         pthread_create(&pthtest[i],NULL,(void *)procesomutex,NULL);   
     }

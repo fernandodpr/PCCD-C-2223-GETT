@@ -74,17 +74,10 @@ void ordenarCola(struct Proceso** cabeza) {
     while (cambio) {
         cambio = false;
         actual = *cabeza;
-
-        printf("Dentro del bucle 1\n");
          
         while (actual->siguiente != NULL) {
             siguiente = actual->siguiente;
             
-            printf("Dentro del bucle 2\n");
-            
-            printf("%d < %d es %d  (Prioridad actual < Prioridad siguiente)\n", actual->prioridad, siguiente->prioridad, actual->prioridad < siguiente->prioridad);
-            printf("%d > %d es %d  (Nodo actual > Nodo siguiente)\n", actual->idNodo, siguiente->idNodo, actual->idNodo > siguiente->idNodo);
-            printf("%d < %d es %d  (Ticket actual < Ticket siguiente)\n", actual->ticket, siguiente->ticket, actual->ticket < siguiente->ticket);
             // Ordenar por prioridad (de mayor a menor)
             if (actual->prioridad < siguiente->prioridad) {
                 printf("Prioridad ordenada de mayor a menor\n");
@@ -102,7 +95,7 @@ void ordenarCola(struct Proceso** cabeza) {
                 cambio = true;
             }
             // Si la prioridad y el nodo son iguales, ordenar por tamaño de grupo (de mayor a menor)
-            else if (actual->prioridad == siguiente->prioridad && actual->idNodo == siguiente->idNodo && actual->ticket < siguiente->ticket) {
+            else if (actual->prioridad == siguiente->prioridad && actual->idNodo == siguiente->idNodo && actual->ticket > siguiente->ticket) {
                 printf("ticket ordenado de mayor a menor\n");
                 temp = actual->ticket;
                 actual->ticket = siguiente->ticket;
