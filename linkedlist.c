@@ -56,7 +56,7 @@ int contarProcesos(struct Proceso* cabeza) {
     return contador;
 }
 void ordenarCola(struct Proceso** cabeza) {
-    /*printf("Hola k haces");
+    printf("Hola k haces");
     struct Proceso* actual = *cabeza;
     struct Proceso* siguiente = NULL;
     int temp;
@@ -71,14 +71,8 @@ void ordenarCola(struct Proceso** cabeza) {
         printf("Dentro del bucle 1\n");
         while (actual->siguiente != NULL) {
             
-            
-            printf("Dentro del bucle 2\n");
             siguiente = actual->siguiente;
-            printf("Dentro del bucle 2\n");
-           
-            printf("%d < %d es %d  (Prioridad actual < Prioridad siguiente)\n", actual->prioridad, siguiente->prioridad, actual->prioridad < siguiente->prioridad);
-            printf("%d > %d es %d  (Nodo actual > Nodo siguiente)\n", actual->idNodo, siguiente->idNodo, actual->idNodo > siguiente->idNodo);
-            printf("%d < %d es %d  (Ticket actual < Ticket siguiente)\n", actual->ticket, siguiente->ticket, actual->ticket < siguiente->ticket);
+
             // Ordenar por prioridad (de mayor a menor)
             if (actual->prioridad < siguiente->prioridad) {
                 printf("Prioridad ordenada de mayor a menor\n");
@@ -87,7 +81,7 @@ void ordenarCola(struct Proceso** cabeza) {
                 siguiente->prioridad = temp;
                 cambio = true;
             }
-            // Si la prioridad es igual, ordenar por nodo (de menor a mayor)
+            /*// Si la prioridad es igual, ordenar por nodo (de menor a mayor)
             else if (actual->prioridad == siguiente->prioridad && actual->idNodo > siguiente->idNodo) {
                 printf("Nodo ordenado de menor a mayor\n");
                 temp = actual->idNodo;
@@ -102,11 +96,11 @@ void ordenarCola(struct Proceso** cabeza) {
                 actual->ticket = siguiente->ticket;
                 siguiente->ticket = temp;
                 cambio = true;
-            }
+            }*/
             actual = actual->siguiente;
         }
 
-    }*/
+    }
 }
 void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     FILE* archivo = fopen(rutaArchivo, "w");

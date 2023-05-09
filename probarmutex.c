@@ -36,6 +36,12 @@ multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
 #define NODOSVECINOS 3
 
+int red =0;
+
+Status estado = 0;
+
+int nodos[100]; //IMPORTANTE en nodos[0] siempre está mi ID
+
 
 int lastticket=15; // Este es el mayor número de ticket recibido.
 
