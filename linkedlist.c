@@ -28,8 +28,6 @@ void agregarProceso(struct Proceso** cabeza, struct Proceso* proceso) {
     }
     printf("Agregado Prioridad: %d, Ticket: %d, idNodo: %d\n", nuevoProceso->prioridad, nuevoProceso->ticket, nuevoProceso->idNodo);
 }
-
-
 void borrarLista(struct Proceso** cabeza) {
     struct Proceso* procesoActual = *cabeza;
     struct Proceso* procesoSiguiente = NULL;
@@ -147,7 +145,6 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     
     fclose(archivo);
 }
-
 struct Proceso* generarListaAleatoria(int cantidad) {
     struct Proceso* cabeza = NULL;
     srand(time(NULL));  // Inicializar el generador de números aleatorios
@@ -168,7 +165,6 @@ struct Proceso* generarListaAleatoria(int cantidad) {
     
     return cabeza;
 }
-
 bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
     if(cabeza->idProceso != proceso->idProceso) {
         printf("NOEsIgual: idProceso\n");
@@ -235,8 +231,6 @@ bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
     }
     return true;
 }
-
-
 void eliminarCabeza(struct Proceso** cabeza) {
     if (*cabeza == NULL) {
         return; // La lista está vacía
@@ -248,7 +242,6 @@ void eliminarCabeza(struct Proceso** cabeza) {
         *cabeza = siguiente; // La lista tiene más de un elemento
     }
 }
-
 bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
     if (cabeza == NULL) { // Si la cola está vacía, retorna false
         return false;
@@ -261,4 +254,21 @@ bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
             return false;
         }
     }
+}
+bool procesoSC(struct Proceso* cabeza) {
+    bool respuesta = 0;
+    struct Proceso* procesoActual = cabeza;
+    
+    while (procesoActual != NULL) {
+        if(procesoActual->ejecucion==1){
+            return true;
+        }
+        procesoActual = procesoActual->siguiente;
+    }
+
+    if(procesoActual == NULL){
+        printf("YA esta vacía\n");
+    }
+    
+    return false;
 }
