@@ -1,0 +1,2 @@
+ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,Retardo
+0,1,1,9,00:00:00.000,00:00:00.000,00:00:00.000,00:00:00.000,0

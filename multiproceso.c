@@ -109,7 +109,7 @@ void* recepcion(void* args){
                 }  // Si el ticket que recibo es mayor actualizo
 
                 //Mando el ACK
-                NetworkSend(red,nodos[0], recibido->process.idNodo, NO_INTERESADO,0,ACK,lastticket);
+                //NetworkSend(red,nodos[0], recibido->process.idNodo, NO_INTERESADO,0,);
             //En estos casos existe contienda.
             }else if (estado==SOLICITANTE){ //Pasa el nodo con ticket menor, el otro
             //Existe contienda en el no
@@ -272,7 +272,7 @@ void * procesomutex(int * param){
                 ticketnum = lastticket + rand() % NODOSVECINOS + 5;
                 lastticket=ticketnum;
                 for (int i=1;i<NODOSVECINOS; i++){
-                    NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,hilo_pid,SOLICITUD,ticketnum);
+                    //NetworkSend(red,nodos[0],nodos[i],SOLICITANTE,hilo_pid,SOLICITUD,ticketnum);
                 }
                 //printf("\n[Nodo %i Hilo %i] Nodos vecinos notificados, espero respuestas.\n",nodos[0],hilo_pid);
                 if(NODOSVECINOS>1)sem_wait(&sem_espera_ACK); //Nos manda el permiso el receptor
@@ -319,7 +319,7 @@ void * procesomutex(int * param){
                         while (actual != NULL) {
                             //printf("Notificando al nodo que ahora si puede entrar: %d \n", actual->valor);
                     
-                            NetworkSend(red,nodos[0], actual->valor, NO_INTERESADO,hilo_pid, ACK, ticketnum);
+                            //NetworkSend(red,nodos[0], actual->valor, NO_INTERESADO,hilo_pid, ACK, ticketnum);
                             actual = actual->siguiente;
                         }
                         
@@ -371,7 +371,7 @@ void * consultas(int * param){
                 bool necesariasolicitud=true;
                 sem_getvalue(&sem_SC, &valorSemaforoSC);
 
-                int cantidadnodosesperando=contarNodos(nodosenespera);
+                int cantidadnodosesperando=contarNodos(cola);
                //printf("[Nodo %i] Nodos en espera: %i",nodos[0],cantidadnodosesperando);
                 //printf("[Nodo %i] Valor semaforo SC: %i",nodos[0],valorSemaforoSC);
 

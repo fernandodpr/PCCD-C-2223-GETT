@@ -6,7 +6,7 @@
         long mtype;          //Destinatario DEST
         Instruccion instruccion;
         Status estado;      //En que estado se encuentra
-        Proceso process;
+        struct Proceso process;
     } Paquete;
 
     Paquete* networkrcv(int red,int nodo);

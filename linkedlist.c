@@ -12,18 +12,11 @@
 #include "linkedlist.h"
 
 
-void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo) {
-    
+void agregarProceso(struct Proceso** cabeza, struct Proceso* proceso) {
     struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
-    nuevoProceso->prioridad = prioridad;
-    nuevoProceso->ticket = ticket;
-    nuevoProceso->idNodo = nodo;
-    nuevoProceso->idProceso = 0;
-    nuevoProceso->atendido = 0;
-    nuevoProceso->contACK = 0;
-    nuevoProceso->creado = 0;
-    nuevoProceso->siguiente = NULL; // El siguiente del último elemento siempre es NULL
+    memcpy(nuevoProceso, proceso, sizeof(struct Proceso)); // Hacer una copia del struct
 
+    nuevoProceso->siguiente = NULL; // El siguiente del último elemento siempre es NULL
     if (*cabeza == NULL) { // Si la lista está vacía, el nuevo proceso es la cabeza
         *cabeza = nuevoProceso;
     } else {
@@ -33,8 +26,7 @@ void agregarProceso(struct Proceso** cabeza, int prioridad, int ticket, int nodo
         }
         ultimo->siguiente = nuevoProceso; // Agregar el nuevo proceso después del último
     }
-
-    printf("Prioridad: %d, Ticket: %d, idNodo: %d\n", nuevoProceso->prioridad, nuevoProceso->ticket, nuevoProceso->idNodo);
+    printf("Agregado Prioridad: %d, Ticket: %d, idNodo: %d\n", nuevoProceso->prioridad, nuevoProceso->ticket, nuevoProceso->idNodo);
 }
 
 
@@ -58,11 +50,15 @@ int contarProcesos(struct Proceso* cabeza) {
         contador++;
         procesoActual = procesoActual->siguiente;
     }
+
+    if(procesoActual == NULL){
+        printf("YA esta vacía\n");
+    }
     
     return contador;
 }
 void ordenarCola(struct Proceso** cabeza) {
-    printf("Hola k haces");
+    /*printf("Hola k haces");
     struct Proceso* actual = *cabeza;
     struct Proceso* siguiente = NULL;
     int temp;
@@ -75,12 +71,13 @@ void ordenarCola(struct Proceso** cabeza) {
         actual = *cabeza;
 
         printf("Dentro del bucle 1\n");
-         
         while (actual->siguiente != NULL) {
-            siguiente = actual->siguiente;
+            
             
             printf("Dentro del bucle 2\n");
-            
+            siguiente = actual->siguiente;
+            printf("Dentro del bucle 2\n");
+           
             printf("%d < %d es %d  (Prioridad actual < Prioridad siguiente)\n", actual->prioridad, siguiente->prioridad, actual->prioridad < siguiente->prioridad);
             printf("%d > %d es %d  (Nodo actual > Nodo siguiente)\n", actual->idNodo, siguiente->idNodo, actual->idNodo > siguiente->idNodo);
             printf("%d < %d es %d  (Ticket actual < Ticket siguiente)\n", actual->ticket, siguiente->ticket, actual->ticket < siguiente->ticket);
@@ -110,7 +107,8 @@ void ordenarCola(struct Proceso** cabeza) {
             }
             actual = actual->siguiente;
         }
-    }
+
+    }*/
 }
 void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     FILE* archivo = fopen(rutaArchivo, "w");
@@ -121,28 +119,28 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     }
     
     struct Proceso* procesoActual = cabeza;
-        fprintf(archivo, "ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,Retardo\n");
+    fprintf(archivo, "ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,Retardo\n");
     
     while (procesoActual != NULL) {
-        struct tm *tm_info = localtime(&procesoActual->inicio);
+        struct tm *tm_info = localtime(&procesoActual->creado);
         char tiempo_inicio[20];
         strftime(tiempo_inicio, 20, "%H:%M:%S", tm_info);
-        fprintf(archivo, "%d,%d,%d,%d,%s.%03ld,", procesoActual->idProceso, procesoActual->prioridad, procesoActual->idNodo, procesoActual->ticket, tiempo_inicio, procesoActual->inicio % 1000);
+        fprintf(archivo, "%d,%d,%d,%d,%s.%01ld,", procesoActual->idProceso, procesoActual->prioridad, procesoActual->idNodo, procesoActual->ticket, tiempo_inicio, procesoActual->inicio % 1000);
         
-        tm_info = localtime(&procesoActual->creado);
+        tm_info = localtime(&procesoActual->inicio);
         char tiempo_creado[20];
         strftime(tiempo_creado, 20, "%H:%M:%S", tm_info);
-        fprintf(archivo, "%s.%03ld,", tiempo_creado, procesoActual->creado % 1000);
+        fprintf(archivo, "%s.%01ld,", tiempo_creado, procesoActual->creado % 1000);
         
         tm_info = localtime(&procesoActual->atendido);
         char tiempo_atendido[20];
         strftime(tiempo_atendido, 20, "%H:%M:%S", tm_info);
-        fprintf(archivo, "%s.%03ld,", tiempo_atendido, procesoActual->atendido % 1000);
+        fprintf(archivo, "%s.%01ld,", tiempo_atendido, procesoActual->atendido % 1000);
         
         tm_info = localtime(&procesoActual->fin);
         char tiempo_fin[20];
         strftime(tiempo_fin, 20, "%H:%M:%S", tm_info);
-        fprintf(archivo, "%s.%03ld,%d\n", tiempo_fin, procesoActual->fin % 1000, procesoActual->retardo);
+        fprintf(archivo, "%s.%01ld,%d\n", tiempo_fin, procesoActual->fin % 1000, procesoActual->retardo);
         
         procesoActual = procesoActual->siguiente;
     }
@@ -240,11 +238,15 @@ bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
 
 
 void eliminarCabeza(struct Proceso** cabeza) {
-    if (*cabeza == NULL || (*cabeza)->siguiente == NULL) {
-        return; // La lista está vacía o solo tiene un elemento
+    if (*cabeza == NULL) {
+        return; // La lista está vacía
     }
-    struct Proceso* segundo = (*cabeza)->siguiente;
-    *cabeza = segundo; // Cambia la cabeza por el segundo elemento
+    struct Proceso* siguiente = (*cabeza)->siguiente;
+    if (siguiente == NULL) {
+        *cabeza = NULL; // La lista tiene un solo elemento
+    } else {
+        *cabeza = siguiente; // La lista tiene más de un elemento
+    }
 }
 
 bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
