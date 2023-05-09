@@ -98,7 +98,7 @@ void ordenarCola(struct Proceso** cabeza) {
                 cambio = true;
             }
             // Si la prioridad y el nodo son iguales, ordenar por tamaño de grupo (de mayor a menor)
-            else if (actual->prioridad == siguiente->prioridad && actual->idNodo == siguiente->idNodo && actual->ticket < siguiente->ticket) {
+            else if (actual->prioridad == siguiente->prioridad && actual->idNodo == siguiente->idNodo && actual->ticket > siguiente->ticket) {
                 printf("ticket ordenado de mayor a menor\n");
                 temp = actual->ticket;
                 actual->ticket = siguiente->ticket;
