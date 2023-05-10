@@ -259,7 +259,7 @@ void * procesomutex(void *arg){
 
                 bool rep=false;
                 do {
-                    printf("[Proceso %d] -> Esperando ACK's\n", yomismo.idProceso);
+                    printf("[Proceso %d] -> Esperando ACK's....%i\n", yomismo.idProceso,cola->contACK);
                     sem_wait(&sem_prioridades_ACK[yomismo.prioridad]);                 
                     rep= ((cola->idProceso==yomismo.idProceso)==false) || (cola->contACK!=NODOSVECINOS-1);
                     if(rep){
