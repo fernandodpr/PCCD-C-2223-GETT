@@ -34,9 +34,7 @@ multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
 ///////////////////////////////////
 #define PROBABILIDAD_ENTRADA 0.75
 #define PROBABILIDAD_PERDIDA_PAQUETE 0.01
-
-
-int NODOSVECINOS = 0;
+#define NODOSVECINOS 3
 
 int red =0;
 
@@ -61,7 +59,6 @@ sem_t sem_protec_ordenarLista;
 sem_t sem_protec_lastticket;
 
 sem_t sem_prioridades[5];
-sem_t sem_prioridades_ACK[5];
 
 struct Proceso* cola = NULL;  
 struct Proceso* historial = NULL;   
@@ -82,45 +79,19 @@ void* recepcion(void* args){
     //Tenemos que definir los tipos de cada uno de los paquetes.
     // Espera a recibir un mensaje en la cola de mensajes
     int acks = 0;
-    printf("ESCUCHANDO CONEXIONES POR RED %i \n",red);
     while(1){
-        printf("while");
-        Paquete recibido;
+        
+//        Paquete* recibido = networkrcv(red,nodos[0]);
+        Paquete* recibido = NULL;
 
-
-        printf("Voy a llamar a networkrcsv");
-        networkrcv(red,nodos[0],&recibido);
-        printf("Sali de networkrcsv");
-
-        printf("ENTRO \n",red);
-        printf("HA LLEGADO UN PAQUETE\n\n");
-
-        printf("La prioridad es %i\n",recibido.prioridad);
-        printf("La Instruccion es %i\n",recibido.instruccion);
-
-       
-        if(recibido.instruccion==SOLICITUD){
+        if(recibido->instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
-            printf("Es una solicitud\n\n");
-
-            if(recibido.ticket>lastticket){
-                lastticket=recibido.ticket;
-                printf("Actualizo el numero de ticket con externo");
-            }  // Si el ticket que recibo es mayor actualizo    
-
-            if(contarProcesos(cola)==0){
+            
+/*
+            if(contarProcesos==0){
                 //La cola está vacía, podemos contestar directamente
-                printf("La cola está vacía, puedo dar paso a la solicitud");
-
-                NetworkSend(red,&recibido);
             }else{
                 //La cola no está vacía, tenemos que añadir a la cola el proceso externo y que luego cuando toque se conteste
-                printf("La cola NO está vacía, añado el proceso a la cola");
-
-                sem_wait(&sem_protec_lista);
-                    addACK(cola,recibido);//Añadir el ack
-                    ordenarCola(cola);
-                sem_post(&sem_protec_lista);
             }
 
 */
@@ -140,19 +111,14 @@ void* recepcion(void* args){
             //Nos están dando permiso para entrar SC
             //Primera comprobación, realmente, queremos?
             sem_wait(&sem_protec_lista);
-                addACK(cola,recibido.idNodo);//Añadir el ack
+            addACK(cola,recibido->process.idNodo);//Añadir el ack
             sem_post(&sem_protec_lista);
-
-
-            if(ACKproceso(cola,recibido.idNodo)==NODOSVECINOS-1){
+            if(ACKproceso(cola,recibido->process.idNodo)==NODOSVECINOS-1){
                 //Este proceso ya tiene todos los ack
-                sem_post(&sem_prioridades_ACK[recibido.prioridad]);// Después en el wait ese deberán de revisar si tienen todos los permisos necesarios pero no es cosa del receptor
-            }
-
-        }else if (recibido.instruccion==NACK){
+                sem_post(&sem_prioridades);// Después en el wait ese deberán de revisar si tienen todos los permisos necesarios pero no es cosa del receptor
+            }            
+        }else if (recibido->instruccion==NACK){
             //No nos están dando el permiso para SC??
-        }else{
-            printf("Caso raro");
         }
 
     }
@@ -169,12 +135,16 @@ void * procesomutex(int* prioridad){
     //int valorSemaforoSC;
     //int valorSemaforoAvisoNodos;
 
-
+    int nodos[1];
+    nodos[0]=1;
     printf("[Proceso %d] -> Acabo de entrar en procesomutex\n", yomismo.idProceso);
+    
+    //do{
+
         //Aleatorizar la entrada en SC
-        
+        /*
             bool aleatoriaentrada=true;
-            printf("[Proceso %d] -> Intentando entrar en la seccion critica...\n", yomismo.idProceso);
+            printf("[Proceso %d] -> Intentando entrar en la seccion critica...\n", hilo_pid);
             do {
 
                 aleatoriaentrada = (double)rand() / RAND_MAX < PROBABILIDAD_ENTRADA;
@@ -183,15 +153,14 @@ void * procesomutex(int* prioridad){
                     
                     sleep(rand()%5+1); //Dormir una cantidad de tiempo aleatoria entre 1 y 5 segundos
                 }else{}
-            }while (!aleatoriaentrada); // 0 No interesado 1 SOLICITANTE
+            }while (!aleatoriaentrada); // 0 No interesado 1 SOLICITANTE*/
 
 
             printf("[Proceso %d] -> Intentando entrar en SC...\n", yomismo.idProceso);
             yomismo.contACK=0;
             yomismo.idNodo=nodos[0];
-            yomismo.pedirPermiso=1;
             yomismo.prioridad=prioridad;
-            printf("Pto control");
+            
             yomismo.ticket=lastticket+rand() % 5;
             //Actualizo el numero de ticket minimo
             sem_wait(&sem_protec_lastticket);
@@ -212,36 +181,14 @@ void * procesomutex(int* prioridad){
             printf("[Proceso %d] -> Mi prioridad es %d y el de la cabeza es %d. RESULTADO %d\n", yomismo.idProceso, yomismo.prioridad, cola->prioridad, esIgual(cola, &yomismo));
             if(esIgual(cola, &yomismo)){
                 //Tengo permiso para entrar en SC
-                printf("[Proceso %d] -> Tengo permisos\n", yomismo.idProceso);
+                printf("[Proceso %d] -> Tengo permisos\n", yomismo.idProceso);  
             }else{
+                //Me espero
+                printf("[Proceso %d] -> NO Tengo permisos\n", yomismo.idProceso);
                 sem_wait(&sem_prioridades[yomismo.prioridad]);
+                printf("[Proceso %d] -> He despertado!\n", yomismo.idProceso);
             }
-
             cola->ejecucion=1;
-            yomismo.instruccion=SOLICITUD;
-            yomismo.estado=SOLICITANTE;
-
-            if (cola->pedirPermiso){
-
-                for (int i=1;i<NODOSVECINOS; i++){
-                    yomismo.mtype=nodos[i];
-                    printf("es aqui, la instruccion es %i\n\n\n",yomismo.instruccion);
-                    NetworkSend(red,&yomismo);
-                }
-                printf("Hola como estás\n");
-
-                bool rep=false;
-                do {
-                    printf("Espero los ACK");
-                    sem_wait(&sem_prioridades_ACK[yomismo.prioridad]);
-                    printf("ACK recibidos\n");
-                    rep= (esIgual(cola, &yomismo)==false) || (cola->contACK!=NODOSVECINOS-1);
-                    if(rep){
-                        sem_post(&sem_prioridades_ACK[yomismo.prioridad]); //El despertar no era para mi
-                    }
-                }while (rep);
-            }
-            
 
             
             //SECCION CRITICA
@@ -274,95 +221,56 @@ void * procesomutex(int* prioridad){
                 printf("Ha despertado?\n");
             }else if(contarProcesos(cola)!=0) {
                 printf("EL SIGUIENTE PROCESO NO ESTA EN MI NODO\n");
-                cola->mtype=cola->idNodo;
-                NetworkSend(red,cola);
-                necesariapeticion(cola,nodos[0]); //Agrega los boolean de necesaria petición
             }else{
                 //El siguinte proceso esta esperando fuera de mi nodo
                 printf("Cola terminada!\n");
             }
+            /*                printf("[Proceso %d] -> EL SIGUIENTE PROCESO ESTA EN MI NODO\n", hilo_pid);
+                printf("[Proceso %d] -> El siguiente proceso es de prioridad %i\n",hilo_pid, cola->prioridad);
+                printf("[Proceso %d] -> El sigueinte proceso es tiene ticket %i\n",hilo_pid, cola->ticket);
+
+                sem_post(&sem_prioridades[cola->prioridad]);
+                printf("[Proceso %d] -> Ha despertado?\n", hilo_pid);
+            }else{
+                //El siguinte proceso esta esperando fuera de mi nodo
+                printf("[Proceso %d] -> EL SIGUIENTE PROCESO NO ESTA EN MI NODO\n", hilo_pid);*/
+
             yomismo.fin= time(NULL);
             
             agregarProceso(&historial, &yomismo);
             
             sleep(1);
+        //}while(1);
+
     return NULL;
     
 }
-void sigint_handler(int sig) {
-    //printf("\n\n\n\n");
-    //printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces\n",contadorsc);
-    printf("Se ha presionado Ctrl+C eliminando buzones....\n");
-    if (msgctl(red, IPC_RMID, NULL) == -1) {
-        perror("msgctl");
-        exit(EXIT_FAILURE);
-    }
-    printf("Buzón eliminado.\n");
-    exit(EXIT_SUCCESS);
-    imprimirLista("historialdeejecucion.csv",historial);
-}
 
 int main(int argc, char *argv[]) {
-    //Signal de salida
-    //printf("Presione Ctrl+C para salir del programa.\n");
-    signal(SIGINT, sigint_handler);
-
-
-    red=msgget(8888, IPC_CREAT | 0777);
-
-
+    printf("Hola\n");
     srand(time(NULL)); 
-    initparam(argc, argv);
+    initparam();
+    int procesos =10;
+    pthread_t pthtest[procesos];
+
+
+    //pthread_t pthrecepcion;
+    //pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);
+
+    for (int i =0; i<procesos;i++) {
+        printf("Creo hilo\n");
+        int prioridadrand=rand() % 3 + 1;
+        pthread_create(&pthtest[i],NULL,(void *)procesomutex,prioridadrand);
+    }
     
-
-    pthread_t pthrecepcion;
-    pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);
-
-
- 
-    int procesos =1;
-
-
-    int i =0;
-    do{
-        pthread_t pthtest[procesos];
-
-        for (int i =0; i<procesos;i++) {
-            printf("Creo hilo\n");
-            int prioridadrand=rand() % 3 + 1;
-            pthread_create(&pthtest[i],NULL,(void *)procesomutex,prioridadrand);
-        }
-
-        pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
-
-        for (int i = 0; i < procesos; i++) {
-            pthread_join(pthtest[i], NULL); // Esperar a que el hilo termine
-        }
-        i++;
-    }while(i<5);
-
-   
-  sigint_handler(0);
+    for (int i = 0; i < procesos; i++) {
+        pthread_join(pthtest[i], NULL); // Esperar a que el hilo termine
+    }
+    imprimirLista("historialdeejecucion.csv",historial);
     return 0;
 }
 
-void initparam(int argc, char *argv[]){
-    //Parametros con las ID
-    NODOSVECINOS=argc-1;
-    //printf("Se van a iniciar %i nodos\n",NODOSVECINOS);
-
-    //Parametros a entero
-    for (int i = 1; i < argc; i++) {
-        nodos[i-1] = atoi(argv[i]);
-    }
-
-    srand(time(NULL)); //Para que los aleatorios no sean siempre los mismos!
-
-    //printf("Nodos vecinos son:\n");
-    for (int i=0; i<NODOSVECINOS; i++) {
-        //printf("ID de nodo %i: %i \n",i,nodos[i]);
-    }
-
+void initparam(){
     //INICIALIZACIÓN DE SEMAFOROS
     sem_init(&sem_SC,0,1);
     sem_init(&sem_esperaAvisoNodos,0,1);

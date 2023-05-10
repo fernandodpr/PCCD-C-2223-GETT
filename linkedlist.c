@@ -7,7 +7,6 @@
 #include <semaphore.h>
 #include <pthread.h>
 #include <unistd.h>
-
 #include "datatypes.h"
 #include "linkedlist.h"
 
@@ -25,8 +24,8 @@ void agregarProceso(struct Proceso** cabeza, struct Proceso* proceso) {
         }
         ultimo->siguiente = nuevoProceso; // Agregar el nuevo proceso después del último
     }
-    printf("Agregado Prioridad: %d, Ticket: %d, idNodo: %d\n", nuevoProceso->prioridad, nuevoProceso->ticket, nuevoProceso->idNodo);
 }
+
 void borrarLista(struct Proceso** cabeza) {
     struct Proceso* procesoActual = *cabeza;
     struct Proceso* procesoSiguiente = NULL;
@@ -54,9 +53,54 @@ int contarProcesos(struct Proceso* cabeza) {
     
     return contador;
 }
+
 void ordenarCola(struct Proceso** cabeza) {
-    /*
     struct Proceso* actual = *cabeza;
+    struct Proceso* sigue = NULL;
+
+    while(actual != NULL){
+        struct Proceso* next = actual->siguiente;
+
+        // Ordenar por prioridad (de menor a menor)
+        if(sigue == NULL || actual->prioridad < sigue->prioridad){
+            actual->siguiente = sigue;
+            sigue = actual;
+        
+        // Ordenar por nodo (de menor a menor)
+        }else if(actual->prioridad == sigue->prioridad && actual->idNodo > sigue->idNodo){
+            actual->siguiente = sigue;
+            sigue = actual;
+        
+        // Ordenar por ticket (de menor a menor)
+        }else if(actual->prioridad == sigue->prioridad && actual->idNodo == sigue->idNodo && actual->ticket < sigue->ticket){
+            actual->siguiente = sigue;
+            sigue = actual;
+        
+        }else {
+            struct Proceso *temp = sigue;
+            while(temp->siguiente != NULL && temp->siguiente->prioridad < actual->prioridad){
+                temp = temp->siguiente;
+            }
+
+            while(temp->siguiente != NULL && temp->siguiente->ticket < actual->ticket){
+                temp = temp->siguiente;
+            }
+
+            while(temp->siguiente != NULL && temp->siguiente->idNodo < actual->idNodo){
+                temp = temp->siguiente;
+            }
+
+            actual->siguiente = temp->siguiente;
+            temp->siguiente = actual;
+        }
+
+        actual = next;
+
+    }
+
+    *cabeza = sigue;
+
+ /*  struct Proceso* actual = *cabeza;
     struct Proceso* siguiente = NULL;
     int temp;
     bool cambio = true;
@@ -67,14 +111,17 @@ void ordenarCola(struct Proceso** cabeza) {
         cambio = false;
         actual = *cabeza;
 
-        printf("Dentro del bucle 1\n");
         while (actual->siguiente != NULL) {
             
             siguiente = actual->siguiente;
 
-            // Ordenar por prioridad (de mayor a menor)
-            if (actual->prioridad < siguiente->prioridad) {
+            // Ordenar por prioridad (de menor a menor)
+            if (actual->prioridad > siguiente->prioridad) {
                 printf("Prioridad ordenada de mayor a menor\n");
+                //actual->siguiente = siguiente->siguiente;
+                //siguiente->siguiente = actual;
+                //actual = siguiente;
+
                 temp = actual->prioridad;
                 actual->prioridad = siguiente->prioridad;
                 siguiente->prioridad = temp;
@@ -101,6 +148,7 @@ void ordenarCola(struct Proceso** cabeza) {
 
     }*/
 }
+
 void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     FILE* archivo = fopen(rutaArchivo, "w");
     
@@ -138,6 +186,7 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     
     fclose(archivo);
 }
+
 struct Proceso* generarListaAleatoria(int cantidad) {
     struct Proceso* cabeza = NULL;
     srand(time(NULL));  // Inicializar el generador de números aleatorios
@@ -224,6 +273,7 @@ bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
     }
     return true;
 }
+
 void eliminarCabeza(struct Proceso** cabeza) {
     if (*cabeza == NULL) {
         return; // La lista está vacía
@@ -235,6 +285,7 @@ void eliminarCabeza(struct Proceso** cabeza) {
         *cabeza = siguiente; // La lista tiene más de un elemento
     }
 }
+
 bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
     if (cabeza == NULL) { // Si la cola está vacía, retorna false
         return false;
@@ -248,6 +299,7 @@ bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
         }
     }
 }
+
 int ACKproceso(struct Proceso* cabeza, int procesoid){
     struct Proceso* procesoActual = cabeza;
     while (procesoActual != NULL) {
@@ -259,8 +311,9 @@ int ACKproceso(struct Proceso* cabeza, int procesoid){
     }
     return -1;
 }
+
 bool procesoSC(struct Proceso* cabeza) {
-    bool respuesta = 0;
+    //bool respuesta = 0;
     struct Proceso* procesoActual = cabeza;
     
     while (procesoActual != NULL) {
