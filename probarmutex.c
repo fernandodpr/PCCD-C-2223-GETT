@@ -116,6 +116,14 @@ void* recepcion(void* args){
                 recibido.instruccion=ACK;
                 recibido.estado=NO_INTERESADO;
                 NetworkSend(red,NULL,&recibido);
+
+                struct Proceso mensajeRecibido;
+                mensajeRecibido.idNodo = recibido.idNodo;
+                mensajeRecibido.ticket = recibido.ticket;
+                mensajeRecibido.prioridad = recibido.prioridad;
+                mensajeRecibido.idProceso = recibido.proceso;
+                mensajeRecibido.contACK = -10;
+                agregarProceso(&historial, &mensajeRecibido);
             }else{
                 //La cola no está vacía, tenemos que añadir a la cola el proceso externo y que luego cuando toque se conteste
                 printf("La cola NO está vacía, añado el proceso a la cola");
