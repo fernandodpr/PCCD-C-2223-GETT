@@ -160,7 +160,7 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     }
     
     struct Proceso* procesoActual = cabeza;
-    fprintf(archivo, "ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,Retardo\n");
+    fprintf(archivo, "ID Proceso,Prioridad,ID Nodo,Ticket,Hora de creación del proceso,Hora de entrada a la SC,Hora de salida de la SC,Hora de muerte del proceso,ACK's\n");
     
     while (procesoActual != NULL) {
         struct tm *tm_info = localtime(&procesoActual->creado);
@@ -181,7 +181,7 @@ void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
         tm_info = localtime(&procesoActual->fin);
         char tiempo_fin[20];
         strftime(tiempo_fin, 20, "%H:%M:%S", tm_info);
-        fprintf(archivo, "%s.%01ld,%d\n", tiempo_fin, procesoActual->fin % 1000, procesoActual->retardo);
+        fprintf(archivo, "%s.%01ld,%d\n", tiempo_fin, procesoActual->fin % 1000, procesoActual->contACK);
         
         procesoActual = procesoActual->siguiente;
     }

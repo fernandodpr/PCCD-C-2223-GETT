@@ -255,7 +255,7 @@ void * procesomutex(int* prioridad){
                 }while (rep);
             }
             
-
+            yomismo.contACK=cola->contACK;
             
             //SECCION CRITICA
 
@@ -305,13 +305,6 @@ void * procesomutex(int* prioridad){
 void sigint_handler(int sig) {
     //printf("\n\n\n\n");
     //printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces\n",contadorsc);
-    printf("Se ha presionado Ctrl+C eliminando buzones....\n");
-    if (msgctl(red, IPC_RMID, NULL) == -1) {
-        perror("msgctl");
-        exit(EXIT_FAILURE);
-    }
-    printf("Buzón eliminado.\n");
-
     char fichero[300];
     char *pid;
     char *str1 = "historialporordendeejecucion_";
@@ -323,13 +316,18 @@ void sigint_handler(int sig) {
         strcat(fichero, str2);
     }
     imprimirLista(fichero, historial);
-
-    exit(EXIT_SUCCESS);
     imprimirLista("historialdeejecucion.csv",historial);
 
 
 
 
+
+    printf("Se ha presionado Ctrl+C eliminando buzones....\n");
+    if (msgctl(red, IPC_RMID, NULL) == -1) {
+        perror("msgctl");
+        exit(EXIT_FAILURE);
+    }
+    printf("Buzón eliminado.\n");
     exit(EXIT_SUCCESS);
 }
 
