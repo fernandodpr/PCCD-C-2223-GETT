@@ -216,7 +216,7 @@ void * procesomutex(int* prioridad){
                 //El sigueinte proceso está esperando en mi nodo
                 printf("EL SIGUIENTE PROCESO ESTA EN MI NODO\n");
                 printf("El siguiente proceso es de prioridad %i\n",cola->prioridad);
-                printf("El siguieºnte proceso es tiene ticket %i\n",cola->ticket);
+                printf("El siguiente proceso es tiene ticket %i\n",cola->ticket);
                 sem_post(&sem_prioridades[cola->prioridad]);
                 printf("Ha despertado?\n");
             }else if(contarProcesos(cola)!=0) {
