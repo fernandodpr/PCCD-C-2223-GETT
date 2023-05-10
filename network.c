@@ -67,6 +67,7 @@ void NetworkSend(int red, struct Proceso* proceso) {
         message.prioridad=proceso->prioridad;
         message.instruccion=proceso->instruccion;
         message.estado=proceso->estado;
+        message.proceso=proceso->idProceso;
     }else{
         message=*paquete;
     }

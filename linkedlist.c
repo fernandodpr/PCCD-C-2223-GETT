@@ -302,16 +302,14 @@ bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado) {
     }
 }
 
-int ACKproceso(struct Proceso* cabeza, int procesoid){
-    struct Proceso* procesoActual = cabeza;
-    while (procesoActual != NULL) {
-        if(procesoActual->idProceso==procesoid){
-            return procesoActual->contACK;
-            
+int ACKproceso(struct Proceso* lista, int idProceso){
+    struct Proceso* actual = lista;
+    while (actual != NULL) {
+        if (actual->idProceso == idProceso) {
+            return actual->contACK;
         }
-        procesoActual = procesoActual->siguiente;
+        actual = actual->siguiente;
     }
-    return -1;
 }
 
 bool procesoSC(struct Proceso* cabeza) {
@@ -331,22 +329,18 @@ bool procesoSC(struct Proceso* cabeza) {
     
     return false;
 }
-void addACK(struct Proceso** cabeza,int identificador) {  
-    printf("Entrando en addACK\n");
-    struct Proceso* procesoActual = *cabeza;
-    while (procesoActual != NULL) {
-        printf("Entrando en while\n");
-
-        if(procesoActual->idProceso==identificador){
-            procesoActual->contACK++;
-            printf("ACK anhadido\n");
-
-            return;
+void addACK(struct Proceso* lista, int idProceso) {
+    struct Proceso* actual = lista;
+    while (actual != NULL) {
+        if (actual->idProceso == idProceso) {
+            actual->contACK++;
+            printf("El proceso %i tiene %i ACK's",idProceso,actual->contACK);
+            break;
         }
-        procesoActual = procesoActual->siguiente;
+        actual = actual->siguiente;
     }
-    return;
 }
+
 void necesariapeticion(struct Proceso* cabeza,int minodo){
     struct Proceso* procesoActual = cabeza;
     while (procesoActual != NULL) {

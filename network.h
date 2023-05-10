@@ -9,6 +9,7 @@
         int prioridad;
         int instruccion;
         int estado;
+        int proceso;
     } Paquete;
 
 #endif

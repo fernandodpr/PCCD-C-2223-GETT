@@ -82,9 +82,9 @@ void* recepcion(void* args){
     //Tenemos que definir los tipos de cada uno de los paquetes.
     // Espera a recibir un mensaje en la cola de mensajes
     int acks = 0;
-    printf("ESCUCHANDO CONEXIONES POR RED %i \n",red);
     while(1){
-        printf("while");
+        printf("ESCUCHANDO CONEXIONES POR RED %i \n",red);
+
         Paquete recibido;
 
 
@@ -143,15 +143,20 @@ void* recepcion(void* args){
 
             
 
-            //sem_wait(&sem_protec_lista);
-                addACK(cola,recibido.idNodo);//Añadir el ack
-            //sem_post(&sem_protec_lista);
+            sem_wait(&sem_protec_lista);
+                printf("Se va a dar permiso al proceso %i\n",recibido.proceso);
+                addACK(cola,recibido.proceso);//Añadir el ack
+            sem_post(&sem_protec_lista);
+            fflush(stdout);
             printf("Se ha añadido el ACK");
 
-
-            if(ACKproceso(cola,recibido.idNodo)==NODOSVECINOS-1){
+            int acks=ACKproceso(cola,recibido.proceso);
+            if(acks==NODOSVECINOS-1){
                 //Este proceso ya tiene todos los ack
                 sem_post(&sem_prioridades_ACK[recibido.prioridad]);// Después en el wait ese deberán de revisar si tienen todos los permisos necesarios pero no es cosa del receptor
+                printf("proceso despertadoc\n");
+            }else{
+                printf("El proceso no tiene todos los ACK's %i\n",acks);
             }
 
         }else if (recibido.instruccion==NACK){
