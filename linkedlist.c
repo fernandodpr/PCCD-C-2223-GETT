@@ -55,7 +55,7 @@ int contarProcesos(struct Proceso* cabeza) {
     return contador;
 }
 void ordenarCola(struct Proceso** cabeza) {
-    printf("Hola k haces");
+    /*
     struct Proceso* actual = *cabeza;
     struct Proceso* siguiente = NULL;
     int temp;
@@ -80,7 +80,7 @@ void ordenarCola(struct Proceso** cabeza) {
                 siguiente->prioridad = temp;
                 cambio = true;
             }
-            /*// Si la prioridad es igual, ordenar por nodo (de menor a mayor)
+            // Si la prioridad es igual, ordenar por nodo (de menor a mayor)
             else if (actual->prioridad == siguiente->prioridad && actual->idNodo > siguiente->idNodo) {
                 printf("Nodo ordenado de menor a mayor\n");
                 temp = actual->idNodo;
@@ -95,11 +95,11 @@ void ordenarCola(struct Proceso** cabeza) {
                 actual->ticket = siguiente->ticket;
                 siguiente->ticket = temp;
                 cambio = true;
-            }*/
+            }
             actual = actual->siguiente;
         }
 
-    }
+    }*/
 }
 void imprimirLista(char* rutaArchivo, struct Proceso* cabeza) {
     FILE* archivo = fopen(rutaArchivo, "w");
@@ -281,6 +281,19 @@ void addACK(struct Proceso* cabeza,int identificador) {
     while (procesoActual != NULL) {
         if(procesoActual->idProceso==identificador){
             procesoActual->contACK++;
+            return;
+        }
+        procesoActual = procesoActual->siguiente;
+    }
+    return;
+}
+void necesariapeticion(struct Proceso* cabeza,int minodo){
+    struct Proceso* procesoActual = cabeza;
+    while (procesoActual != NULL) {
+        if(procesoActual->idNodo!=minodo){
+            if(procesoActual->siguiente->idNodo==minodo){
+                procesoActual->siguiente->pedirPermiso=true;
+            }
             return;
         }
         procesoActual = procesoActual->siguiente;

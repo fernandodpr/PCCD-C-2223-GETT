@@ -1,14 +1,17 @@
 #include "linkedlist.h"
+
 #ifndef NETWORK_H
-    #define NETWORK_H
-    #include "datatypes.h"
+#define NETWORK_H
     typedef struct {
         long mtype;          //Destinatario DEST
-        Instruccion instruccion;
-        Status estado;      //En que estado se encuentra
-        struct Proceso process;
+        int idNodo;
+        int ticket;
+        int prioridad;
+        int instruccion;
+        int estado;
     } Paquete;
 
-    Paquete* networkrcv(int red,int nodo);
-    void NetworkSend(int red, int destinatario,int estado,int instruccion,struct Proceso processinc);
 #endif
+    void networkrcv(int red,int nodo,Paquete* message);
+    
+    void NetworkSend(int red, struct Proceso* proceso);

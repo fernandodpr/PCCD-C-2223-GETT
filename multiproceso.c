@@ -157,7 +157,7 @@ void* recepcion(void* args){
 void sigint_handler(int sig) {
     //printf("\n\n\n\n");
     //printf("\nESTE NDOO HA ENTRADO EN LA SC UN TOTAL DE : %i   veces\n",contadorsc);
-    //printf("Se ha presionado Ctrl+C eliminando buzones....\n");
+    printf("Se ha presionado Ctrl+C eliminando buzones....\n");
     if (msgctl(red, IPC_RMID, NULL) == -1) {
         perror("msgctl");
         exit(EXIT_FAILURE);
@@ -167,7 +167,7 @@ void sigint_handler(int sig) {
 }
 
 int main(int argc, char *argv[]) {
-    /*
+    
     //Signal de salida
     //printf("Presione Ctrl+C para salir del programa.\n");
     signal(SIGINT, sigint_handler);
@@ -178,7 +178,8 @@ int main(int argc, char *argv[]) {
     initparam(argc, argv);
 
     pthread_t pthrecepcion;
-    pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);   
+    pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);
+     
     pthread_t pthtest[10];
     for (int i =0; i<10; i++) {
         //printf("Creo hilo");
@@ -187,7 +188,7 @@ int main(int argc, char *argv[]) {
    
     while (1) {
     
-    }*/
+    }
     probarlista();
     return 0;
 }
