@@ -97,22 +97,25 @@ void* recepcion(void* args){
 
         printf("La prioridad es %i\n",recibido.prioridad);
         printf("La Instruccion es %i\n",recibido.instruccion);
+        if(recibido.ticket>lastticket){
+            lastticket=recibido.ticket;
+            printf("Actualizo el numero de ticket con externo\n");
+        }  // Si el ticket que recibo es mayor actualizo  
 
        
         if(recibido.instruccion==SOLICITUD){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
             printf("Es una solicitud\n\n");
-
-            if(recibido.ticket>lastticket){
-                lastticket=recibido.ticket;
-                printf("Actualizo el numero de ticket con externo");
-            }  // Si el ticket que recibo es mayor actualizo    
-
-            if(contarProcesos(cola)==0){
+            int contarproces=contarProcesos(cola);
+            fflush(stdout);
+            printf("Contar procesos da como resultado");
+            if(contarproces==0){
                 //La cola está vacía, podemos contestar directamente
-                printf("La cola está vacía, puedo dar paso a la solicitud");
-
-                NetworkSend(red,&recibido);
+                printf("La cola está vacía, puedo dar paso a la solicitud de nodo %i",recibido.idNodo);
+                recibido.mtype=recibido.idNodo;
+                recibido.instruccion=ACK;
+                recibido.estado=NO_INTERESADO;
+                NetworkSend(red,NULL,&recibido);
             }else{
                 //La cola no está vacía, tenemos que añadir a la cola el proceso externo y que luego cuando toque se conteste
                 printf("La cola NO está vacía, añado el proceso a la cola");
@@ -126,10 +129,7 @@ void* recepcion(void* args){
 
             if(procesoSC(cola)==true){
                 //Dejamos que pase el otro proceso:   MOTIVO --> nadie en mi nodo está en SC
-                /*if(recibido.process.ticket>lastticket){
-                    lastticket=recibido->process.ticket;
-                }*/  // Si el ticket que recibo es mayor actualizo
-
+    
               
                 //En estos casos existe contienda.
             }else{ //Pasa el nodo con ticket menor, el otro
@@ -139,9 +139,14 @@ void* recepcion(void* args){
         }else if(recibido.instruccion==ACK){
             //Nos están dando permiso para entrar SC
             //Primera comprobación, realmente, queremos?
-            sem_wait(&sem_protec_lista);
+            printf("Es un ACK\n");
+
+            
+
+            //sem_wait(&sem_protec_lista);
                 addACK(cola,recibido.idNodo);//Añadir el ack
-            sem_post(&sem_protec_lista);
+            //sem_post(&sem_protec_lista);
+            printf("Se ha añadido el ACK");
 
 
             if(ACKproceso(cola,recibido.idNodo)==NODOSVECINOS-1){
@@ -226,7 +231,7 @@ void * procesomutex(int* prioridad){
                 for (int i=1;i<NODOSVECINOS; i++){
                     yomismo.mtype=nodos[i];
                     printf("es aqui, la instruccion es %i\n\n\n",yomismo.instruccion);
-                    NetworkSend(red,&yomismo);
+                    NetworkSend(red,&yomismo,NULL);
                 }
                 printf("Hola como estás\n");
 
@@ -275,7 +280,7 @@ void * procesomutex(int* prioridad){
             }else if(contarProcesos(cola)!=0) {
                 printf("EL SIGUIENTE PROCESO NO ESTA EN MI NODO\n");
                 cola->mtype=cola->idNodo;
-                NetworkSend(red,cola);
+                NetworkSend(red,cola,NULL);
                 necesariapeticion(cola,nodos[0]); //Agrega los boolean de necesaria petición
             }else{
                 //El siguinte proceso esta esperando fuera de mi nodo
@@ -318,6 +323,7 @@ int main(int argc, char *argv[]) {
     pthread_t pthrecepcion;
     pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);
 
+if(nodos[0]==10){
 
  
     int procesos =1;
@@ -333,15 +339,14 @@ int main(int argc, char *argv[]) {
             pthread_create(&pthtest[i],NULL,(void *)procesomutex,prioridadrand);
         }
 
-        pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
-
+pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
         for (int i = 0; i < procesos; i++) {
             pthread_join(pthtest[i], NULL); // Esperar a que el hilo termine
         }
         i++;
     }while(i<5);
 
-   
+}else{pthread_join(pthrecepcion, NULL); }
   sigint_handler(0);
     return 0;
 }

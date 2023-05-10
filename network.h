@@ -14,4 +14,4 @@
 #endif
     void networkrcv(int red,int nodo,Paquete* message);
     
-    void NetworkSend(int red, struct Proceso* proceso);
+    void NetworkSend(int red ,struct Proceso* proceso,Paquete* paquete);

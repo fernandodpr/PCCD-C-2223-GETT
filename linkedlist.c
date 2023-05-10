@@ -43,7 +43,9 @@ int contarProcesos(struct Proceso* cabeza) {
     struct Proceso* procesoActual = cabeza;
     
     while (procesoActual != NULL) {
+        printf("contador");
         contador++;
+
         procesoActual = procesoActual->siguiente;
     }
 
@@ -324,16 +326,21 @@ bool procesoSC(struct Proceso* cabeza) {
     }
 
     if(procesoActual == NULL){
-        printf("YA esta vacía\n");
+        printf("YA esta vacía sc\n");
     }
     
     return false;
 }
-void addACK(struct Proceso* cabeza,int identificador) {  
-    struct Proceso* procesoActual = cabeza;
+void addACK(struct Proceso** cabeza,int identificador) {  
+    printf("Entrando en addACK\n");
+    struct Proceso* procesoActual = *cabeza;
     while (procesoActual != NULL) {
+        printf("Entrando en while\n");
+
         if(procesoActual->idProceso==identificador){
             procesoActual->contACK++;
+            printf("ACK anhadido\n");
+
             return;
         }
         procesoActual = procesoActual->siguiente;

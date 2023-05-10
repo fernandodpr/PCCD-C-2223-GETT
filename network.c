@@ -58,23 +58,19 @@ void NetworkSend(int red, struct Proceso* proceso) {
 
         return;
     }
-    void NetworkSend(int red ,struct Proceso* proceso){
-
+    void NetworkSend(int red ,struct Proceso* proceso,Paquete* paquete){
         Paquete message;
+    if(paquete==NULL){
         message.mtype=proceso->mtype;
         message.idNodo=proceso->idNodo;
         message.ticket=proceso->ticket;
         message.prioridad=proceso->prioridad;
         message.instruccion=proceso->instruccion;
         message.estado=proceso->estado;
-
-        printf("La prioridad del paquete es %i\n",message.prioridad);
-
-        printf("La instruccion del paquete es %i\n",message.instruccion);
-
-
-        printf("Envio un paquete para: %li\n",message.mtype);
-
+    }else{
+        message=*paquete;
+    }
+        printf("[RED] Envio paquete a nodo %li con prioridad %i con instruccion %i\n",message.mtype,message.prioridad,message.instruccion);
         if(msgsnd(red, &message, sizeof(message), 0) == -1) {
           perror("msgsnd");
              exit(1);
