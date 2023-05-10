@@ -8,6 +8,7 @@ Para poder ejecutar el sript de inicialización autiomática de nodos compilar c
 /*Ejemplo de lanzamiento: 
 multiproceso.o RECEP ID_COLA_INTERNA ID_COLA_RED #########Lanza la aplicacioón receptor 
 multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -150,7 +151,7 @@ void* recepcion(void* args){
 
                 sem_wait(&sem_protec_lista);
                     addACK(cola,recibido);//Añadir el ack
-                    ordenarCola(cola);
+                    ordenarCola(&cola);
                 sem_post(&sem_protec_lista);
             }
 
@@ -190,8 +191,9 @@ void* recepcion(void* args){
 
 }
 
-void * procesomutex(int* prioridad){
+void * procesomutex(void *arg){
     struct Proceso yomismo;
+    int *prioridad = (int *)arg;
 
     yomismo.creado= time(NULL);
     yomismo.idProceso = gettid();
@@ -218,7 +220,8 @@ void * procesomutex(int* prioridad){
             yomismo.contACK=0;
             yomismo.idNodo=nodos[0];
             yomismo.pedirPermiso=1;
-            yomismo.prioridad=prioridad;
+            yomismo.prioridad=(*prioridad);
+            
             yomismo.ticket=lastticket+rand() % 5;
 
             //Actualizo el numero de ticket minimo
@@ -344,9 +347,9 @@ int main(int argc, char *argv[]) {
     pthread_create(&pthrecepcion,NULL,(void *)recepcion,NULL);
 
 
-
  
-    int procesos =1;
+    int procesos =5;
+    int prioridadrand[3] = {1,2,3};
 
 
     int i =0;
@@ -354,8 +357,9 @@ int main(int argc, char *argv[]) {
         pthread_t pthtest[procesos];
 
         for (int i =0; i<procesos;i++) {
-            int prioridadrand=rand() % 3 + 1;
-            pthread_create(&pthtest[i],NULL,(void *)procesomutex,prioridadrand);
+
+            int prio = rand() % 3;
+            pthread_create(&pthtest[i],NULL,(void *)procesomutex,(void *)&prioridadrand[prio]);
         }
 
         pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
