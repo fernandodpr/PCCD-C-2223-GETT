@@ -123,12 +123,12 @@ void* recepcion(void* args){
                 sem_post(&sem_protec_lista);
             }
 
-*/
+
             if(procesoSC(cola)==true){
                 //Dejamos que pase el otro proceso:   MOTIVO --> nadie en mi nodo está en SC
-                if(recibido->process.ticket>lastticket){
+                /*if(recibido.process.ticket>lastticket){
                     lastticket=recibido->process.ticket;
-                }  // Si el ticket que recibo es mayor actualizo
+                }*/  // Si el ticket que recibo es mayor actualizo
 
               
                 //En estos casos existe contienda.
@@ -136,7 +136,7 @@ void* recepcion(void* args){
 
             }
 
-        }else if(recibido->instruccion==ACK){
+        }else if(recibido.instruccion==ACK){
             //Nos están dando permiso para entrar SC
             //Primera comprobación, realmente, queremos?
             sem_wait(&sem_protec_lista);
