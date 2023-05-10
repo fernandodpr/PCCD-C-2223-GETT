@@ -14,6 +14,8 @@ void agregarProceso(struct Proceso** cabeza, struct Proceso* proceso) {
     struct Proceso* nuevoProceso = (struct Proceso*) malloc(sizeof(struct Proceso));
     memcpy(nuevoProceso, proceso, sizeof(struct Proceso)); // Hacer una copia del struct
 
+    printf("[Nodo %d] -> Agregado proceso %d con prioridad: %d, Ticket: %d e idNodo: %d\n", proceso->idNodo, proceso->idProceso, proceso->prioridad, proceso->ticket, proceso->idNodo);
+
     nuevoProceso->siguiente = NULL; // El siguiente del último elemento siempre es NULL
     if (*cabeza == NULL) { // Si la lista está vacía, el nuevo proceso es la cabeza
         *cabeza = nuevoProceso;
@@ -43,15 +45,12 @@ int contarProcesos(struct Proceso* cabeza) {
     struct Proceso* procesoActual = cabeza;
     
     while (procesoActual != NULL) {
-        printf("contador");
         contador++;
 
         procesoActual = procesoActual->siguiente;
     }
 
-    if(procesoActual == NULL){
-        printf("YA esta vacía\n");
-    }
+
     
     return contador;
 }
@@ -211,26 +210,15 @@ struct Proceso* generarListaAleatoria(int cantidad) {
 }
 bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
     if(cabeza->idProceso != proceso->idProceso) {
-        printf("NOEsIgual: idProceso\n");
         return false;
     }
     if(cabeza->prioridad != proceso->prioridad) {
-        printf("NOEsIgual: prioridad\n");
-                        printf("La prioridad de cabeza es %i    \n",cabeza->prioridad);
-                printf("La prioridad de proceso es %i    \n",proceso->prioridad);
-
         return false;
     }
     if(cabeza->idNodo != proceso->idNodo) {
-                printf("NOEsIgual: idNodo\n");
-
-
-
         return false;
     }
     if(cabeza->ticket != proceso->ticket) {
-                printf("NOEsIgual: ticket\n");
-
         return false;
     }
     if(cabeza->inicio != proceso->inicio) {
@@ -239,13 +227,9 @@ bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
         return false;
     }
     if(cabeza->creado != proceso->creado) {
-                printf("NOEsIgual: creado\n");
-
         return false;
     }
     if(cabeza->atendido != proceso->atendido) {
-                printf("NOEsIgual: atendido\n");
-
         return false;
     }
     if(cabeza->fin != proceso->fin) {
@@ -254,23 +238,15 @@ bool esIgual(struct Proceso* cabeza, struct Proceso* proceso) {
         return false;
     }
     if(cabeza->retardo != proceso->retardo) {
-                printf("NOEsIgual: retardo\n");
-
         return false;
     }
     if(cabeza->contACK != proceso->contACK) {
-                printf("NOEsIgual: contACK\n");
-
         return false;
     }
     if(cabeza->ejecucion != proceso->ejecucion) {
-                printf("NOEsIgual: ejecucion\n");
-
         return false;
     }
     if(cabeza->pedirPermiso != proceso->pedirPermiso) {
-                printf("NOEsIgual: pedirpermiso\n");
-
         return false;
     }
     return true;
@@ -326,10 +302,7 @@ bool procesoSC(struct Proceso* cabeza) {
         procesoActual = procesoActual->siguiente;
     }
 
-    if(procesoActual == NULL){
-        printf("YA esta vacía sc\n");
-    }
-    
+
     return false;
 }
 void addACK(struct Proceso* lista, int idProceso) {
@@ -337,7 +310,6 @@ void addACK(struct Proceso* lista, int idProceso) {
     while (actual != NULL) {
         if (actual->idProceso == idProceso) {
             actual->contACK++;
-            printf("El proceso %i tiene %i ACK's",idProceso,actual->contACK);
             break;
         }
         actual = actual->siguiente;
