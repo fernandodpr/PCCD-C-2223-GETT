@@ -92,7 +92,7 @@ void* recepcion(void* args){
         networkrcv(red,nodos[0],&recibido);
         printf("Sali de networkrcsv");
 
-        printf("ENTRO \n",red);
+        printf("ENTRO \n");
         printf("HA LLEGADO UN PAQUETE\n\n");
 
         printf("La prioridad es %i\n",recibido.prioridad);
@@ -308,6 +308,19 @@ void sigint_handler(int sig) {
         exit(EXIT_FAILURE);
     }
     printf("Buzón eliminado.\n");
+
+    char fichero[300];
+    char *pid;
+    char *str1 = "historialporordendeejecucion_";
+    char *str2 = ".csv";
+
+    if(asprintf(&pid, "%d",nodos[0]) == -1);
+    else {
+        strcat(strcpy(fichero, str1), pid);
+        strcat(fichero, str2);
+    }
+    imprimirLista(fichero, historial);
+
     exit(EXIT_SUCCESS);
     imprimirLista("historialdeejecucion.csv",historial);
 }
