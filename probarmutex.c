@@ -221,7 +221,7 @@ void * procesomutex(void *arg){
             yomismo.contACK=0;
             yomismo.idNodo=nodos[0];
             yomismo.pedirPermiso=1;
-            yomismo.prioridad=(*prioridad);
+            yomismo.prioridad=prioridad;
             
             yomismo.ticket=lastticket+rand() % 5;
 
@@ -277,7 +277,7 @@ void * procesomutex(void *arg){
             
             //SECCION CRITICA
 
-            printf("[Proceso %d] -> Entrando en SC con ticket\n", yomismo.idProceso,yomismo.ticket);
+            printf("[Proceso %d] -> Entrando en SC con ticket %d\n", yomismo.idProceso,yomismo.ticket);
 
             yomismo.inicio= time(NULL);
             int tiempoespera=rand() % 1 + 2;
@@ -308,7 +308,7 @@ void * procesomutex(void *arg){
                     if(cola->idNodo==nodos[0]){
                         sem_post(&sem_prioridades[cola->prioridad]);
                     }else if(contarProcesos(cola)==0){
-                        printf("[Proceso %d] -> Se ha finalizado la cola de procesos\n", yomismo.idProceso,yomismo.ticket);
+                        printf("[Proceso %d] -> Se ha finalizado la cola de procesos\n", yomismo.idProceso);
                         agregarProceso(&historial, &yomismo);
                         guardalog();
                         return NULL; 
@@ -317,7 +317,7 @@ void * procesomutex(void *arg){
 
             }else{
                 //Cola terminada
-                printf("[Proceso %d] -> Se ha finalizado la cola de procesos\n", yomismo.idProceso,yomismo.ticket);
+                printf("[Proceso %d] -> Se ha finalizado la cola de procesos\n", yomismo.idProceso);
                 agregarProceso(&historial, &yomismo);
                 guardalog();
                 return NULL; 
