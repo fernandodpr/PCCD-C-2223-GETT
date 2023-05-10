@@ -143,7 +143,6 @@ void ordenarCola(struct Proceso** cabeza) {
                 siguiente->ticket = temp;
                 cambio = true;
             }
-
             actual = actual->siguiente;
         }
 
@@ -335,6 +334,19 @@ void addACK(struct Proceso* cabeza,int identificador) {
     while (procesoActual != NULL) {
         if(procesoActual->idProceso==identificador){
             procesoActual->contACK++;
+            return;
+        }
+        procesoActual = procesoActual->siguiente;
+    }
+    return;
+}
+void necesariapeticion(struct Proceso* cabeza,int minodo){
+    struct Proceso* procesoActual = cabeza;
+    while (procesoActual != NULL) {
+        if(procesoActual->idNodo!=minodo){
+            if(procesoActual->siguiente->idNodo==minodo){
+                procesoActual->siguiente->pedirPermiso=true;
+            }
             return;
         }
         procesoActual = procesoActual->siguiente;
