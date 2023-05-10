@@ -245,10 +245,13 @@ void * procesomutex(int* prioridad){
                     printf("Espero los ACK");
                     sem_wait(&sem_prioridades_ACK[yomismo.prioridad]);
                     printf("ACK recibidos\n");
-                    rep= (esIgual(cola, &yomismo)==false) || (cola->contACK!=NODOSVECINOS-1);
+                    
+                    rep= ((cola->idProceso==yomismo.idProceso)==false) || (cola->contACK!=NODOSVECINOS-1);
                     if(rep){
                         sem_post(&sem_prioridades_ACK[yomismo.prioridad]); //El despertar no era para mi
                     }
+
+                    sleep(1);
                 }while (rep);
             }
             
@@ -308,8 +311,13 @@ void sigint_handler(int sig) {
         exit(EXIT_FAILURE);
     }
     printf("Buzón eliminado.\n");
-    exit(EXIT_SUCCESS);
+    
     imprimirLista("historialdeejecucion.csv",historial);
+
+
+
+
+    exit(EXIT_SUCCESS);
 }
 
 int main(int argc, char *argv[]) {
@@ -331,7 +339,7 @@ int main(int argc, char *argv[]) {
 if(nodos[0]==10){
 
  
-    int procesos =1;
+    int procesos =5;
 
 
     int i =0;
