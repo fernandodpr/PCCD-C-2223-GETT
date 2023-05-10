@@ -41,15 +41,7 @@ void NetworkSend(int red, struct Proceso* proceso) {
 }*/
 
     void networkrcv(int red,int nodo,Paquete* message){
-
-        printf("Inicio de la fucnion networkrcv");
-        printf("Esperando recibir un paquete por red %i para mi (%i)",red,nodo);
-
-
         int resultado=msgrcv(red, (struct msgbuf *)message, sizeof(Paquete),(long)nodo, 0);
-        
-        fflush(stdout);
-        printf("Resultado de recepcion %i",resultado);
         
         if (resultado== -1) {
             printf("Error al recibir el mensaje");
@@ -71,7 +63,7 @@ void NetworkSend(int red, struct Proceso* proceso) {
     }else{
         message=*paquete;
     }
-        printf("[RED] Envio paquete a nodo %li con prioridad %i con instruccion %i\n",message.mtype,message.prioridad,message.instruccion);
+        printf("[RED %i] Envio paquete a nodo %li con prioridad %i con instruccion %i\n",red,message.mtype,message.prioridad,message.instruccion);
         if(msgsnd(red, &message, sizeof(message), 0) == -1) {
           perror("msgsnd");
              exit(1);
