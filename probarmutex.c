@@ -104,13 +104,18 @@ void* recepcion(void* args){
 
             if(recibido.ticket>lastticket){
                 lastticket=recibido.ticket;
+                printf("Actualizo el numero de ticket con externo");
             }  // Si el ticket que recibo es mayor actualizo    
 
-            if(contarProcesos==0){
+            if(contarProcesos(cola)==0){
                 //La cola está vacía, podemos contestar directamente
+                printf("La cola está vacía, puedo dar paso a la solicitud");
+
                 NetworkSend(red,&recibido);
             }else{
                 //La cola no está vacía, tenemos que añadir a la cola el proceso externo y que luego cuando toque se conteste
+                printf("La cola NO está vacía, añado el proceso a la cola");
+
                 sem_wait(&sem_protec_lista);
                     addACK(cola,recibido);//Añadir el ack
                     ordenarCola(cola);
@@ -297,23 +302,25 @@ int main(int argc, char *argv[]) {
 
  
     int procesos =1;
-    pthread_t pthtest[procesos];
 
 
+    int i =0;
+    do{
+        pthread_t pthtest[procesos];
 
+        for (int i =0; i<procesos;i++) {
+            printf("Creo hilo\n");
+            int prioridadrand=rand() % 3 + 1;
+            pthread_create(&pthtest[i],NULL,(void *)procesomutex,prioridadrand);
+        }
 
-    for (int i =0; i<procesos;i++) {
-        printf("Creo hilo\n");
-        int prioridadrand=rand() % 3 + 1;
-        pthread_create(&pthtest[i],NULL,(void *)procesomutex,prioridadrand);
-    }
-    
-    pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
+        pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
 
-    for (int i = 0; i < procesos; i++) {
-        pthread_join(pthtest[i], NULL); // Esperar a que el hilo termine
-    }
-
+        for (int i = 0; i < procesos; i++) {
+            pthread_join(pthtest[i], NULL); // Esperar a que el hilo termine
+        }
+        i++;
+    }while(i<5);
 
    
   sigint_handler(0);
