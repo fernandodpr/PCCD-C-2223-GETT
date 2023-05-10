@@ -177,8 +177,9 @@ void* recepcion(void* args){
 
 }
 
-void * procesomutex(int* prioridad){
+void * procesomutex(void *arg){
     struct Proceso yomismo;
+    int *prioridad = (int *)arg;
 
     yomismo.creado= time(NULL);
     yomismo.idProceso = gettid();
@@ -208,7 +209,7 @@ void * procesomutex(int* prioridad){
             yomismo.contACK=0;
             yomismo.idNodo=nodos[0];
             yomismo.pedirPermiso=1;
-            yomismo.prioridad=prioridad;
+            yomismo.prioridad=(*prioridad);
             printf("Pto control");
             yomismo.ticket=lastticket+rand() % 5;
             //Actualizo el numero de ticket minimo
@@ -290,7 +291,7 @@ void * procesomutex(int* prioridad){
                 //El sigueinte proceso está esperando en mi nodo
                 printf("EL SIGUIENTE PROCESO ESTA EN MI NODO\n");
                 printf("El siguiente proceso es de prioridad %i\n",cola->prioridad);
-                printf("El siguieºnte proceso es tiene ticket %i\n",cola->ticket);
+                printf("El siguiente proceso es tiene ticket %i\n",cola->ticket);
                 sem_post(&sem_prioridades[cola->prioridad]);
                 printf("Ha despertado?\n");
             }else if(contarProcesos(cola)!=0) {
@@ -358,6 +359,7 @@ if(nodos[0]==10){
 
  
     int procesos =5;
+    int prioridadrand[procesos];
 
 
     int i =0;
@@ -366,8 +368,8 @@ if(nodos[0]==10){
 
         for (int i =0; i<procesos;i++) {
             printf("Creo hilo\n");
-            int prioridadrand=rand() % 3 + 1;
-            pthread_create(&pthtest[i],NULL,(void *)procesomutex,prioridadrand);
+            prioridadrand[i]=rand() % 3 + 1;
+            pthread_create(&pthtest[i],NULL,(void *)procesomutex,(void *)&prioridadrand[i]);
         }
 
 pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
