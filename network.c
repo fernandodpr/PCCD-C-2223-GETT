@@ -41,6 +41,10 @@ void NetworkSend(int red, struct Proceso* proceso) {
 }*/
 
     void networkrcv(int red,int nodo,Paquete* message){
+
+        int delay = rand() % 101;
+        usleep(delay * 1000); //Para simular la latencia de la red
+
         int resultado=msgrcv(red, (struct msgbuf *)message, sizeof(Paquete),(long)nodo, 0);
         
         if (resultado== -1) {
