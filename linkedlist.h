@@ -40,3 +40,7 @@
     void eliminarCabeza(struct Proceso** cabeza);
 
     bool compararIdNodo(struct Proceso* cabeza, int idNodoBuscado);
+
+    void addACK(struct Proceso* lista, int idProceso);
+    bool procesoSC(struct Proceso* cabeza);
+    int ACKproceso(struct Proceso* lista, int idProceso);
