@@ -310,6 +310,9 @@ int ACKproceso(struct Proceso* lista, int idProceso){
         }
         actual = actual->siguiente;
     }
+
+    return -1;
+
 }
 
 bool procesoSC(struct Proceso* cabeza) {

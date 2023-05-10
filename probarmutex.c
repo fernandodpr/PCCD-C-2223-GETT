@@ -309,6 +309,7 @@ void sigint_handler(int sig) {
     }
     printf("Buzón eliminado.\n");
 
+    //
     char fichero[300];
     char *pid;
     char *str1 = "historialporordendeejecucion_";
@@ -321,8 +322,8 @@ void sigint_handler(int sig) {
     }
     imprimirLista(fichero, historial);
 
-    exit(EXIT_SUCCESS);
     imprimirLista("historialdeejecucion.csv",historial);
+    exit(EXIT_SUCCESS);
 }
 
 int main(int argc, char *argv[]) {
