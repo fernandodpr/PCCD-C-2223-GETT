@@ -8,6 +8,7 @@ Para poder ejecutar el sript de inicialización autiomática de nodos compilar c
 /*Ejemplo de lanzamiento: 
 multiproceso.o RECEP ID_COLA_INTERNA ID_COLA_RED #########Lanza la aplicacioón receptor 
 multiproceso.o CONSULTAS ID_COLA_INTERNA ID_COLA_RED ID_NODO [ID'S NODOS]*/
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -130,7 +131,7 @@ void* recepcion(void* args){
 
                 sem_wait(&sem_protec_lista);
                     addACK(cola,recibido);//Añadir el ack
-                    ordenarCola(cola);
+                    ordenarCola(&cola);
                 sem_post(&sem_protec_lista);
             }
 
@@ -359,7 +360,7 @@ if(nodos[0]==10){
 
  
     int procesos =5;
-    int prioridadrand[procesos];
+    int prioridadrand[3] = {1,2,3};
 
 
     int i =0;
@@ -368,8 +369,8 @@ if(nodos[0]==10){
 
         for (int i =0; i<procesos;i++) {
             printf("Creo hilo\n");
-            prioridadrand[i]=rand() % 3 + 1;
-            pthread_create(&pthtest[i],NULL,(void *)procesomutex,(void *)&prioridadrand[i]);
+            int prio = rand() % 3;
+            pthread_create(&pthtest[i],NULL,(void *)procesomutex,(void *)&prioridadrand[prio]);
         }
 
 pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
