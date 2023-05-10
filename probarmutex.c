@@ -131,26 +131,27 @@ void* recepcion(void* args){
             //NOS HA LLEGADO UNA SOLICITUD DE UN NODO
 
             int contarproces=contarProcesos(cola);
-            fflush(stdout);
+
+            struct Proceso procesoRecibido;
+            procesoRecibido.idNodo = recibido.idNodo;
+            procesoRecibido.ticket = recibido.ticket;
+            procesoRecibido.prioridad = recibido.prioridad;
+            procesoRecibido.idProceso = recibido.proceso;
+            procesoRecibido.contACK = 0;
+
             if(contarproces==0){
                 //La cola está vacía, podemos contestar directamente
                 recibido.mtype=recibido.idNodo;
                 recibido.instruccion=ACK;
                 recibido.estado=NO_INTERESADO;
                 NetworkSend(red,NULL,&recibido);
-
-                struct Proceso mensajeRecibido;
-                mensajeRecibido.idNodo = recibido.idNodo;
-                mensajeRecibido.ticket = recibido.ticket;
-                mensajeRecibido.prioridad = recibido.prioridad;
-                mensajeRecibido.idProceso = recibido.proceso;
-                mensajeRecibido.contACK = -10;
-                agregarProceso(&historial, &mensajeRecibido);
+                agregarProceso(&historial, &procesoRecibido);
             }else{
                 //La cola no está vacía, tenemos que añadir a la cola el proceso externo y que luego cuando toque se conteste
 
+
                 sem_wait(&sem_protec_lista);
-                    addACK(cola,recibido);//Añadir el ack
+                    agregarProceso(&cola,&procesoRecibido);//Añadir el ack
                     ordenarCola(&cola);
                 sem_post(&sem_protec_lista);
             }
@@ -299,6 +300,7 @@ void * procesomutex(void *arg){
                 sem_post(&sem_prioridades[cola->prioridad]);
             }else if(contarProcesos(cola)!=0) {
                 //El siguiente proceso esta en otro nodo
+                //LUEGO METER EN EL HISTORIAL
                 do{
                     cola->mtype=cola->idNodo;
                     NetworkSend(red,cola,NULL);
@@ -348,7 +350,7 @@ int main(int argc, char *argv[]) {
 
 
  
-    int procesos =5;
+    int procesos =2;
     int prioridadrand[3] = {1,2,3};
 
 
