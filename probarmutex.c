@@ -325,6 +325,7 @@ void * procesomutex(void *arg){
             yomismo.fin= time(NULL);
             
             agregarProceso(&historial, &yomismo);
+            guardalog();
             
             sleep(1);
     return NULL;
@@ -350,12 +351,14 @@ int main(int argc, char *argv[]) {
 
 
  
-    int procesos =2;
+    int procesos =20;
     int prioridadrand[3] = {1,2,3};
 
-
+    if (nodos[0]==1) {
+    
+    
     int i =0;
-    do{
+ 
         pthread_t pthtest[procesos];
 
         for (int i =0; i<procesos;i++) {
@@ -363,13 +366,15 @@ int main(int argc, char *argv[]) {
             int prio = rand() % 3;
             pthread_create(&pthtest[i],NULL,(void *)procesomutex,(void *)&prioridadrand[prio]);
         }
-
         pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
+
         for (int i = 0; i < procesos; i++) {
             pthread_join(pthtest[i], NULL); // Esperar a que el hilo termine
         }
         i++;
-    }while(i<5);
+}else{        pthread_join(pthrecepcion, NULL); // Esperar a que el hilo termine
+}
+       
 
   sigint_handler(0);
 

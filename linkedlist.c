@@ -309,7 +309,7 @@ void addACK(struct Proceso* lista, int idProceso) {
     struct Proceso* actual = lista;
     while (actual != NULL) {
         if (actual->idProceso == idProceso) {
-            actual->contACK++;
+            actual->contACK=actual->contACK+1;
             break;
         }
         actual = actual->siguiente;
